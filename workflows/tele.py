@@ -8,9 +8,21 @@ from dotenv import load_dotenv
 load_dotenv()
 API_TELE = os.environ.get('API_TELE')
 
-class Bot_Tele():
+class gram():
     def __init__(self):
-        self = telegram.Bot(API_TELE)
+        self.bot = telegram.Bot(API_TELE)
+        self.p()
+
+    def p(self):
+        print("Printing getMe")
+        blob = self.bot.get_me()
+        print(blob)
+
+
+# class Bot_Tele(): pass
+
+# for i in telegram.Bot.__all__:
+#     setattr(Bot_Tele, i, getattr(telegram.Bot, i))
 
 print("Successful Bot Call")
-Bot_Tele()
+gram()
