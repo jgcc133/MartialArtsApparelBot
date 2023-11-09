@@ -9,8 +9,7 @@ from workflows import tele
 def main():
     print("Hello World!")
     # print(API_TELE)
-    telebot = tele.gram()
-    telebot.p()
+    telebot = tele()
 
 main()
 # asyncio.run(main())
