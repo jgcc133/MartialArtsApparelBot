@@ -1,5 +1,3 @@
-import telegram
-import telegram.ext
 import os
 
 from dotenv import load_dotenv
