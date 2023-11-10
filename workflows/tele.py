@@ -1,4 +1,5 @@
 import os
+import asyncio
 
 from dotenv import load_dotenv
 from telethon import TelegramClient, events
@@ -11,52 +12,16 @@ API_TELE_BOT = os.environ.get('API_TELE_BOT')
 API_TELE_APP_ID  = os.environ.get('API_TELE_APP_ID')
 API_TELE_APP_HASH = os.environ.get('API_TELE_APP_HASH')
 
+CHAT_ID = 63144080
+client = TelegramClient(
+        'bot_session',
+        API_TELE_APP_ID,
+        API_TELE_APP_HASH,
+        ).start(bot_token=API_TELE_BOT)
 
-client = TelegramClient('bot_session', API_TELE_APP_ID, API_TELE_APP_HASH).start(bot_token=API_TELE_BOT)
+print("Client Initialised and Running")
+    
 
-async def send_hello_message():
-    chat_id = 63144080
-    message = 'Hello from your bot!'
-
-    await client.send_message(chat_id, message)
-
-@client.on(events.NewMessage)
-async def handle_new_message(event):
-    sender = await event.get_sender()
-    message = event.message.text
-
-    print(f"Received a message from {sender.username} ({sender.id}): {message}")
-
-@client.on(events.NewMessage(pattern='/start'))
-async def handle_start_command(event):
-    sender = await event.get_sender()
-    chat_id = event.message.peer_id
-    print(chat_id)
-    if isinstance(chat_id, (PeerUser, PeerChat, PeerChannel)):
-        await client.send_message(
-            chat_id,
-            'Welcome to the bot! What would you like to do today?',
-            buttons=[
-                Button.inline('Find Product', 'find-product'),
-                Button.inline('Another Button', 'another-button')
-                ]
-            )
-
-@client.on(events.NewMessage(pattern='/find-product'))
-async def handle_product_query(event):
-    sender = await event.get_sender()
-    chat_id = event.message.peer_id
-    print(chat_id)
-    if isinstance(chat_id, (PeerUser, PeerChat, PeerChannel)):
-        await client.send_message(
-            chat_id,
-            'Welcome to the bot! What would you like to do today?',
-            buttons=[
-                Button.inline('Find Product', 'find-product'),
-                Button.inline('Another Button', 'another-button')
-                ]
-            )
 
 # Run the event loop to start receiving messages
 client.run_until_disconnected()
-
