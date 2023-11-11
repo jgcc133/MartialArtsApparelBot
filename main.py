@@ -14,41 +14,79 @@ load_dotenv()
 API_TELE_BOT = os.environ.get('API_TELE_BOT')
 API_TELE_APP_ID  = os.environ.get('API_TELE_APP_ID')
 API_TELE_APP_HASH = os.environ.get('API_TELE_APP_HASH')
+CHAT_ID = os.environ.get('CHAT_ID') # Chat ID between myself and the bot, purely for debugging purposes
 
-CHAT_ID = 63144080
 client = TelegramClient(
         'bot_session',
         API_TELE_APP_ID,
         API_TELE_APP_HASH
         ).start(bot_token=API_TELE_BOT)
 
+COMMANDS = ['/start', '/help', '/products', '/viewing', '/others']
+
 @client.on(events.NewMessage(pattern='/start'))
 async def msg_handler_start(msg):
     '''
-    Completely new user
+    Completely new user. Returns a start welcome message based on the chat user ID
+    For channels, the flow and context will be handled separately
     '''
-    print("New User initialising")
     try:
-        current_chat_id = await msg.get_peer_id()
-        print(current_chat_id)
+        # Obtaining username
+        chat_from = msg.chat if msg.chat else (await msg.get_chat())
+        chat_username = utils.get_display_name(chat_from)
+        chat_id = utils.get_peer_id(chat_from)
+        print(f"[ {chat_id} | {chat_username} ] \t : \t Sent a /start message")
+
         response = await client.send_message(
-            entity=CHAT_ID,
+            entity=chat_id,
             message="Welcome to Martial Arts Apparel Bot! What services would you like to take a look at?",
             buttons=[
-                Button.inline('Enquire about products', 'msg_handler_product'),
-                Button.inline('Arrange for viewing', 'msg_handler_viewing'),
-                Button.inline('Other Services', 'msg_handler_others')
+                [Button.inline('Product Enquiry', 'msg_handler_product')],
+                [Button.inline('Arrange Viewing', 'msg_handler_viewing')],
+                [Button.inline('Other Services', 'msg_handler_others')]
                 ])
-        print("New User initialised")
+        print(f"[ {chat_id} | {chat_username} ] \t : \t Start Message sent to User")
     except:
         print("error")
 
 
 @client.on(events.NewMessage())
-async def typical_control_flow(event):
+async def typical_control_flow(msg):
     '''
-    Sends a message to ask if user is referring to a previous query, or to a new one
+    Sends a message to ask if user is referring to a previous query (on services not products),
+    or to a new one.
+    Under a new query, start handler is triggered
     '''
-    await client.send_message(entity=CHAT_ID, message='test typical control flow')
+    print("Setting up handler number 2")
+    try:
+        chat_from = msg.chat if msg.chat else (await msg.get_chat())
+        chat_text = msg.message if msg.message else (await msg.get_message())
+        
+        if chat_text.message not in COMMANDS:            
+            chat_username = utils.get_display_name(chat_from)
+            chat_id = utils.get_peer_id(chat_from)
+            print(f"[ {chat_id} | {chat_username} ] \t : \t Sent a message that's not an existing command")
+
+            response = await client.send_message(
+                entity=chat_id,
+                message='Resume previous enquiry?',
+                buttons=[
+                    Button.inline('New Enquiry', await msg_handler_start(msg)),
+                    Button.inline('Previous Enquiry', 'msg_handler_query_previous')
+                    ])
+    except:
+        print("typical message control flow error")
+
+# sets of functions only triggered by buttons
+# inaccessible by commands
+async def msg_handler_query_previous(msg):
+    '''
+    When this function is called, bot will query the last choice
+    that the user has selected, on a Service level query
+    (View  Products / shop, vs arrange viewing vs other services)
+    And resume USER's selection
+    data object is stored as a _ _ _?
+    '''
+    pass
 
 client.run_until_disconnected()
