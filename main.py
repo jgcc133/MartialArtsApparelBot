@@ -108,6 +108,19 @@ async def handler(event):
     
     await msg_handler_start(event)
 
+@client.on(events.CallbackQuery(data='Product Enquiry'))
+async def handler(event):
+    ut.pLog(event.sender_id, utils.get_display_name(await event.get_chat()), f"Selected {str(event.data, encoding='utf-8')}")
+    await client.send_message(
+        entity=event.sender_id,
+        message="Which areas of products would you like to look at today?",
+        buttons=[
+            [Button.inline("MMA", "MMA"),
+            Button.inline("Muay Thai", "Muay Thai")],
+            [Button.inline("BJJ", "BJJ"),
+             Button.inline("Other Accessories", "Other Accessories")]
+        ])
+
 @client.on(events.CallbackQuery(data='Previous Enquiry'))
 async def msg_handler_query_previous(msg):
     '''
@@ -118,5 +131,6 @@ async def msg_handler_query_previous(msg):
     data object is stored as a _ _ _?
     '''
     pass
+
 
 client.run_until_disconnected()
