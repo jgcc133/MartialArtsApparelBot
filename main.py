@@ -42,9 +42,9 @@ async def msg_handler_start(msg):
             entity=chat_id,
             message="Welcome to Martial Arts Apparel Bot! What services would you like to take a look at?",
             buttons=[
-                [Button.inline('Product Enquiry', 'msg_handler_product')],
-                [Button.inline('Arrange Viewing', 'msg_handler_viewing')],
-                [Button.inline('Other Services', 'msg_handler_others')]
+                [Button.inline('Product Enquiry', 'Product Enquiry')],
+                [Button.inline('Arrange Viewing', 'Arrange Viewing')],
+                [Button.inline('Other Services', 'Other Services')]
                 ])
         ut.pLog(chat_id, chat_username, "Start Message sent to User")
     except:
@@ -68,12 +68,12 @@ async def typical_control_flow(msg):
             chat_id = utils.get_peer_id(chat_from)
             ut.pLog(chat_id, chat_username, f"Sent <'{chat_text.message}'>, a message that's not an existing command")
 
-            await client.send_message(
+            resume_query = await client.send_message(
                 entity=chat_id,
                 message='Resume previous enquiry?',
                 buttons=[
-                    Button.inline('New Enquiry', b'start'),
-                    Button.inline('Previous Enquiry', b'previous_query')
+                    Button.inline('New Enquiry', 'New Enquiry'),
+                    Button.inline('Previous Enquiry', 'Previous Enquiry')
                     ])
     
     except:
@@ -86,11 +86,29 @@ async def typical_control_flow(msg):
 # sets of functions only triggered by buttons
 # inaccessible by commands
 
-@client.on(events.CallbackQuery(data=b'start'))
+@client.on(events.CallbackQuery())
 async def handler(event):
+    '''
+    Global to Edit all sent messages to include responses in italics on second line
+    and remove the existing buttons
+    '''
+    
+    ut.pLog(event.sender_id, utils.get_display_name(await event.get_chat()), f"Selected {str(event.data, encoding='utf-8')}")
+    message = await event.get_message()
+    text = message.text + "\n__**" + str(event.data, encoding='utf-8') + "**__"
+    await client.edit_message(
+        entity=event.sender_id,
+        message=event.message_id,
+        text=text,
+        buttons=Button.clear())
+    
+
+@client.on(events.CallbackQuery(data='New Enquiry'))
+async def handler(event):
+    
     await msg_handler_start(event)
 
-@client.on(events.CallbackQuery(data=b'previous_query'))
+@client.on(events.CallbackQuery(data='Previous Enquiry'))
 async def msg_handler_query_previous(msg):
     '''
     When this function is called, bot will query the last choice
