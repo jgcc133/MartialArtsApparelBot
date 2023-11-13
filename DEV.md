@@ -15,3 +15,9 @@ Pending being able to call start message handler when "new query" is selected as
 
 Next Steps:
 Control Flow is to be abstracted OUT of the main.py or [some platform].py files. This is to allow control flow to be updated regardless of the number of chat platforms being supported
+
+13 Nov 23
+Control Flow has been abstracted. The config is now read in from control_flow.py by the respective chat platform files (tele.py, and in future others)
+
+Next Steps:
+Adding events.NewMessage handler for non-command text submitted by user, and callbackquery for button callback data
