@@ -119,7 +119,23 @@ async def handler(event):
              Button.inline("Other Accessories", "Other Accessories")]
         ])
 
+@client.on(events.CallbackQuery(data='Arrange Viewing'))
+async def handler(event):
+    ut.pLog(
+        event.sender_id,
+        utils.get_display_name(await event.get_chat()),
+         f"Selected {str(event.data, encoding='utf-8')}, displaying viewing options for user to select")
+    
+    pass
 
+@client.on(events.CallbackQuery(data='Other Services'))
+async def handler(event):
+    ut.pLog(
+        event.sender_id,
+        utils.get_display_name(await event.get_chat()),
+        f"Selected {str(event.data, encoding='utf-8')}, sending a list of other services for user to select")
+    
+    pass
 
 @client.on(events.CallbackQuery(data='Previous Enquiry'))
 async def msg_handler_query_previous(msg):
