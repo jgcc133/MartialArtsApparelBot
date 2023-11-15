@@ -1,6 +1,7 @@
 import os
 import asyncio
 import math
+import yaml
 
 from dotenv import load_dotenv
 from telethon import Button, TelegramClient, events, utils
@@ -9,8 +10,6 @@ from workflows import utils as ut
 from workflows import control_flow
 
 AUTH = {}
-COMMANDS = {}
-CALLBACKS = {}
 
 def setKeys():
     '''
@@ -35,6 +34,7 @@ def beauButtons(button_list: list = []):
     Just use the higher number of squares and append accordingly
     leaving the last row blank from the right
     '''
+        
     min_square = math.ceil(math.sqrt(len(button_list)))
     
     buttons=[]
@@ -55,12 +55,19 @@ def addHandler():
     '''
     Setting the commands to be added as event.newMessage
     '''
-    
     try:
-        Commands = control_flow.main()["Flow"]["data"]["commands"]
-        Callbacks = control_flow.main()["Flow"]["data"]["callbacks"]
-        Default = control_flow.main()["Flow"]["data"]["default"]
-        
+        control_file = 'workflows/control.yml'
+        with open(control_file, 'r') as file:
+            Control = yaml.safe_load(file)
+            
+        Commands = Control["Flow"]["data"]["commands"]
+        Callbacks = Control["Flow"]["data"]["callbacks"]
+        Default = Control["Flow"]["data"]["default"]
+        ut.pLog(f"Control has been loaded from {control_file}")
+    except:
+        ut.pLog("Unable to load control flow from control.yml")
+    
+    try:        
         @Client.on(events.NewMessage())
         async def handler(event):
             # Obtaining username
@@ -68,21 +75,21 @@ def addHandler():
             chat_username = utils.get_display_name(chat_from)
             chat_id = utils.get_peer_id(chat_from)                
             text = event.raw_text
-            ut.pLog(f"Sent a {text} message.",chat_id, chat_username)
+            ut.pLog(f"Sent a <{text}> message.",chat_id, chat_username)
         
             if text in Commands.keys():
                 try:                
-                    buttons = beauButtons(Commands[text]["btn"])
+                    buttons = None if len(Commands[text]["btn"]) == 0 else beauButtons(Commands[text]["btn"])
                     await Client.send_message(
                         entity=chat_id,
                         message=Commands[text]["msg"],
                         buttons=buttons)
-                    ut.pLog(f"Sent a {text} command in events.NewMessage", chat_id, chat_username)
+                    ut.pLog(f"Sent a <{text}> message to user from events.NewMessage", chat_id, chat_username)
                 except:
-                    ut.pLog(f"Failed to send {text} command from events.NewMessage")
+                    ut.pLog(f"Failed to send <{text}> command from events.NewMessage")
             else:
                 print("Fire off a /start to Client or future talking")
-                ut.pLog(f"Clicked on {text} that has not been added to the Config list.",chat_id, chat_username)
+                ut.pLog(f"Sent a <{text}> command that has not been added to the Config list.",chat_id, chat_username)
                 buttons = beauButtons(Default["btn"])
                 await Client.send_message(
                         entity=chat_id,
@@ -101,17 +108,17 @@ def addHandler():
             msg = await event.get_message()
             
             data = str(event.data, encoding='utf-8')
-            ut.pLog(f"Clicked on {data}.",chat_id, chat_username)
+            ut.pLog(f"Clicked on [{data}]",chat_id, chat_username)
             
             if data in Callbacks.keys():
                 try:
                     # Send message based on control flow
-                    buttons = beauButtons(Callbacks[data]["btn"])
+                    buttons = None if len(Callbacks[data]["btn"]) == 0 else beauButtons(Callbacks[data]["btn"]) 
                     await Client.send_message(
                         entity=chat_id,
                         message=Callbacks[data]["msg"],
                         buttons=buttons)
-                    ut.pLog(f"Sent {data} message to user", chat_id, chat_username)
+                    ut.pLog(f"Sent [{data}] message to user", chat_id, chat_username)
 
                     # Append response and clear buttons
                     new_text = msg.text + "\n\n__**" + str(event.data, encoding='utf-8') + "**__"
@@ -121,9 +128,9 @@ def addHandler():
                         text=new_text,
                         buttons=Button.clear())
                 except:
-                    ut.pLog(f"Failed to send {data} message from events.CallbackQuery to user")
+                    ut.pLog(f"Failed to send [{data}] message from events.CallbackQuery to user")
             else:
-                ut.pLog(f"Clicked on {data} that has not been added to the Config list.",chat_id, chat_username)
+                ut.pLog(f"Clicked on [{data}] button that has not been added to the Config list.",chat_id, chat_username)
                 buttons = beauButtons(Default["btn"])
                 await Client.send_message(
                         entity=chat_id,

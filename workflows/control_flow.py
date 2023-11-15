@@ -52,6 +52,18 @@ CONFIG = {
                     "msg": "What other services would you like to explore?",
                     "btn": ["Contact Seller", "Back"]
                 },
+                "MMA": {
+                    "msg": "Pulling MMA data...",
+                    "btn": []
+                },
+                "BJJ": {
+                    "msg": "Pulling BJJ data...",
+                    "btn": []
+                },
+                "MMA": {
+                    "msg": "Pulling data on all other accessories...",
+                    "btn": []
+                },
                 "Back to Start": {
                     "msg": "What services would you like to take a look at?",
                     "btn": ["Product Enquiry", "Arrange Viewing", "Other Services"]
