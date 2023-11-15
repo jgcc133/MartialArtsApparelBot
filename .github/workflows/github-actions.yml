@@ -2,6 +2,10 @@
 name: github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push, pull_request]
+env:
+  API_TELE_BOT: ${{ secrets.API_TELE_BOT }}
+  API_TELE_APP_ID: ${{ secrets.API_TELE_APP_ID}}
+  API_TELE_APP_HASH: ${{ secrets.API_TELE_APP_HASH}}
 jobs:
   build:
     runs-on: ubuntu-latest
