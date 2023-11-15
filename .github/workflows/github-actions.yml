@@ -1,0 +1,14 @@
+---
+name: github-actions
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+jobs:
+  
+  check-bats-version:
+    runs-on: [self-hosted, linux, x64, gpu]
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          python-version: '3.9.13'
+      - run: pip install requirements.txt
+      - run: python main.py
