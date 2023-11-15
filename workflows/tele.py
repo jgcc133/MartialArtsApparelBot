@@ -5,21 +5,20 @@ import yaml
 
 from dotenv import load_dotenv
 from telethon import Button, TelegramClient, events, utils
-from telethon.tl.functions.messages import GetBotCallbackAnswerRequest
 from workflows import utils as ut
-from workflows import control_flow
 
 AUTH = {}
+CONTROL = {}
+control_file = 'workflows/control.yml'
 
 def setKeys():
     '''
     Setting the authentication unique to tele
     '''
     
-    ut.pLog("Obtaining Authentication...")
-    
+    ut.pLog("Obtaining Authentication...")    
     try:
-        AuthRequired = control_flow.main()["Auth"]["data"]["tele"]
+        AuthRequired = CONTROL["Auth"]["data"]["tele"]
         for key in AuthRequired:
             AUTH[key] = os.environ.get(key)
         ut.pLog("Authenticated.")
@@ -55,17 +54,10 @@ def addHandler():
     '''
     Setting the commands to be added as event.newMessage
     '''
-    try:
-        control_file = 'workflows/control.yml'
-        with open(control_file, 'r') as file:
-            Control = yaml.safe_load(file)
-            
-        Commands = Control["Flow"]["data"]["commands"]
-        Callbacks = Control["Flow"]["data"]["callbacks"]
-        Default = Control["Flow"]["data"]["default"]
-        ut.pLog(f"Control has been loaded from {control_file}")
-    except:
-        ut.pLog("Unable to load control flow from control.yml")
+    
+    Commands = CONTROL["Flow"]["data"]["commands"]
+    Callbacks = CONTROL["Flow"]["data"]["callbacks"]
+    Default = CONTROL["Flow"]["data"]["default"]
     
     try:        
         @Client.on(events.NewMessage())
@@ -139,7 +131,20 @@ def addHandler():
     except:
         ut.pLog("Failed to load handlers...")
 
+def loadControl():
+    '''
+    Loads control flow from control file (yml file) into the global const CONTROL
+    '''    
+    try:
+        with open(control_file, 'r') as file:
+            control = yaml.safe_load(file)            
+        ut.pLog(f"Control has been loaded from {control_file}")
+        return control
+    except:
+        ut.pLog("Unable to load control flow from control.yml")
+    
 load_dotenv()
+CONTROL = loadControl()
 setKeys()
 Client = TelegramClient(
         'bot_session',
