@@ -24,7 +24,7 @@ Flow:
     commands:
       /start:
         msg: Welcome to Martial Arts Apparel Bot! What services would you like to take a look at?
-        btn: [Product Enquiry, Arrange Viewing, Other Services, Back]
+        btn: &startbtn [Product Enquiry, Arrange Viewing, Other Services, Back]
       /help:
         msg: View our list of commands?
         btn: [Product Enquiry, Arrange Viewing, Other Services, Back]
@@ -53,7 +53,7 @@ Flow:
         btn: []
       Back to Start:
         msg: What services would you like to take a look at?
-        btn: [Product Enquiry, Arrange Viewing, Other Services]
+        btn: *startbtn
     
     default:
       msg : Stay tuned! This function has not been added...
