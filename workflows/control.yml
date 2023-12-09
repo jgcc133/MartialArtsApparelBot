@@ -11,6 +11,19 @@ Auth:
       - API_TELE_APP_HASH
     whatsapp:
 
+Source:
+  meta: A list of URL/ directory combinations to pull data from
+  data:
+    base_url: some url (Activeapparels)
+    alt_url:
+      - url1
+      - url2
+
+    base_dir: root
+    alt_dir:
+      - dir1
+      - dir2
+
 Platforms:
   meta: A list of platforms supported / to be loaded
   data:

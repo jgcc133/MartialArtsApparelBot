@@ -27,3 +27,6 @@ Control File completely abstracted and converted to yaml file
 
 Next Steps:
 Host using GitHub Actions, and HTTP Get request to pull info from google drive (test with personal)
+
+9 Dec 23
+Use google drive url api to pull data from google drive. Provided data there is public to all.
