@@ -1,6 +1,4 @@
 
-from workflows import tele
-
 '''
 .workflows.tele contains all the callback handlers as a chat bot
 As more chat bots get created, the logic flow will reside here,
@@ -10,7 +8,36 @@ i.e. one main.py file to control convo flow and UI,
 but the individual files to make most use of the respective chat bots
 '''
 
+import os
+import asyncio
+import yaml
+
+from dotenv import load_dotenv
+from workflows import utils as ut
+from workflows import teleclass as tl
+
+
+load_dotenv()
+control_file = 'workflows/control.yml'
+
+def loadControl():
+    '''
+    Loads control flow from control file (yml file) into the global const CONTROL
+    '''    
+    try:
+        print(control_file)
+        with open(control_file, 'r') as file:
+            control = yaml.safe_load(file)            
+        ut.pLog(f"Control has been loaded from {control_file}")
+        return control
+    except:
+        ut.pLog("Unable to load control flow from control.yml")
+
 def main():
-    pass
+    
+    CONTROL = loadControl()
+    telegram_interface = tl.Tele(CONTROL)
+
+    
 
 main()

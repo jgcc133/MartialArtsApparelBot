@@ -8,25 +8,27 @@ product data to be pulled. However, it is this projects' wish to not host code o
 (Due to their instability and slowness in loading). Hence we will develop our environment
 as if we were hosted on AWS or Azure, interfacing with Google Drive.
 
-  data:
-    base_url: some url (Activeapparels)
-    alt_url:
-      - url1
-      - url2
-
-    base_dir: root
-    alt_dir:
-      - dir1
-      - dir2
-
-
 is suposed to give:
 a directory table of urls to check, consisting of:
 
-            base_url        url1        url2
-base_dir    base_url/       url1/       url2/
-dir1        base_url/dir1   url1/dir1   url2/dir1
-dir2        base_url/dir2   url1/dir2   url2/dir2
 
 and pull all files with 'catalogue' in their name
 '''
+
+import requests
+import yaml
+
+from workflows import tele
+from workflows import utils as ut
+
+# Pull data from control.yml for google drive url
+def pull():
+    
+
+repo_url = tele.loadControl()['Source']['data']['url']
+ut.pLog("repo_url")
+
+
+# Get Request to pull metadata file (google sheets)
+# Based on Google sheets filepaths, load either all or filter and then load filtered
+# Go to individual list of folders and pull out relevant information

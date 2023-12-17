@@ -21,7 +21,7 @@ def setKeys():
         AuthRequired = CONTROL["Auth"]["data"]["tele"]
         for key in AuthRequired:
             AUTH[key] = os.environ.get(key)
-        ut.pLog("Authenticated.")
+        ut.pLog("Authentication Complete.") 
     except:
         ut.pLog("Failed to load Authentication.")
 
@@ -143,9 +143,13 @@ def loadControl():
     except:
         ut.pLog("Unable to load control flow from control.yml")
     
+
+'''
 load_dotenv()
 CONTROL = loadControl()
+
 setKeys()
+
 Client = TelegramClient(
         'bot_session',
         AUTH["API_TELE_APP_ID"],
@@ -155,3 +159,20 @@ Client = TelegramClient(
 addHandler()
 
 Client.run_until_disconnected()
+
+
+Rewrite tele as a class.
+'''
+
+class Tele:
+
+    def __init__(self, control):
+        ut.pLog("Obtaining Authentication...")
+        try:
+            AuthRequired = CONTROL["Auth"]["data"]["tele"]
+            for key in AuthRequired:
+                self.AUTH[key] = os.environ.get(key)
+            ut.pLog("Authentication Complete.") 
+        except:
+            ut.pLog("Failed to load Authentication.")
+        
