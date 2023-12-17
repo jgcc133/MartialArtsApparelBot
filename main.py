@@ -14,7 +14,7 @@ import yaml
 
 from dotenv import load_dotenv
 from workflows import utils as ut
-from workflows import teleclass as tl
+from workflows import tele as tl
 from workflows import datatrawl as dt
 
 
