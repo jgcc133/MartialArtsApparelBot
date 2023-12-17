@@ -15,6 +15,7 @@ import yaml
 from dotenv import load_dotenv
 from workflows import utils as ut
 from workflows import teleclass as tl
+from workflows import datatrawl as dt
 
 
 load_dotenv()
@@ -37,6 +38,7 @@ def main():
     
     CONTROL = loadControl()
     telegram_interface = tl.Tele(CONTROL)
+    trawler = dt
 
     
 
