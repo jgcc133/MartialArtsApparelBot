@@ -3,3 +3,4 @@ env
 launch.json
 *.pptx
 bot_session.session
+.github
