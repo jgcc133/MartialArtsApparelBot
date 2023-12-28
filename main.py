@@ -21,24 +21,29 @@ from workflows import datatrawl as dt
 load_dotenv()
 control_file = 'workflows/control.yml'
 
-def loadControl():
+def loadControl(control_file = 'workflows/control.yml'):
     '''
     Loads control flow from control file (yml file) into the global const CONTROL
     '''    
     try:
-        print(control_file)
         with open(control_file, 'r') as file:
             control = yaml.safe_load(file)            
         ut.pLog(f"Control has been loaded from {control_file}")
         return control
     except:
-        ut.pLog("Unable to load control flow from control.yml")
+        ut.pLog(f"Unable to load control flow from {control_file}")
 
 def main():
     
-    CONTROL = loadControl()
-    telegram_interface = tl.Tele(CONTROL)
-    trawler = dt
+    CONTROL = loadControl()    
+    # trawler = dt.Trawler("https://docs.google.com/spreadsheets/d/1wQ-Z7mAVcpHC1p4DdcBs1sD_ipkC6lGqohOOzpa28Ls/edit#gid=0").accessHTTP()
+    # ut.pObj(trawler.accessHTTP())
+    
+    
+    # Temporarily disabled for GDrive testing
+    # telegram_interface = tl.Tele(CONTROL)
+    
+    trawler = dt.TrawlerSet(CONTROL['ID'], CONTROL['Source']['data'])
 
     
 

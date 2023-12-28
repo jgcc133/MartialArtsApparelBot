@@ -51,3 +51,16 @@ Root/
 
 Step 1:
 abstract load dotenv and control.yml to 
+
+22 Dec 23:
+Completed Abstraction of Tele into a class of handler creators to interface with control.yml
+Forked gdrive manual to attempt building a TrawlSet and Trawler class, which should also interface with control.yml to get the credentials and talk to each respective storage management platforms.
+Next steps: understand and build OAuth 2.0 for service account APIs
+
+28 Dec 23:
+Completed Auth with GDrive, OAuth2.0 Able to pull files with url
+Able to distinguish between folder or file with file(Capabilities(canListChildren))
+
+Next Steps: Query two layer deep folders and store the IDs in Trawler.pointers or Trawler.payloads
+Next steps: Merge back to main, then add in long term logging (add timestamp and save to log.yml)
+Next Steps: Post the data (pictures, with text / tags) back to telegram 
