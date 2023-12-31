@@ -1,0 +1,176 @@
+
+{
+  "Time": "2023-12-31 18:53:01.046753",
+  "Control": {
+    "ID": "Martial Arts Apparel",
+    "Auth": {
+      "meta": "A list of keys required from os.environ",
+      "data": {
+        "tele": {
+          "app": [
+            "AUTH_TELE_APP_ID",
+            "AUTH_TELE_APP_HASH"
+          ],
+          "bots": {
+            "b2d": "API_TELE_B2D_BOT",
+            "b2c": "API_TELE_B2C_BOT"
+          }
+        },
+        "whatsapp": null
+      }
+    },
+    "Source": {
+      "meta": "A list of URL/ directory combinations to pull data from",
+      "data": {
+        "GoogleDrive": {
+          "url": "https://drive.google.com/drive/folders/18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5?usp=sharing",
+          "apiUse": {
+            "scopes": [
+              "https://www.googleapis.com/auth/drive"
+            ],
+            "credLoc": "env/GoogleDriveCred.json",
+            "driveId": "18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5",
+            "tokenLoc": "env/GoogleDriveToken.json"
+          }
+        }
+      }
+    },
+    "Platforms": {
+      "meta": "A list of platforms supported / to be loaded",
+      "data": [
+        "tele",
+        "whatsapp"
+      ]
+    },
+    "B2DFlow": {
+      "meta": "Control Flow config for ControlEngine to read in and generate a list of handlers and callbackquery",
+      "data": {
+        "commands": {
+          "/start": {
+            "msg": "Welcome to Martial Arts Apparel Bot! What services would you like to take a look at?",
+            "btn": [
+              "Product Enquiry",
+              "Arrange Viewing",
+              "Other Services",
+              "Back"
+            ]
+          },
+          "/help": {
+            "msg": "View our list of commands?",
+            "btn": [
+              "Product Enquiry",
+              "Arrange Viewing",
+              "Other Services",
+              "Back"
+            ]
+          },
+          "/call": {
+            "msg": "Speak to our sales representatives?",
+            "btn": [
+              "Call",
+              "Chat with Live Rep",
+              "Back"
+            ]
+          }
+        },
+        "callbacks": {
+          "Product Enquiry": {
+            "msg": "Which areas of products would you like to look at today?",
+            "btn": [
+              "MMA",
+              "Muay Thai",
+              "BJJ",
+              "Other Accessories",
+              "Back"
+            ]
+          },
+          "Arrange Viewing": {
+            "msg": "Please select a suitable time and location for viewing?",
+            "btn": [
+              "Date & Time",
+              "Location",
+              "Back"
+            ]
+          },
+          "Other Services": {
+            "msg": "What other services would you like to explore?",
+            "btn": [
+              "Contact Seller",
+              "Back"
+            ]
+          },
+          "MMA": {
+            "msg": "Pulling data on all other accessories...",
+            "btn": []
+          },
+          "BJJ": {
+            "msg": "Pulling BJJ data...",
+            "btn": []
+          },
+          "Back to Start": {
+            "msg": "What services would you like to take a look at?",
+            "btn": [
+              "Product Enquiry",
+              "Arrange Viewing",
+              "Other Services",
+              "Back"
+            ]
+          }
+        },
+        "default": {
+          "msg": "Stay tuned! This function has not been added...",
+          "btn": [
+            "Back to Start"
+          ]
+        }
+      }
+    },
+    "B2CFlow": {
+      "meta": "Control Flow config for ControlEngine to read in and generate a list of handlers and callbackquery for B2C chat bot",
+      "data": {
+        "commands": {
+          "/start": {
+            "msg": "Welcome to Martial Arts Apparel Bot! What services would you like to take a look at?",
+            "btn": [
+              "Product Enquiry",
+              "Arrange Viewing",
+              "Other Services",
+              "Back"
+            ]
+          }
+        },
+        "callbacks": {
+          "Product Enquiry": {
+            "msg": "Which areas of products would you like to look at today?",
+            "btn": [
+              "MMA",
+              "Muay Thai",
+              "BJJ",
+              "Other Accessories",
+              "Back"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
+{
+  "Time": "2023-12-31 18:53:02.386605",
+  "": {
+    "Category2": {
+      "id": "1pofGSzAuy4RiF5XB2GvAvrYYiJgU9uk3",
+      "sku": {}
+    },
+    "Category1": {
+      "id": "1WUbpV4bRc4ElSBZEvSXaMNoEd0snhXIN",
+      "sku": {
+        "SKU11": {
+          "id": "1-Fr4xMl0MoLMfUNiOXE0O-wmAHNtnkMD",
+          "tags": [],
+          "photos": {}
+        }
+      }
+    }
+  }
+}

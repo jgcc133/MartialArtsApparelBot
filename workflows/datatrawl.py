@@ -81,9 +81,9 @@ class Trawler:
                     # Save the credentials for the next run
                     with open(self.token_loc, "w") as token:
                         token.write(self.creds.to_json())
-            ut.pLog(f"Credentials for {self.trawl_for} successfully set.")
+            ut.pLog(f"Credentials for {self.trawl_for} successfully set.", p1=True)
         except:
-            ut.pLog(f"Credentials for {self.trawl_for} could not be set")
+            ut.pLog(f"Credentials for {self.trawl_for} could not be set", p1=True)
 
     def initialPull(self):
         '''
@@ -132,10 +132,10 @@ class Trawler:
                 if cat_page_token is None:
                     break                
 
-            ut.pObj(self.pointers)
+            ut.pObj(self.pointers, p1 = True)
            
         except:
-            ut.pLog(f"Could not load files from {self.trawl_for}")
+            ut.pLog(f"Could not load files from {self.trawl_for}", p1=True)
 
     def pullFiles(self, by_keyword=False, keywords=[]):
         '''
@@ -184,14 +184,15 @@ class Trawler:
                 page_token = response.get('nextPageToken', None)
                 if page_token is None:
                     break            
-            ut.pObj(self.pointers)
+            ut.logObj(self.pointers, name=f"{self.trawl_for}Pointers")
+
 
             '''
             Iterates a second round with query, to catch all folders under category folders
             '''
 
         except:
-            ut.pLog(f"Could not load files from {self.trawl_for}")
+            ut.pLog(f"Could not load files from {self.trawl_for}", p1=True)
 
 
 class TrawlerSet:
@@ -210,9 +211,9 @@ class TrawlerSet:
                 ut.pLog(f"Creating Trawler for {platform}...")
                 try:
                     self.trawlers[platform] = Trawler(platform, trawl_url_dict[platform])
-                    ut.pLog(f"Trawler created: {platform} for {self.trawlset_for}.")
+                    ut.pLog(f"Trawler created: {platform} for {self.trawlset_for}.", p1=True)
                 except:
-                    ut.pLog(f"Unable to create Trawler: {platform} for {self.trawlset_for}")
+                    ut.pLog(f"Unable to create Trawler: {platform} for {self.trawlset_for}", p1=True)
     
 
     

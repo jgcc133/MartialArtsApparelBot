@@ -25,25 +25,25 @@ def loadControl(control_file = 'workflows/control.yml'):
     '''
     Loads control flow from control file (yml file) into the global const CONTROL
     '''    
+    ut.pLog(f"Loading Control from {control_file}...")
     try:
         with open(control_file, 'r') as file:
             control = yaml.safe_load(file)            
-        ut.pLog(f"Control has been loaded from {control_file}")
+        ut.pLog(f"Control has been loaded from {control_file}", p1=True)
+        ut.logObj(control, "Control")
         return control
     except:
-        ut.pLog(f"Unable to load control flow from {control_file}")
+        ut.pLog(f"Unable to load control flow from {control_file}", p1=True)
 
 def main():
-    
-    CONTROL = loadControl()    
-    # trawler = dt.Trawler("https://docs.google.com/spreadsheets/d/1wQ-Z7mAVcpHC1p4DdcBs1sD_ipkC6lGqohOOzpa28Ls/edit#gid=0").accessHTTP()
-    # ut.pObj(trawler.accessHTTP())
+    ut.clearLogs()
+    CONTROL = loadControl()
+    trawler = dt.TrawlerSet(CONTROL['ID'], CONTROL['Source']['data'])
     
     
     # Temporarily disabled for GDrive testing
     # telegram_interface = tl.Tele(CONTROL)
     
-    trawler = dt.TrawlerSet(CONTROL['ID'], CONTROL['Source']['data'])
 
     
 

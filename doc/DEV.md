@@ -63,4 +63,7 @@ Able to distinguish between folder or file with file(Capabilities(canListChildre
 
 Next Steps: Query two layer deep folders and store the IDs in Trawler.pointers or Trawler.payloads
 Next steps: Merge back to main, then add in long term logging (add timestamp and save to log.yml)
-Next Steps: Post the data (pictures, with text / tags) back to telegram 
+Next Steps: Post the data (pictures, with text / tags) back to telegram
+
+29 Dec 23:
+2-Layer deep folders queried and stored in Trawler.pointers

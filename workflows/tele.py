@@ -29,7 +29,7 @@ class Tele:
 
     
     def getKeys(self, control):
-        ut.pLog("Obtaining Authentication...")
+        ut.pLog("Obtaining Authentication for Telegram...")
         try:
             AuthRequired = control["Auth"]["data"]["tele"]["app"]
             for key in AuthRequired:
@@ -37,9 +37,9 @@ class Tele:
             BotsRequired = control["Auth"]["data"]["tele"]["bots"]
             for key in BotsRequired:
                 self.APIS[key] = os.environ.get(BotsRequired[key])
-            ut.pLog("Authentication Complete.") 
+            ut.pLog("Authentication for Telegram Complete.", p1=True) 
         except:
-            ut.pLog("Failed to load Authentication.")
+            ut.pLog("Failed to load Authentication for Telegram.", p1=True)
 
     def createBots(self, control):
         '''
@@ -86,7 +86,7 @@ class Tele:
                             buttons=buttons)
                         ut.pLog(f"Sent a <{text}> message to user from events.NewMessage", chat_id, chat_username)
                     except:
-                        ut.pLog(f"Failed to send <{text}> command from events.NewMessage")
+                        ut.pLog(f"Failed to send <{text}> command from events.NewMessage", p1=True)
                 else:
                     print("Fire off a /start to Client or future talking")
                     ut.pLog(f"Sent a <{text}> command that has not been added to the Config list.",chat_id, chat_username)
@@ -128,16 +128,16 @@ class Tele:
                             text=new_text,
                             buttons=Button.clear())
                     except:
-                        ut.pLog(f"Failed to send [{data}] message from events.CallbackQuery to user")
+                        ut.pLog(f"Failed to send [{data}] message from events.CallbackQuery to user", p1=True)
                 else:
-                    ut.pLog(f"Clicked on [{data}] button that has not been added to the Config list.",chat_id, chat_username)
+                    ut.pLog(f"Clicked on [{data}] button that has not been added to the Config list.",chat_id, chat_username, p1=True)
                     buttons = self.beauButtons(Default["btn"])
                     await Client.send_message(
                             entity=chat_id,
                             message=Default["msg"],
                             buttons=buttons)
         except:
-            ut.pLog("Failed to load handlers...")
+            ut.pLog("Failed to load handlers...", p1=True)
 
     def beauButtons(self, button_list: list = []):
         '''
