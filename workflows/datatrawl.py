@@ -6,19 +6,28 @@ Meaning:
 Through the dict that we define in control yml, it determines where the bot trawls through, or 
 even what is the trawling procedure (depend on which file as metadata, etc)
 One trawler to many drives
+
+Trawler.initialPull() returns a dictionary IDs of the files, in self.pointer
+
+if there are differences to the directory IDs, we will then initiate a full download of tags
+and photos, and push a change to metadata g sheets
 '''
 
 import os
 import io
+import gspread
 import requests
+import google.auth.transport.requests
+
+import pandas as pd
 
 from workflows import utils as ut
 
-from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseDownload
+from httplib2 import Http
 
 from googleapiclient.errors import HttpError
 
@@ -47,152 +56,187 @@ class Trawler:
         self.token_loc = key_dict["apiUse"]["tokenLoc"]
         self.driveId = key_dict["apiUse"]["driveId"]
         self.creds = None
+        self.drive_client = None
+        self.spreadsheet_client = None
+
         self.pointers = {}
-        self.payload = {}
+        self.metaHeaders = {
+            "Category_ID": 0,
+            "Product_ID": 1,
+            "Common_Media_ID": 2,
+            "Variation_ID": 3,
+            "Media_ID": 4,
+            "Tags": 5,
+            "Category": 6,
+            "Product": 7,
+            "Variation": 8,
+            "Sizes": 9,
+            "Inventory": 10
+        }
+        self.productTable = pd.DataFrame(columns=self.metaHeaders.keys())
 
         self.svcID = None
         self.svckey = None
-
+                        
         self.setCreds()
-        self.initialPull()
-        # self.pullFiles(by_keyword=True, keywords=["metadata", "meta"])
+        self.initialIDPull()
+        self.buildProductTable()
 
     def setCreds(self):
         ut.pLog(f"Setting Credentials for {self.trawl_for}...")
         try:
             if self.token_loc is None or self.token_loc != '':
+                # Set token_loc filepath if it hasn't been set
                 self.token_loc = f"env/{self.trawl_for}Token.json"
             if os.path.exists(self.token_loc):
+                # If the token file exists, initialise credentials from it
                 ut.pLog(f"Using Token from {self.token_loc}...")
                 self.creds = Credentials.from_authorized_user_file(self.token_loc, self.SCOPES)
-            else:
-                '''
-                token_loc filepath has not been set,
-                token.json has not been created, or
-                credentials are no longer valid
-                '''
-                if not self.creds or not self.creds.valid:
-                    if self.creds and self.creds.expired and self.creds.refresh_token:
-                        self.creds.refresh(Request())
-                    else:
-                        flow = InstalledAppFlow.from_client_secrets_file(
-                            self.cred_loc, self.SCOPES)
-                        self.creds = flow.run_local_server(port=0)
-                    # Save the credentials for the next run
-                    with open(self.token_loc, "w") as token:
-                        token.write(self.creds.to_json())
+            
+            if not self.creds or not self.creds.valid or not self.creds.has_scopes(self.SCOPES):
+                    
+                # token file does not exist, or credentials are no longer valid
+                # both require user to log in
+                # else continue on to setting build service
+                
+                flow = InstalledAppFlow.from_client_secrets_file(
+                    self.cred_loc, self.SCOPES)
+                self.creds = flow.run_local_server(port=0)
+                # Save the credentials for the next run
+                with open(self.token_loc, "w") as token:
+                    token.write(self.creds.to_json())
+            
+                        
+            self.drive_client = build("drive", "v3", credentials=self.creds)
+            self.spreadsheet_client = gspread.authorize(self.creds)
+            
             ut.pLog(f"Credentials for {self.trawl_for} successfully set.", p1=True)
         except:
             ut.pLog(f"Credentials for {self.trawl_for} could not be set", p1=True)
 
-    def initialPull(self):
+    def initialIDPull(self):
         '''
         Initial pull method. Also to pull every single file and endpoint to display.
         Shortened form of pullFiles.
         Causes self.pointers to be filled with a dict object of ids that we can use to
-        pull and download photos
-        '''
-        ut.pLog(f"Pulling files from Drive...")
-        try:
-            service = build("drive", "v3", credentials=self.creds)
-            cat_query = f"('{self.driveId}' in parents) and (trashed = false)"
-            ut.pLog(f"Querying {self.trawl_for} with \n {cat_query}")
-            cat_page_token = None
-            cat_response = service.files().list(q=cat_query,
-                                            fields='nextPageToken, files(id, name, capabilities(canListChildren))').execute()
-            
-            while True:                
-                for category in cat_response.get('files', []):
-                    cat_name = category.get('name')
-                    cat_id = category.get('id')
-                    ut.pLog(f"Found file : {cat_name} (id: {cat_id})")
-                    if category.get('capabilities')['canListChildren'] == True:
-                        self.pointers[cat_name] = {
-                            "id": cat_id,
-                            "sku":{}
-                        }
-                        sku_page_token = None
-                        sku_query = f"('{cat_id}' in parents) and (trashed = false)"
-                        sku_response = service.files().list(q=sku_query,
-                                            fields='nextPageToken, files(id, name, capabilities(canListChildren))').execute()
-                        while True:
-                            for sku in sku_response.get('files', []):
-                                sku_name = sku.get('name')
-                                sku_id = sku.get('id')
-                                if sku.get('capabilities')['canListChildren'] == True:
-                                    self.pointers[cat_name]["sku"][sku_name] = {
-                                        "id": sku_id,
-                                        "tags": [],
-                                        "photos": {}
-                                    }
-                            sku_page_token = sku_response.get('nextPageToken', None)
-                            if sku_page_token is None:
-                                break
-                cat_page_token = cat_response.get('nextPageToken', None)
-                if cat_page_token is None:
-                    break                
+        pull and download photos.
+        Note: This function only returns IDs as pointers to later download the files.
 
-            ut.pObj(self.pointers, p1 = True)
-           
-        except:
-            ut.pLog(f"Could not load files from {self.trawl_for}", p1=True)
-
-    def pullFiles(self, by_keyword=False, keywords=[]):
-        '''
         To reduce the need for complexity of GDrive structure to be listed on control.yml
-        or a metadata doc, it is recommended that the folder structure is two levels deep
+        or a metadata doc, it is recommended that the folder structure is standardised at
+        four levels deep:
+        
         Root (For Chatbot)
         |           |           |
         Category1   Category2   Category3
-        |       |
-        SKU11   SKU12
-        |-text
-        |-pictures
+        |
+        Prod11___________________
+        |-tags                  |
+        |-media(usually PDF)    |
+        Variation111            Variation112
+        |-media(usually pic)    |-media(usually pic)
 
-        If by_keyword is set to true, then keywords act as an additional filter.
-        If we don't want to re-organise everything into a common Root 'For Chatbot' folder,
-        Then the url supplied can be to AA's root folder.
-        Both the folders' with names that match keyword, and pics with names that match keyword,
-        will be added to the list, in an OR set.
         '''
         ut.pLog(f"Pulling files from Drive...")
         try:
-            service = build("drive", "v3", credentials=self.creds)
-            if by_keyword and len(keywords)!=0:
-                query = f"('{self.driveId}' in parents) and (trashed = false) and ((name contains "
-                query += f"'{keywords[0]}')"
-                if len(keywords) > 1:
-                    for kw in keywords[1:]:
-                        query += f" or (name contains '{kw}')"
-                query += ")"
-            else:
-                query = f"('{self.driveId}' in parents) and (trashed = false)"
-            ut.pLog(f"Querying {self.trawl_for} with \n {query}")
-            page_token = None
-            response = service.files().list(q=query,
-                                            fields='nextPageToken, files(id, name, capabilities(canListChildren))').execute()
+            service = self.drive_client
+            cat_query = f"('{self.driveId}' in parents) and (trashed = false)"
+            ut.pLog(f"Querying {self.trawl_for} with \n {cat_query}", p1=True)
+            fields = 'nextPageToken, files(id, name, capabilities(canListChildren))'
+            cat_response = service.files().list(q=cat_query,fields=fields).execute()
             
-            # ut.pObj(response) # For Devt Only
-            while True:                
-                for category in response.get('files', []):
-                    ut.pLog(f"Found file : {category.get('name')} (id: {category.get('id')})")
-                    if category.get('capabilities')['canListChildren'] == True:
-                        self.pointers[category.get('name')] = {
-                            "id": category.get('id'),
-                            "sku":{}
-                        }
-                page_token = response.get('nextPageToken', None)
-                if page_token is None:
-                    break            
-            ut.logObj(self.pointers, name=f"{self.trawl_for}Pointers")
+            # Iterate Category
+            for category in cat_response.get('files', []):
+                cat_name = category.get('name')
+                cat_id = category.get('id')
+                if category.get('capabilities')['canListChildren'] == True:
+                    self.pointers[cat_name] = {
+                        "id": cat_id,
+                        "products":{}
+                    }
 
+                    # Iterate products
+                    pro_query = f"('{cat_id}' in parents) and (trashed = false)"
+                    pro_response = service.files().list(q=pro_query, fields=fields).execute()
+                    for pro in pro_response.get('files', []):
+                        pro_name = pro.get('name')
+                        pro_id = pro.get('id')
+                        if pro.get('capabilities')['canListChildren'] == True:
+                            self.pointers[cat_name]["products"][pro_name] = {
+                                "id": pro_id,
+                                "media": {},
+                                "variations": {}
+                            }
 
-            '''
-            Iterates a second round with query, to catch all folders under category folders
-            '''
-
+                            # Iterate variations within product folders
+                            var_query = f"('{pro_id}' in parents) and (trashed = false)"
+                            var_response = service.files().list(q=var_query, fields=fields).execute()
+                            
+                            for var in var_response.get('files', []):
+                                var_name = var.get('name')
+                                var_id = var.get('id')
+                                if var.get('capabilities')['canListChildren'] == True:
+                                    # deal with as variation exists (as a folder) and need to iterate
+                                    # deeper to search for IDs of photo files
+                                    self.pointers[cat_name]["products"][pro_name]["variations"][var_name] = {
+                                            "id": var_id,
+                                            "media": {},
+                                            "tag": ""
+                                        }                                    
+                                    file_query = f"('{var_id}' in parents) and (trashed = false)"
+                                    file_response = service.files().list(q=file_query, fields=fields).execute()
+                                    for file in file_response.get('files', []):
+                                        
+                                        file_id = file.get('id')
+                                        file_name = file.get('name')
+                                        # deal with as photo, record tag ID if name contains tag and media if otherwhise
+                                        if 'tag' in file_name.lower():
+                                            self.pointers[cat_name]["products"][pro_name]["variations"][var_name]["tag"] = file_id
+                                        else:
+                                            self.pointers[cat_name]["products"][pro_name]["variations"][var_name]["media"][file_name] = file_id
+                                else:
+                                    #  Assume Product Media File, add to product media dict
+                                    self.pointers[cat_name]["products"][pro_name]["media"][var_name] = var_id
+            ut.logObj(self.pointers, name= f"{self.trawl_for} Pointers")
+            ut.pLog(f"File and Folder IDs have been loaded from {self.trawl_for}.", p1=True)
         except:
-            ut.pLog(f"Could not load files from {self.trawl_for}", p1=True)
+            ut.pLog(f"Could not load file IDs from {self.trawl_for}", p1=True)
+
+    def buildProductTable(self):
+        '''
+        from self.pointers, each to query response get a file from G Drive (tags GSheets)
+        '''
+        self.pointers
+        self.metaHeaders
+        self.productTable
+
+        # Try for one item
+        for cat in self.pointers.keys():
+            cat_ID = self.pointers[cat]['id']
+            for prod in self.pointers[cat]['products'].keys():
+                prod_ID = self.pointers[cat]['products'][prod]['id']
+
+                # Product Media ID list concatenation
+                common_media_IDs = ''
+                for common_media in self.pointers[cat]['products'][prod]['media'].keys():
+                    common_media_IDs += self.pointers[cat]['products'][prod]['media'][common_media] + ", "
+                common_media_IDs = common_media_IDs[:-2]
+
+                for var in self.pointers[cat]['products'][prod]['variations'].keys():
+                    var_ID = self.pointers[cat]['products'][prod]['variations'][var]['id']
+
+                    media_IDs = ''
+                    for media in self.pointers[cat]['products'][prod]['variations'][var]['media'].keys():
+                        media_IDs += self.pointers[cat]['products'][prod]['variations'][var]['media'][media] + ", "
+                    media_IDs = media_IDs[:-2]
+
+                    self.productTable.loc[len(self.productTable.index)] = [
+                        cat_ID, prod_ID, common_media_IDs, var_ID, media_IDs, '' , cat, prod, var, '', 0
+                    ]
+        print("tablised")
+        
+
+    
 
 
 class TrawlerSet:

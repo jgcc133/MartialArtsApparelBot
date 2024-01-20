@@ -41,44 +41,33 @@ def pObj(
         obj: object,
         name: str = "",
         p1: bool = False
-):
-    time = datetime.datetime.now()
-    blob = {}
-    print(time)
-    blob["Time"] = str(time)
-    print(blob)
-
-    blob[name] = obj
-
-    to_print = json.dumps(blob, indent=2)
+) -> None:
+    to_print = json.dumps(obj, indent=2)
     print(to_print)
-    if p1 and Save_Logs: logObj(blob, name, self_called=True)
+    if p1 and Save_Logs: logObj(obj, name)
 
 def writeStr(str):
     # Remove isDev = True to isDev = False when deploying
     log_file_name = 'workflows/DevLog.txt' if Is_Dev else 'workflows/Log.txt'
     
     with open(log_file_name, "a") as log:
-        log.write("\n" + str)
+        log.write(str + "\n")
 
 def logObj(obj,
-           name: str = "",
-           self_called: bool = False):
+           name: str = ""):
     # If self_called is false, then it comes from other parts of the code, not ut.pObj
         
     # Remove isDev = True to isDev = False when deploying
     log_file_name = 'workflows/DevObjs.json' if Is_Dev else 'workflows/Objs.json'
     
-    if not self_called:
-        blob = {}
-        blob["Time"] = str(datetime.datetime.now())
-        blob[name] = obj
-    else:
-        blob = obj
+    blob = {}
+    blob[name] = {}
+    blob[name]["Time"] = str(datetime.datetime.now())
+    blob[name]["Data"] = obj    
 
     with open(log_file_name, "a") as log:
-        log.write("\n")
         json.dump(blob, log, ensure_ascii=False, indent=2)
+        log.write(",\n")
 
 def clearLogs():
     log_file_names = ['workflows/DevObjs.json',

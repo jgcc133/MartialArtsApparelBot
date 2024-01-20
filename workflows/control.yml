@@ -22,8 +22,10 @@ Source:
     GoogleDrive:
       url: https://drive.google.com/drive/folders/18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5?usp=sharing
       apiUse:
-        scopes:
-          - https://www.googleapis.com/auth/drive
+        scopes: 
+        - https://www.googleapis.com/auth/drive
+        - https://www.googleapis.com/auth/spreadsheets
+        - https://www.googleapis.com/auth/documents
         credLoc: env/GoogleDriveCred.json
         driveId: 18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5
         tokenLoc: env/GoogleDriveToken.json

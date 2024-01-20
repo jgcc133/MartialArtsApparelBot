@@ -40,14 +40,12 @@ After discussion with Verne, there are a few big pieces that we can tackle in ph
 The structure of google drive will be:
 Root/
     - Category 1/
-        - SKU 11/
-            - Tags Text file
-            - Photo1
-            - Photo2
-            - etc
-        - SKU 12/
-            - Tags Text file
-            - Photo1
+        - Product 11/
+            - Tags sheets file
+            - Media1(catalog pdfs)
+            - Variations 111/
+                - Media (pictures) : Mediafile ID
+
 
 Step 1:
 abstract load dotenv and control.yml to 
@@ -67,3 +65,36 @@ Next Steps: Post the data (pictures, with text / tags) back to telegram
 
 29 Dec 23:
 2-Layer deep folders queried and stored in Trawler.pointers
+
+31 Dec 23:
+Completed Query to GDrive and Logging
+
+Next Steps: Google Apps Script with triggers set on G Cloud projects, to trawl and update to metadata Gsheets
+(Note: G Sheets metadata is potentially just a interim repo for Biz content management. In steady state if these files hosted on a server can be the DB for the mgmt, then G sheets metadata, as well as occasional backup of logs will remain)
+
+3 Jan 24:
+Started work on Google Drive Google Apps Script. However it seems redundant to reproduce the exact same trawler just existing on GDrive. Also, there are no GAS triggers that can listen to changes in folder structure (when SKUs are added, deleted, or shifted, or catalog media is added). Hence, the GAS code behaviour will also consist of time-based querying. We should use it instead as a backup process (i.e. In addition to the data being saved in metadata GSheets as a backup to data files stored together with this code, Apps Script queries once every week to store that in GSheets and our servers for a lower level backup)
+Recommend for tags to be in google sheets rather than docs (not yml friendly)
+Tags in column A, Columns B to D are variation, sizes and stock
+
+next steps: gspread to pull all tags files, pulling the tags within, to 2) populate a metadata file, which will then 3) be used to check against 4a) pulled metadata file from root, and then update metadata file accordingly
+
+4 Jan 24:
+Trawler.initialPull() complete.
+Pulls in all file and folder IDs
+
+Tags should be done at metadata level. Reason being: while client may be carrying the same set of SKUs (category - product - variation - size), he may be adding to SEO list only (changing tags BUT not changing variations offered)
+
+Tags handling:
+Tags should be added to a set (to ensure unique, Case Sensitive keywords), then concatenated to a list of words, delimted with ", ". In the case when pulling the algo realises there are a difference in tags, a union of both 1) metadata tags column and 2) tags column in variation tags Gsheets is to be retained AND synchronised
+Next steps: How do we then delete tags? (It has to be by function, either on G Sheets. Clear from metadata / variations Gsheets and then slowly add back by the same function)
+Pending Verne's reply
+
+Potential steps:
+SKU data object would include (from metadata)
+Category_ID	Product_ID	Common_Media_ID	Variation_ID	Media_ID	Tags	Category	Product	Variation	Sizes	Inventory
+but also:
+media files
+other purchase related fields such as
+supplier, MOQ, purchase history, etc
+other hidden methods to push data to update meta data

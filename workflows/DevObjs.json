@@ -1,176 +1,256 @@
-
 {
-  "Time": "2023-12-31 18:53:01.046753",
   "Control": {
-    "ID": "Martial Arts Apparel",
-    "Auth": {
-      "meta": "A list of keys required from os.environ",
-      "data": {
-        "tele": {
-          "app": [
-            "AUTH_TELE_APP_ID",
-            "AUTH_TELE_APP_HASH"
-          ],
-          "bots": {
-            "b2d": "API_TELE_B2D_BOT",
-            "b2c": "API_TELE_B2C_BOT"
-          }
-        },
-        "whatsapp": null
-      }
-    },
-    "Source": {
-      "meta": "A list of URL/ directory combinations to pull data from",
-      "data": {
-        "GoogleDrive": {
-          "url": "https://drive.google.com/drive/folders/18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5?usp=sharing",
-          "apiUse": {
-            "scopes": [
-              "https://www.googleapis.com/auth/drive"
+    "Time": "2024-01-20 20:30:23.442181",
+    "Data": {
+      "ID": "Martial Arts Apparel",
+      "Auth": {
+        "meta": "A list of keys required from os.environ",
+        "data": {
+          "tele": {
+            "app": [
+              "AUTH_TELE_APP_ID",
+              "AUTH_TELE_APP_HASH"
             ],
-            "credLoc": "env/GoogleDriveCred.json",
-            "driveId": "18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5",
-            "tokenLoc": "env/GoogleDriveToken.json"
+            "bots": {
+              "b2d": "API_TELE_B2D_BOT",
+              "b2c": "API_TELE_B2C_BOT"
+            }
+          },
+          "whatsapp": null
+        }
+      },
+      "Source": {
+        "meta": "A list of URL/ directory combinations to pull data from",
+        "data": {
+          "GoogleDrive": {
+            "url": "https://drive.google.com/drive/folders/18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5?usp=sharing",
+            "apiUse": {
+              "scopes": [
+                "https://www.googleapis.com/auth/drive",
+                "https://www.googleapis.com/auth/spreadsheets",
+                "https://www.googleapis.com/auth/documents"
+              ],
+              "credLoc": "env/GoogleDriveCred.json",
+              "driveId": "18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5",
+              "tokenLoc": "env/GoogleDriveToken.json"
+            }
           }
         }
-      }
-    },
-    "Platforms": {
-      "meta": "A list of platforms supported / to be loaded",
-      "data": [
-        "tele",
-        "whatsapp"
-      ]
-    },
-    "B2DFlow": {
-      "meta": "Control Flow config for ControlEngine to read in and generate a list of handlers and callbackquery",
-      "data": {
-        "commands": {
-          "/start": {
-            "msg": "Welcome to Martial Arts Apparel Bot! What services would you like to take a look at?",
-            "btn": [
-              "Product Enquiry",
-              "Arrange Viewing",
-              "Other Services",
-              "Back"
-            ]
+      },
+      "Platforms": {
+        "meta": "A list of platforms supported / to be loaded",
+        "data": [
+          "tele",
+          "whatsapp"
+        ]
+      },
+      "B2DFlow": {
+        "meta": "Control Flow config for ControlEngine to read in and generate a list of handlers and callbackquery",
+        "data": {
+          "commands": {
+            "/start": {
+              "msg": "Welcome to Martial Arts Apparel Bot! What services would you like to take a look at?",
+              "btn": [
+                "Product Enquiry",
+                "Arrange Viewing",
+                "Other Services",
+                "Back"
+              ]
+            },
+            "/help": {
+              "msg": "View our list of commands?",
+              "btn": [
+                "Product Enquiry",
+                "Arrange Viewing",
+                "Other Services",
+                "Back"
+              ]
+            },
+            "/call": {
+              "msg": "Speak to our sales representatives?",
+              "btn": [
+                "Call",
+                "Chat with Live Rep",
+                "Back"
+              ]
+            }
           },
-          "/help": {
-            "msg": "View our list of commands?",
-            "btn": [
-              "Product Enquiry",
-              "Arrange Viewing",
-              "Other Services",
-              "Back"
-            ]
+          "callbacks": {
+            "Product Enquiry": {
+              "msg": "Which areas of products would you like to look at today?",
+              "btn": [
+                "MMA",
+                "Muay Thai",
+                "BJJ",
+                "Other Accessories",
+                "Back"
+              ]
+            },
+            "Arrange Viewing": {
+              "msg": "Please select a suitable time and location for viewing?",
+              "btn": [
+                "Date & Time",
+                "Location",
+                "Back"
+              ]
+            },
+            "Other Services": {
+              "msg": "What other services would you like to explore?",
+              "btn": [
+                "Contact Seller",
+                "Back"
+              ]
+            },
+            "MMA": {
+              "msg": "Pulling data on all other accessories...",
+              "btn": []
+            },
+            "BJJ": {
+              "msg": "Pulling BJJ data...",
+              "btn": []
+            },
+            "Back to Start": {
+              "msg": "What services would you like to take a look at?",
+              "btn": [
+                "Product Enquiry",
+                "Arrange Viewing",
+                "Other Services",
+                "Back"
+              ]
+            }
           },
-          "/call": {
-            "msg": "Speak to our sales representatives?",
+          "default": {
+            "msg": "Stay tuned! This function has not been added...",
             "btn": [
-              "Call",
-              "Chat with Live Rep",
-              "Back"
+              "Back to Start"
             ]
           }
-        },
-        "callbacks": {
-          "Product Enquiry": {
-            "msg": "Which areas of products would you like to look at today?",
-            "btn": [
-              "MMA",
-              "Muay Thai",
-              "BJJ",
-              "Other Accessories",
-              "Back"
-            ]
-          },
-          "Arrange Viewing": {
-            "msg": "Please select a suitable time and location for viewing?",
-            "btn": [
-              "Date & Time",
-              "Location",
-              "Back"
-            ]
-          },
-          "Other Services": {
-            "msg": "What other services would you like to explore?",
-            "btn": [
-              "Contact Seller",
-              "Back"
-            ]
-          },
-          "MMA": {
-            "msg": "Pulling data on all other accessories...",
-            "btn": []
-          },
-          "BJJ": {
-            "msg": "Pulling BJJ data...",
-            "btn": []
-          },
-          "Back to Start": {
-            "msg": "What services would you like to take a look at?",
-            "btn": [
-              "Product Enquiry",
-              "Arrange Viewing",
-              "Other Services",
-              "Back"
-            ]
-          }
-        },
-        "default": {
-          "msg": "Stay tuned! This function has not been added...",
-          "btn": [
-            "Back to Start"
-          ]
         }
-      }
-    },
-    "B2CFlow": {
-      "meta": "Control Flow config for ControlEngine to read in and generate a list of handlers and callbackquery for B2C chat bot",
-      "data": {
-        "commands": {
-          "/start": {
-            "msg": "Welcome to Martial Arts Apparel Bot! What services would you like to take a look at?",
-            "btn": [
-              "Product Enquiry",
-              "Arrange Viewing",
-              "Other Services",
-              "Back"
-            ]
-          }
-        },
-        "callbacks": {
-          "Product Enquiry": {
-            "msg": "Which areas of products would you like to look at today?",
-            "btn": [
-              "MMA",
-              "Muay Thai",
-              "BJJ",
-              "Other Accessories",
-              "Back"
-            ]
+      },
+      "B2CFlow": {
+        "meta": "Control Flow config for ControlEngine to read in and generate a list of handlers and callbackquery for B2C chat bot",
+        "data": {
+          "commands": {
+            "/start": {
+              "msg": "Welcome to Martial Arts Apparel Bot! What services would you like to take a look at?",
+              "btn": [
+                "Product Enquiry",
+                "Arrange Viewing",
+                "Other Services",
+                "Back"
+              ]
+            }
+          },
+          "callbacks": {
+            "Product Enquiry": {
+              "msg": "Which areas of products would you like to look at today?",
+              "btn": [
+                "MMA",
+                "Muay Thai",
+                "BJJ",
+                "Other Accessories",
+                "Back"
+              ]
+            }
           }
         }
       }
     }
   }
-}
+},
 {
-  "Time": "2023-12-31 18:53:02.386605",
-  "": {
-    "Category2": {
-      "id": "1pofGSzAuy4RiF5XB2GvAvrYYiJgU9uk3",
-      "sku": {}
-    },
-    "Category1": {
-      "id": "1WUbpV4bRc4ElSBZEvSXaMNoEd0snhXIN",
-      "sku": {
-        "SKU11": {
-          "id": "1-Fr4xMl0MoLMfUNiOXE0O-wmAHNtnkMD",
-          "tags": [],
-          "photos": {}
+  "GoogleDrive Pointers": {
+    "Time": "2024-01-20 20:30:30.321109",
+    "Data": {
+      "Shoes": {
+        "id": "1i_d4tVJW0vHCVJHbVWJMPb3h8jWE6LiR",
+        "products": {
+          "Asics Matflex 7 Shoes": {
+            "id": "1o8x1KzZlJHYiSIAbkz2YYx7oWcNtt5I2",
+            "media": {
+              "24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf": "1iZO60OQ7m2xd49io_q1YQlk-6UKfHQu-"
+            },
+            "variations": {
+              "Black": {
+                "id": "1b4PTX_ib7XkGB5by3bb5XhtlBdoM0zEx",
+                "media": {},
+                "tag": ""
+              },
+              "White": {
+                "id": "1ecO8jpZzkPHBouqGoOrW1DKV0b0_AQI7",
+                "media": {},
+                "tag": ""
+              }
+            }
+          },
+          "Asics Matflex 6 Shoes": {
+            "id": "1G2kPkodpsBZ5U-XUryRjgC4kZyjY1UbC",
+            "media": {
+              "Asics Matflex 6 Shoes Catalog.pdf": "1zXTvJgapeUvRAg_tlXhDctA1zC66qxcf"
+            },
+            "variations": {
+              "Black Silver": {
+                "id": "1v88SPeFVQT3CfyzLKbH-yqq5kzIg-_23",
+                "media": {
+                  "1081A021_001_SR_TP_GLB.jpg": "1oQtIae8ekPLINKUWu5hfpBWevQhK2TVP",
+                  "1081A021_001_SR_RT_GLB.jpg": "1BEaoelulMThw5mSNw-4flDvIFoVRikc8",
+                  "1081A021_001_SR_LT_GLB.jpg": "1PDekC5sBtTNwIMKYtoypSET_rexF0Mu6",
+                  "1081A021_001_SR_FR_GLB.jpg": "1qSdLQ3zZdO3zTtX9BkLKqUUzVz42d9gE",
+                  "1081A021_001_SR_FL_GLB.jpg": "1b8slotH9D_ZW9laK3y_gxVUbvfmPJHNC",
+                  "1081A021_001_SR_BT_GLB.jpg": "1tocVAYZUM81BvFHGOYjCchRnFId0Lftw",
+                  "1081A021_001_SR_BK_GLB.jpg": "1eNmEpqfa5wMuojUgHHB5rN-r0kK_FX1P"
+                },
+                "tag": ""
+              },
+              "Frost Gold": {
+                "id": "1CXDc4P1uZzjKW4160TjKH4fTNjqL--pP",
+                "media": {
+                  "1081A021_021_SR_RT_GLB.jpg": "1TNLfjKDycMvvOIBQfI5H9wCmEetwijku",
+                  "1081A021_021_SR_LT_GLB.jpg": "1I4IzHD9Bn3TPwMaXxRI2DVQQKfHmp2w9",
+                  "1081A021_021_SB_TP_GLB.jpg": "1b7VVkaCKhONtDTK74-38i_62uS3fxrg5",
+                  "1081A021_021_SB_FR_GLB.jpg": "1zMe1YuUD8m2Y-35zTc3hdIcN17YYs_TM",
+                  "1081A021_021_SB_FL_GLB.jpg": "19HUsKEjyz-nT6qYKo7K6ozGtA1ysi93H",
+                  "1081A021_021_SB_BT_GLB.jpg": "1iVX-8GMYKb6OJkn57xhrTTQLeSy_rTBs",
+                  "1081A021_021_SB_BK_GLB.jpg": "1QWkuJNGYHZe-UiqKvnEMoLOdxLRpck6r"
+                },
+                "tag": ""
+              }
+            }
+          }
+        }
+      },
+      "Sweat Pants": {
+        "id": "1pofGSzAuy4RiF5XB2GvAvrYYiJgU9uk3",
+        "products": {}
+      },
+      "Boxing Gloves": {
+        "id": "1WUbpV4bRc4ElSBZEvSXaMNoEd0snhXIN",
+        "products": {
+          "Prize Ring Boxing Gloves": {
+            "id": "1-Fr4xMl0MoLMfUNiOXE0O-wmAHNtnkMD",
+            "media": {
+              "Catalogue-PRIZERINGSports-2023.pdf": "1Qwz5lNy6JoqAWX_h8OSV965alpM1OS7q"
+            },
+            "variations": {
+              "Pro Training Velcro (Blue Silver)": {
+                "id": "19v_bASC5F_0kPE0ZGVQrTZp0rLojVs0P",
+                "media": {},
+                "tag": ""
+              },
+              "Prof SS Boxing Gloves Soft Type (Black Silver)": {
+                "id": "1YmI06wJZMDrSbFU_u2LBLZjwOY4treCl",
+                "media": {},
+                "tag": ""
+              },
+              "Prof. 5.0 (Black Orange)": {
+                "id": "1qWYRAhGdI3zl61_ju2Sqv98uaWQjrtTi",
+                "media": {},
+                "tag": ""
+              }
+            }
+          }
         }
       }
     }
   }
-}
+},
