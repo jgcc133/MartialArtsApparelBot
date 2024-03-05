@@ -1,23 +1,14 @@
 import os
-import asyncio
 import math
-import yaml
 
-from dotenv import load_dotenv
 from telethon import Button, TelegramClient, events, utils
 from workflows import utils as ut
-
-AUTH = {}
-CONTROL = {}
-control_file = 'workflows/control.yml'
+from workflows.control import Control
 
 class Tele:
 
-    def __init__(self, control):
-        '''
-        init will instantiate all the instances of client chat bots required, storing their
-        reference in a dict object self.BOTS
-        '''
+    def __init__(self, control: Control):
+        '''init takes in a control dict obj from Main and creates an instance of chat bot session'''
 
         self.AUTH = {}
         self.APIS = {}
@@ -28,7 +19,7 @@ class Tele:
 
 
     
-    def getKeys(self, control):
+    def getKeys(self, control) -> None:
         ut.pLog("Obtaining Authentication for Telegram...")
         try:
             AuthRequired = control["Auth"]["data"]["tele"]["app"]
@@ -41,23 +32,29 @@ class Tele:
         except:
             ut.pLog("Failed to load Authentication for Telegram.", p1=True)
 
-    def createBots(self, control):
+    def createBots(self, control) -> None:
         '''
         untested with connection to telegram server
         '''
-        for api in self.APIS:
-            if api != '' and not None:
-                Client = TelegramClient(
-                    'bot_session',
-                    self.AUTH["AUTH_TELE_APP_ID"],
-                    self.AUTH["AUTH_TELE_APP_HASH"]
-                    ).start(bot_token=self.APIS[api])
-                self.addB2DHandlers(control, Client)
-                Client.run_until_disconnected()
+        ut.pLog("Imbuing Telegram Bot with Logic Flow...")
+        try:
+            for api in self.APIS:
+                if api != '' and not None:
+                    Client = TelegramClient(
+                        'bot_session',
+                        self.AUTH["AUTH_TELE_APP_ID"],
+                        self.AUTH["AUTH_TELE_APP_HASH"]
+                        ).start(bot_token=self.APIS[api])
+                    self.addB2DHandlers(control, Client)
+                    ut.pLog("Telegram Chat Bot is online!", p1=True)
 
-                self.BOTS[api] = Client
+                    Client.run_until_disconnected()
 
-    def addB2DHandlers(self, control, Client):
+                    self.BOTS[api] = Client
+        except:
+            ut.pLog("Failed to add handlers")
+
+    def addB2DHandlers(self, control, Client) -> None:
         '''
         Setting the commands to be added as event.newMessage
         '''
@@ -139,7 +136,7 @@ class Tele:
         except:
             ut.pLog("Failed to load handlers...", p1=True)
 
-    def beauButtons(self, button_list: list = []):
+    def beauButtons(self, button_list: list = []) -> list:
         '''
         Button layout designer.
         1 , 4, 9 (Squares design concept):

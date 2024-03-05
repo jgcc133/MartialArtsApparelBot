@@ -16,35 +16,22 @@ from dotenv import load_dotenv
 from workflows import utils as ut
 from workflows import tele as tl
 from workflows import datatrawl as dt
+from workflows.control import Control
 
 
 load_dotenv()
-control_file = 'workflows/control.yml'
+control_file = 'user/control.yml'
 
-def loadControl(control_file = 'workflows/control.yml'):
-    '''
-    Loads control flow from control file (yml file) into the global const CONTROL
-    '''    
-    ut.pLog(f"Loading Control from {control_file}...")
-    try:
-        with open(control_file, 'r') as file:
-            control = yaml.safe_load(file)            
-        ut.pLog(f"Control has been loaded from {control_file}", p1=True)
-        ut.logObj(control, "Control")
-        return control
-    except:
-        ut.pLog(f"Unable to load control flow from {control_file}", p1=True)
-
-def main():
+def main() -> None:
     ut.clearLogs()
-    CONTROL = loadControl()
-    trawler = dt.TrawlerSet(CONTROL['ID'], CONTROL['Source']['data'])
-    
+    CONTROL = Control(control_file)
+    trawler = dt.TrawlerSet(CONTROL.logic['ID'], CONTROL.logic['Source']['data'])
+    with open('user/sku.yml', 'w') as sku:
+        yaml.dump(trawler.trawlers['GoogleDrive'].pointers, sku)
     
     # Temporarily disabled for GDrive testing
-    # telegram_interface = tl.Tele(CONTROL)
+    telegram_interface = tl.Tele(CONTROL.logic)
     
 
-    
-
-main()
+if __name__ == "__main__":
+    main()

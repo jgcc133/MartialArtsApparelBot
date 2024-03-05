@@ -25,7 +25,6 @@ Source:
         scopes: 
         - https://www.googleapis.com/auth/drive
         - https://www.googleapis.com/auth/spreadsheets
-        - https://www.googleapis.com/auth/documents
         credLoc: env/GoogleDriveCred.json
         driveId: 18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5
         tokenLoc: env/GoogleDriveToken.json

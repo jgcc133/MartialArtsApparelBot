@@ -1,6 +1,10 @@
-[ 2024-01-20 20:30:23.442181 | 1 | system ] : 	 Control has been loaded from workflows/control.yml
-[ 2024-01-20 20:30:23.464566 | 1 | system ] : 	 Credentials for GoogleDrive successfully set.
-[ 2024-01-20 20:30:23.464566 | 1 | system ] : 	 Querying GoogleDrive with 
+[ 2024-03-05 22:31:38.880404 | 1 | system ] : 	 Control has been loaded from user/control.yml
+[ 2024-03-05 22:31:38.890627 | 1 | system ] : 	 Credentials for GoogleDrive successfully set.
+[ 2024-03-05 22:31:38.891620 | 1 | system ] : 	 Querying GoogleDrive with 
  ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
-[ 2024-01-20 20:30:30.321109 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
-[ 2024-01-20 20:32:50.429363 | 1 | system ] : 	 Trawler created: GoogleDrive for Martial Arts Apparel.
+[ 2024-03-05 22:31:48.498353 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
+[ 2024-03-05 22:31:48.498353 | 1 | system ] : 	 Trawler created: GoogleDrive for Martial Arts Apparel.
+[ 2024-03-05 22:31:48.504352 | 1 | system ] : 	 Authentication for Telegram Complete.
+[ 2024-03-05 22:31:49.003965 | 1 | system ] : 	 Telegram Chat Bot is online!
+[ 2024-03-05 22:32:05.469547 | 63144080 | Jon Chow ] : 	 Clicked on [Muay Thai] button that has not been added to the Config list.
+[ 2024-03-05 22:32:12.252015 | 1 | system ] : 	 Telegram Chat Bot is online!

@@ -36,7 +36,6 @@ class Trawler:
     '''
     Single Trawler Class. I.e. a trawlers instance is made up of multiple trawler
     '''
-
     def __init__(self, trawl_for, key_dict):
 
         '''
@@ -80,7 +79,7 @@ class Trawler:
                         
         self.setCreds()
         self.initialIDPull()
-        self.buildProductTable()
+
 
     def setCreds(self):
         ut.pLog(f"Setting Credentials for {self.trawl_for}...")
@@ -181,7 +180,8 @@ class Trawler:
                                     self.pointers[cat_name]["products"][pro_name]["variations"][var_name] = {
                                             "id": var_id,
                                             "media": {},
-                                            "tag": ""
+                                            "tags": "",
+                                            "sizes": {}
                                         }                                    
                                     file_query = f"('{var_id}' in parents) and (trashed = false)"
                                     file_response = service.files().list(q=file_query, fields=fields).execute()

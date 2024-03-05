@@ -98,3 +98,9 @@ media files
 other purchase related fields such as
 supplier, MOQ, purchase history, etc
 other hidden methods to push data to update meta data
+
+20 Jan 24:
+On Main: created flow to build metadata df (to go into metadata gSheets in root folder)
+On sku-yml branch: instead saved products id dict obj to yml
+
+Next Steps: if the query by distributor / user can work from yml to do a search / filter, this can be merged back with tele handlers to return 1) common media IDs and media IDs, and 2) return actual media files of these products

@@ -59,21 +59,26 @@ def logObj(obj,
         
     # Remove isDev = True to isDev = False when deploying
     log_file_name = 'workflows/DevObjs.json' if Is_Dev else 'workflows/Objs.json'
+    f = open(log_file_name)
+    blob = json.load(f)
     
-    blob = {}
     blob[name] = {}
     blob[name]["Time"] = str(datetime.datetime.now())
-    blob[name]["Data"] = obj    
+    blob[name]["Data"] = obj
 
-    with open(log_file_name, "a") as log:
+    with open(log_file_name, "w") as log:
         json.dump(blob, log, ensure_ascii=False, indent=2)
-        log.write(",\n")
 
 def clearLogs():
+    empty = {}
     log_file_names = ['workflows/DevObjs.json',
                       'workflows/Objs.json',
                       'workflows/DevLog.txt',
                       'workflows/Log.txt']
     for log in log_file_names:
-        with open(log, "w") as log:
-            log.write("")
+        if "Objs" in log:
+            with open(log, "w") as log:
+                json.dump(empty, log)
+        elif "Log" in log:
+            with open(log, "w") as log:
+                log.write("")
