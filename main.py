@@ -8,8 +8,6 @@ i.e. one main.py file to control convo flow and UI,
 but the individual files to make most use of the respective chat bots
 '''
 
-import os
-import asyncio
 import yaml
 
 from dotenv import load_dotenv

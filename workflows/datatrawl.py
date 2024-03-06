@@ -14,10 +14,7 @@ and photos, and push a change to metadata g sheets
 '''
 
 import os
-import io
 import gspread
-import requests
-import google.auth.transport.requests
 
 import pandas as pd
 
