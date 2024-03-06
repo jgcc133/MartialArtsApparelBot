@@ -79,6 +79,7 @@ class Trawler:
                         
         self.setCreds()
         self.initialIDPull()
+        self.compareMD2Dict()
 
 
     def setCreds(self):
@@ -202,7 +203,7 @@ class Trawler:
         except:
             ut.pLog(f"Could not load file IDs from {self.trawl_for}", p1=True)
 
-    def buildProductTable(self):
+    def compareMD2Dict(self):
         '''
         from self.pointers, each to query response get a file from G Drive (tags GSheets)
         '''

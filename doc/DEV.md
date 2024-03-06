@@ -104,3 +104,10 @@ On Main: created flow to build metadata df (to go into metadata gSheets in root 
 On sku-yml branch: instead saved products id dict obj to yml
 
 Next Steps: if the query by distributor / user can work from yml to do a search / filter, this can be merged back with tele handlers to return 1) common media IDs and media IDs, and 2) return actual media files of these products
+
+5 Mar 24:
+Repaired the code after refactoring
+
+Next Steps: 1) Figure out writing inventory, tags info backend (python) as an alternative to google sheets user interface
+
+2) Figure out querying chat interface
