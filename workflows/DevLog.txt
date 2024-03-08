@@ -2,3 +2,10 @@
 [ 2024-03-06 21:43:12.631974 | 1 | system ] : 	 Credentials for GoogleDrive successfully set.
 [ 2024-03-06 21:43:12.632972 | 1 | system ] : 	 Querying GoogleDrive with 
  ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
+[ 2024-03-06 21:43:21.857958 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
+[ 2024-03-06 21:43:21.869480 | 1 | system ] : 	 Trawler created: GoogleDrive for Martial Arts Apparel.
+[ 2024-03-06 21:43:21.878566 | 1 | system ] : 	 Authentication for Telegram Complete.
+[ 2024-03-06 21:43:23.917225 | 1 | system ] : 	 Telegram Chat Bot is online!
+[ 2024-03-06 21:43:45.880273 | 63144080 | Jon Chow ] : 	 Clicked on [Other Accessories] button that has not been added to the Config list.
+[ 2024-03-06 21:43:48.877585 | 63144080 | Jon Chow ] : 	 Clicked on [Back] button that has not been added to the Config list.
+[ 2024-03-06 21:43:53.535505 | 63144080 | Jon Chow ] : 	 Clicked on [Muay Thai] button that has not been added to the Config list.
