@@ -1,1 +1,1 @@
-web: gunicorn main:main
+web: uvicorn main:main
