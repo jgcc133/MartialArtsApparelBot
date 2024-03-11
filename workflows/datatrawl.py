@@ -110,6 +110,7 @@ class Trawler:
                 request = google.auth.transport.urllib3.Request(http)
                 self.creds.refresh(request)
             except:
+                ut.pLog(f"No Token Found. Token expiriy is {stored_token}")
                 stored_creds=os.environ.get("GOOGLE_CREDENTIALS")
                 if stored_creds != None or stored_creds != '':
                     stored_creds = json.loads(stored_creds)
