@@ -246,7 +246,7 @@ class Trawler:
                     self.productTable.loc[len(self.productTable.index)] = [
                         cat_ID, prod_ID, common_media_IDs, var_ID, media_IDs, '' , cat, prod, var, '', 0
                     ]
-        print("tablised")
+        print("tabulated")
         
 
     
