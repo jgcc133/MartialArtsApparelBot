@@ -106,7 +106,9 @@ class Trawler:
                     client_secret=stored_token['client_secret'],
                     scopes=self.SCOPES
                 )
+                ut.pLog("Just before urllib3")
                 http = urllib3.PoolManager()
+                ut.pLog("Made it past urllib3")
                 request = google.auth.transport.urllib3.Request(http)
                 self.creds.refresh(request)
             except:
