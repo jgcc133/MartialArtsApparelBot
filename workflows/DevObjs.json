@@ -1,6 +1,6 @@
 {
   "Control": {
-    "Time": "2024-03-08 16:05:04.149577",
+    "Time": "2024-03-11 21:24:23.523684",
     "Data": {
       "ID": "Martial Arts Apparel",
       "Auth": {
@@ -157,7 +157,7 @@
     }
   },
   "GoogleDrive Pointers": {
-    "Time": "2024-03-08 16:08:13.965108",
+    "Time": "2024-03-11 21:25:08.036964",
     "Data": {
       "Handwraps": {
         "id": "123x132fQvpM5SdzZxkj23bYXibNyG4Eb",
@@ -187,6 +187,29 @@
               "24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf": "1iZO60OQ7m2xd49io_q1YQlk-6UKfHQu-"
             },
             "variations": {
+              "items_approved_photo_global_2023_2_asics_footwear": {
+                "id": "12Q8yi9d1G4O1vxlw-6ufZ9BPzj5s6jPt",
+                "media": {
+                  "1081A051_020_SB_BT_GLB.png": "12oaUqmG-KLKTBhHoZBw1mTepnQg6GzC6",
+                  "1081A051_001_SB_BK_GLB.png": "12g2hWqUbPsJiqqsvaPjeElp9HGv-2nM6",
+                  "1081A051_001_SB_TP_GLB.png": "12iyyFqSkRj9pJ8aHicDOaqTKTDfGPvmx",
+                  "1081A051_020_SB_BK_GLB.png": "12teKPx_3W7rvYaMQcIh6RgdfAtM3vsYu",
+                  "1081A051_001_SB_BT_GLB.png": "12fITpWpNUwjIizWLTBTLjvAUcjm2vsRV",
+                  "1081A051_020_SB_FR_GLB.png": "12zo70CAqyLSt-HnonWjKSDly_FzXkmeh",
+                  "1081A051_001_SR_RT_GLB.png": "12vmHLcVYMHGC51sMz7hn6yqc35mTTzUc",
+                  "1081A051_020_SB_TP_GLB.png": "12wHY5g_loxzrSRNdpL_MdTEmVWAyXuPw",
+                  "1081A051_001_SL_RT_GLB.png": "12hZXdRH5fikDcIQSs-mSaKWTZ5BlAi9-",
+                  "1081A051_001_SR_LT_GLB.png": "12gIY_aMQRKvkKtQIDTSOizPPHM_9it7q",
+                  "1081A051_020_SR_LT_GLB.png": "13SPd5lsL6xSzIyeMla7Zscok_-ZFdEIm",
+                  "1081A051_001_SB_FL_GLB.png": "12_tgp22UwMnkLDwYOFjvwgDEYoOd2fke",
+                  "1081A051_001_SB_FR_GLB.png": "12U_bIfEmEc7B_VP8glr3ZBjcB5Q3-4JJ",
+                  "1081A051_020_SB_FL_GLB.png": "13EQJC3ib63BY5h1cniDMBzNuGtL7UdW_",
+                  "1081A051_020_SR_RT_GLB.png": "13MPsl2KL57zn17vd6_KvhDbD0zDrJWIU",
+                  "1081A051_020_SL_RT_GLB.png": "13V7e2N60qqj05bdBXH_ObA-tj3-95kdA"
+                },
+                "tags": "",
+                "sizes": {}
+              },
               "Black": {
                 "id": "1b4PTX_ib7XkGB5by3bb5XhtlBdoM0zEx",
                 "media": {},

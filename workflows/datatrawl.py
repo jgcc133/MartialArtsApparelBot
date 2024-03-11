@@ -15,8 +15,12 @@ and photos, and push a change to metadata g sheets
 
 import os
 import gspread
-
+import json
+import dotenv
+import urllib3
 import pandas as pd
+
+import google.auth.transport.urllib3
 
 from workflows import utils as ut
 
@@ -24,7 +28,7 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseDownload
-from httplib2 import Http
+
 
 from googleapiclient.errors import HttpError
 
@@ -82,31 +86,44 @@ class Trawler:
     def setCreds(self):
         ut.pLog(f"Setting Credentials for {self.trawl_for}...")
         try:
-            if self.token_loc is None or self.token_loc != '':
-                # Set token_loc filepath if it hasn't been set
-                self.token_loc = f"env/{self.trawl_for}Token.json"
-            if os.path.exists(self.token_loc):
-                # If the token file exists, initialise credentials from it
-                ut.pLog(f"Using Token from {self.token_loc}...")
-                self.creds = Credentials.from_authorized_user_file(self.token_loc, self.SCOPES)
+            '''
+            load token from os.environ.
+            If token exists with all the fields, call refresh token
+            else, load credentials from os.environ
+            and ask user to authenticate.
+            if that fails (no credentials or credentials expired),
+            then error msg and exit.
+
+            subsequently, build the builds
             
-            if not self.creds or not self.creds.valid or not self.creds.has_scopes(self.SCOPES):
-                    
-                # token file does not exist, or credentials are no longer valid
-                # both require user to log in
-                # else continue on to setting build service
-                
-                flow = InstalledAppFlow.from_client_secrets_file(
-                    self.cred_loc, self.SCOPES)
-                self.creds = flow.run_local_server(port=0)
-                # Save the credentials for the next run
-                with open(self.token_loc, "w") as token:
-                    token.write(self.creds.to_json())
-            
-                        
+            '''
+            stored_token = os.environ.get("GOOGLE_TOKEN")
+            try:
+                stored_token=json.loads(stored_token)
+                self.creds = Credentials(
+                    token=stored_token['token'],
+                    refresh_token=stored_token['refresh_token'],
+                    token_uri=stored_token['token_uri'],
+                    client_id=stored_token['client_id'],
+                    client_secret=stored_token['client_secret'],
+                    scopes=self.SCOPES
+                )
+                http = urllib3.PoolManager()
+                request = google.auth.transport.urllib3.Request(http)
+                self.creds.refresh(request)
+            except:
+                stored_creds=os.environ.get("GOOGLE_CREDENTIALS")
+                if stored_creds != None or stored_creds != '':
+                    stored_creds = json.loads(stored_creds)
+                    flow = InstalledAppFlow.from_client_config(stored_creds, scopes=self.SCOPES)
+                    self.creds = flow.run_local_server(port=0)
+                else:
+                    ut.pLog("No credentials found (Require at least 1). Please contact administrator.", p1=True)
+                    return None
+        
             self.drive_client = build("drive", "v3", credentials=self.creds)
             self.spreadsheet_client = gspread.authorize(self.creds)
-            
+                               
             ut.pLog(f"Credentials for {self.trawl_for} successfully set.", p1=True)
         except:
             ut.pLog(f"Credentials for {self.trawl_for} could not be set", p1=True)
