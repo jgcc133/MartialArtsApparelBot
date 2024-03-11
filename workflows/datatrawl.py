@@ -121,7 +121,7 @@ class Trawler:
         
             self.drive_client = build("drive", "v3", credentials=self.creds)
             self.spreadsheet_client = gspread.authorize(self.creds)
-                               
+            ut.pLog(f"Expiry for token is {self.creds.expiry}")
             ut.pLog(f"Credentials for {self.trawl_for} successfully set.", p1=True)
         except:
             ut.pLog(f"Credentials for {self.trawl_for} could not be set", p1=True)
