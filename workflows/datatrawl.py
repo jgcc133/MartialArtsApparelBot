@@ -52,8 +52,6 @@ class Trawler:
         self.url = key_dict["url"]
         self.trawl_for = trawl_for # By platform name / type
         self.SCOPES = key_dict["apiUse"]["scopes"]
-        self.cred_loc = key_dict["apiUse"]["credLoc"]
-        self.token_loc = key_dict["apiUse"]["tokenLoc"]
         self.driveId = key_dict["apiUse"]["driveId"]
         self.creds = None
         self.drive_client = None

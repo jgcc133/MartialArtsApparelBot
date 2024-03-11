@@ -1,5 +1,11 @@
-[ 2024-03-11 21:24:23.521682 | 1 | system ] : 	 Control has been loaded from user/control.yml
-[ 2024-03-11 21:24:53.638282 | 1 | system ] : 	 Credentials for GoogleDrive successfully set.
-[ 2024-03-11 21:24:54.933442 | 1 | system ] : 	 Querying GoogleDrive with 
+[ 2024-03-11 21:33:48.480155 | 1 | system ] : 	 Control has been loaded from user/control.yml
+[ 2024-03-11 21:33:48.483382 | 1 | system ] : 	 Credentials for GoogleDrive could not be set
+[ 2024-03-11 21:33:48.484965 | 1 | system ] : 	 Querying GoogleDrive with 
  ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
-[ 2024-03-11 21:25:08.043999 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
+[ 2024-03-11 21:33:48.485922 | 1 | system ] : 	 Could not load file IDs from GoogleDrive
+[ 2024-03-11 21:33:48.487318 | 1 | system ] : 	 Trawler created: GoogleDrive for Martial Arts Apparel.
+[ 2024-03-11 21:33:48.487318 | 1 | system ] : 	 Authentication for Telegram Complete.
+[ 2024-03-11 21:33:49.155220 | 1 | system ] : 	 Telegram Chat Bot is online!
+[ 2024-03-11 21:34:09.583899 | 63144080 | Jon Chow ] : 	 Clicked on [Back] button that has not been added to the Config list.
+[ 2024-03-11 21:34:14.803146 | 63144080 | Jon Chow ] : 	 Clicked on [Back] button that has not been added to the Config list.
+[ 2024-03-11 21:34:22.018172 | 1 | system ] : 	 Telegram Chat Bot is online!
