@@ -98,13 +98,14 @@ class Trawler:
             stored_token = os.environ.get("GOOGLE_TOKEN")
             try:
                 stored_token=json.loads(stored_token)
+                ut.pLog(f"stored_token is {len(stored_token)} characters long.")
                 self.creds = Credentials(
                     token=stored_token['token'],
                     refresh_token=stored_token['refresh_token'],
                     token_uri=stored_token['token_uri'],
                     client_id=stored_token['client_id'],
                     client_secret=stored_token['client_secret'],
-                    scopes=self.SCOPES
+                    scopes=stored_token['scopes']
                 )
                 ut.pLog("Just before urllib3")
                 http = urllib3.PoolManager()
