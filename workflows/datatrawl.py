@@ -104,12 +104,13 @@ class Trawler:
                     token_uri=stored_token['token_uri'],
                     client_id=stored_token['client_id'],
                     client_secret=stored_token['client_secret'],
-                    scopes=self.SCOPES
+                    scopes=stored_token['scopes']
                 )
                 http = urllib3.PoolManager()
                 request = google.auth.transport.urllib3.Request(http)
                 self.creds.refresh(request)
             except:
+                ut.pLog(f"No Token Found. Please get token from your existing Credentials")
                 stored_creds=os.environ.get("GOOGLE_CREDENTIALS")
                 if stored_creds != None or stored_creds != '':
                     stored_creds = json.loads(stored_creds)
@@ -121,7 +122,7 @@ class Trawler:
         
             self.drive_client = build("drive", "v3", credentials=self.creds)
             self.spreadsheet_client = gspread.authorize(self.creds)
-                               
+            ut.pLog(f"Expiry for token is {self.creds.expiry}")
             ut.pLog(f"Credentials for {self.trawl_for} successfully set.", p1=True)
         except:
             ut.pLog(f"Credentials for {self.trawl_for} could not be set", p1=True)
