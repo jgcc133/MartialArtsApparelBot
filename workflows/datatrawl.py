@@ -98,7 +98,6 @@ class Trawler:
             stored_token = os.environ.get("GOOGLE_TOKEN")
             try:
                 stored_token=json.loads(stored_token)
-                ut.pLog(f"stored_token is {len(stored_token)} characters long.")
                 self.creds = Credentials(
                     token=stored_token['token'],
                     refresh_token=stored_token['refresh_token'],
@@ -107,13 +106,11 @@ class Trawler:
                     client_secret=stored_token['client_secret'],
                     scopes=stored_token['scopes']
                 )
-                ut.pLog("Just before urllib3")
                 http = urllib3.PoolManager()
-                ut.pLog("Made it past urllib3")
                 request = google.auth.transport.urllib3.Request(http)
                 self.creds.refresh(request)
             except:
-                ut.pLog(f"No Token Found. Token expiriy is {stored_token}")
+                ut.pLog(f"No Token Found. Please get token from your existing Credentials")
                 stored_creds=os.environ.get("GOOGLE_CREDENTIALS")
                 if stored_creds != None or stored_creds != '':
                     stored_creds = json.loads(stored_creds)
