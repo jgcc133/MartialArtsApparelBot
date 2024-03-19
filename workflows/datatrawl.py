@@ -16,7 +16,6 @@ and photos, and push a change to metadata g sheets
 import os
 import gspread
 import json
-import dotenv
 import urllib3
 import pandas as pd
 
@@ -53,6 +52,7 @@ class Trawler:
         self.trawl_for = trawl_for # By platform name / type
         self.SCOPES = key_dict["apiUse"]["scopes"]
         self.driveId = key_dict["apiUse"]["driveId"]
+        self.metaId = key_dict["apiUse"]["metaId"]
         self.creds = None
         self.drive_client = None
         self.spreadsheet_client = None
@@ -78,6 +78,7 @@ class Trawler:
                         
         self.setCreds()
         self.initialIDPull()
+        self.metaTablePull()
         self.compareMD2Dict()
 
 
@@ -215,6 +216,17 @@ class Trawler:
             ut.pLog(f"File and Folder IDs have been loaded from {self.trawl_for}.", p1=True)
         except:
             ut.pLog(f"Could not load file IDs from {self.trawl_for}", p1=True)
+
+    def metaTablePull(self):
+        gs_client = self.spreadsheet_client
+        try:
+            md_sht = gs_client.open_by_key(self.metaId)
+        except PermissionError:
+            ut.pLog("You have not enabled Sheets API on the Google Cloud Platform project associated with this chatbot!")
+        sht = md_sht.worksheet("AAMAA")
+        df = pd.DataFrame(sht.get_all_records())
+        print(df)
+
 
     def compareMD2Dict(self):
         '''

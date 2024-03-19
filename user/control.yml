@@ -26,6 +26,7 @@ Source:
         - https://www.googleapis.com/auth/drive
         - https://www.googleapis.com/auth/spreadsheets
         driveId: 18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5
+        metaId: 1wQ-Z7mAVcpHC1p4DdcBs1sD_ipkC6lGqohOOzpa28Ls
 
 Platforms:
   meta: A list of platforms supported / to be loaded

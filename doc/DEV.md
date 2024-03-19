@@ -111,3 +111,10 @@ Repaired the code after refactoring
 Next Steps: 1) Figure out writing inventory, tags info backend (python) as an alternative to google sheets user interface
 
 2) Figure out querying chat interface
+
+12 Mar 24:
+Deployed to Railway.app successfully. Telegram bot able to respond, google drive credentials can be verified via railway.app.
+
+Next Steps:
+1) control.yml: build search query on control.yml
+2) google sheets metada: pull tags sizes and inventory data

@@ -1,6 +1,6 @@
 {
   "Control": {
-    "Time": "2024-03-12 10:42:03.463531",
+    "Time": "2024-03-19 17:48:30.899215",
     "Data": {
       "ID": "Martial Arts Apparel",
       "Auth": {
@@ -29,7 +29,8 @@
                 "https://www.googleapis.com/auth/drive",
                 "https://www.googleapis.com/auth/spreadsheets"
               ],
-              "driveId": "18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5"
+              "driveId": "18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5",
+              "metaId": "1wQ-Z7mAVcpHC1p4DdcBs1sD_ipkC6lGqohOOzpa28Ls"
             }
           }
         }
@@ -148,6 +149,184 @@
                 "Other Accessories",
                 "Back"
               ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "GoogleDrive Pointers": {
+    "Time": "2024-03-19 17:49:06.625592",
+    "Data": {
+      "Handwraps": {
+        "id": "123x132fQvpM5SdzZxkj23bYXibNyG4Eb",
+        "products": {
+          "Prize Ring": {
+            "id": "127FsS1UutyffH8xsUauFvwtoLdEUjrQh",
+            "media": {},
+            "variations": {
+              "Sky Blue Handwraps": {
+                "id": "12Itd_XgX-bXi5aWXcKevR9VGobQIGkul",
+                "media": {
+                  "Sky Blue Handwraps Prize Ring.JPG": "12NS9h6GlDs_RmWFOyj5GbVfaTMo9pOEa"
+                },
+                "tags": "",
+                "sizes": {}
+              }
+            }
+          }
+        }
+      },
+      "Shoes": {
+        "id": "1i_d4tVJW0vHCVJHbVWJMPb3h8jWE6LiR",
+        "products": {
+          "Asics Matflex 7 Shoes": {
+            "id": "1o8x1KzZlJHYiSIAbkz2YYx7oWcNtt5I2",
+            "media": {
+              "24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf": "1iZO60OQ7m2xd49io_q1YQlk-6UKfHQu-"
+            },
+            "variations": {
+              "items_approved_photo_global_2023_2_asics_footwear": {
+                "id": "12Q8yi9d1G4O1vxlw-6ufZ9BPzj5s6jPt",
+                "media": {
+                  "1081A051_020_SB_BT_GLB.png": "12oaUqmG-KLKTBhHoZBw1mTepnQg6GzC6",
+                  "1081A051_001_SB_BK_GLB.png": "12g2hWqUbPsJiqqsvaPjeElp9HGv-2nM6",
+                  "1081A051_001_SB_TP_GLB.png": "12iyyFqSkRj9pJ8aHicDOaqTKTDfGPvmx",
+                  "1081A051_020_SB_BK_GLB.png": "12teKPx_3W7rvYaMQcIh6RgdfAtM3vsYu",
+                  "1081A051_001_SB_BT_GLB.png": "12fITpWpNUwjIizWLTBTLjvAUcjm2vsRV",
+                  "1081A051_020_SB_FR_GLB.png": "12zo70CAqyLSt-HnonWjKSDly_FzXkmeh",
+                  "1081A051_001_SR_RT_GLB.png": "12vmHLcVYMHGC51sMz7hn6yqc35mTTzUc",
+                  "1081A051_020_SB_TP_GLB.png": "12wHY5g_loxzrSRNdpL_MdTEmVWAyXuPw",
+                  "1081A051_001_SL_RT_GLB.png": "12hZXdRH5fikDcIQSs-mSaKWTZ5BlAi9-",
+                  "1081A051_001_SR_LT_GLB.png": "12gIY_aMQRKvkKtQIDTSOizPPHM_9it7q",
+                  "1081A051_020_SR_LT_GLB.png": "13SPd5lsL6xSzIyeMla7Zscok_-ZFdEIm",
+                  "1081A051_001_SB_FL_GLB.png": "12_tgp22UwMnkLDwYOFjvwgDEYoOd2fke",
+                  "1081A051_001_SB_FR_GLB.png": "12U_bIfEmEc7B_VP8glr3ZBjcB5Q3-4JJ",
+                  "1081A051_020_SB_FL_GLB.png": "13EQJC3ib63BY5h1cniDMBzNuGtL7UdW_",
+                  "1081A051_020_SR_RT_GLB.png": "13MPsl2KL57zn17vd6_KvhDbD0zDrJWIU",
+                  "1081A051_020_SL_RT_GLB.png": "13V7e2N60qqj05bdBXH_ObA-tj3-95kdA"
+                },
+                "tags": "",
+                "sizes": {}
+              },
+              "Black": {
+                "id": "1b4PTX_ib7XkGB5by3bb5XhtlBdoM0zEx",
+                "media": {},
+                "tags": "",
+                "sizes": {}
+              },
+              "White": {
+                "id": "1ecO8jpZzkPHBouqGoOrW1DKV0b0_AQI7",
+                "media": {},
+                "tags": "",
+                "sizes": {}
+              }
+            }
+          },
+          "Asics Matflex 6 Shoes": {
+            "id": "1G2kPkodpsBZ5U-XUryRjgC4kZyjY1UbC",
+            "media": {
+              "Copy of 1081A021_021_SB_BT_GLB.jpg": "1Kx1fZTzWVaOE7gxEs6oXM4wiNr22AXI9",
+              "Asics Matflex 6 Shoes Catalog.pdf": "1zXTvJgapeUvRAg_tlXhDctA1zC66qxcf"
+            },
+            "variations": {
+              "Black Silver": {
+                "id": "1v88SPeFVQT3CfyzLKbH-yqq5kzIg-_23",
+                "media": {
+                  "1081A021_001_SR_TP_GLB.jpg": "1oQtIae8ekPLINKUWu5hfpBWevQhK2TVP",
+                  "1081A021_001_SR_RT_GLB.jpg": "1BEaoelulMThw5mSNw-4flDvIFoVRikc8",
+                  "1081A021_001_SR_LT_GLB.jpg": "1PDekC5sBtTNwIMKYtoypSET_rexF0Mu6",
+                  "1081A021_001_SR_FR_GLB.jpg": "1qSdLQ3zZdO3zTtX9BkLKqUUzVz42d9gE",
+                  "1081A021_001_SR_FL_GLB.jpg": "1b8slotH9D_ZW9laK3y_gxVUbvfmPJHNC",
+                  "1081A021_001_SR_BT_GLB.jpg": "1tocVAYZUM81BvFHGOYjCchRnFId0Lftw",
+                  "1081A021_001_SR_BK_GLB.jpg": "1eNmEpqfa5wMuojUgHHB5rN-r0kK_FX1P"
+                },
+                "tags": "",
+                "sizes": {}
+              },
+              "Frost Gold": {
+                "id": "1CXDc4P1uZzjKW4160TjKH4fTNjqL--pP",
+                "media": {
+                  "1081A021_021_SR_RT_GLB.jpg": "1TNLfjKDycMvvOIBQfI5H9wCmEetwijku",
+                  "1081A021_021_SR_LT_GLB.jpg": "1I4IzHD9Bn3TPwMaXxRI2DVQQKfHmp2w9",
+                  "1081A021_021_SB_TP_GLB.jpg": "1b7VVkaCKhONtDTK74-38i_62uS3fxrg5",
+                  "1081A021_021_SB_FR_GLB.jpg": "1zMe1YuUD8m2Y-35zTc3hdIcN17YYs_TM",
+                  "1081A021_021_SB_FL_GLB.jpg": "19HUsKEjyz-nT6qYKo7K6ozGtA1ysi93H",
+                  "1081A021_021_SB_BT_GLB.jpg": "1iVX-8GMYKb6OJkn57xhrTTQLeSy_rTBs",
+                  "1081A021_021_SB_BK_GLB.jpg": "1QWkuJNGYHZe-UiqKvnEMoLOdxLRpck6r"
+                },
+                "tags": "",
+                "sizes": {}
+              }
+            }
+          }
+        }
+      },
+      "Sweat Pants": {
+        "id": "1pofGSzAuy4RiF5XB2GvAvrYYiJgU9uk3",
+        "products": {}
+      },
+      "Boxing Gloves": {
+        "id": "1WUbpV4bRc4ElSBZEvSXaMNoEd0snhXIN",
+        "products": {
+          "Prize Ring Boxing Gloves": {
+            "id": "1-Fr4xMl0MoLMfUNiOXE0O-wmAHNtnkMD",
+            "media": {
+              "Catalogue-PRIZERINGSports-2023.pdf": "1Qwz5lNy6JoqAWX_h8OSV965alpM1OS7q"
+            },
+            "variations": {
+              "Prof. 5.0 (White Blue Red)": {
+                "id": "11tAmM9uoGpDU1AQ4YV8bIW7PMbE338MX",
+                "media": {
+                  "white blue red prize ring.JPG": "11yuY65sBoEQhEgX1ytgf0FNn2RUCSnxI"
+                },
+                "tags": "",
+                "sizes": {}
+              },
+              "Prof. 5.0 (Blue White)": {
+                "id": "11u-dRzo2G-GyBZUm7RTQgdCZhmtlgByQ",
+                "media": {
+                  "blue white prize ring.JPG": "11vQf3tIZ0cRAvbD7HY5Cttic2_pWNVs5"
+                },
+                "tags": "",
+                "sizes": {}
+              },
+              "Prof. 5.0 (Maroon Black Piping)": {
+                "id": "11rSjCjNn7Q5mUsflCbVvxlZKu6tw94-P",
+                "media": {
+                  "Maroon Black Prize Ring.JPG": "11yq7BYLTNMyH0ZrkbUVwA3XK7HvwJYZx"
+                },
+                "tags": "",
+                "sizes": {}
+              },
+              "Prof SS Boxing Gloves Soft Type (All White)": {
+                "id": "11m1d_-fj9Jyn1ycjqHdgS2umYA_0cfTS",
+                "media": {
+                  "All white prize ring.JPG": "11no2T4zgGAghJIiObYsiAKKxcVJwQvtv"
+                },
+                "tags": "",
+                "sizes": {}
+              },
+              "Pro Training Velcro (Blue Silver)": {
+                "id": "19v_bASC5F_0kPE0ZGVQrTZp0rLojVs0P",
+                "media": {},
+                "tags": "",
+                "sizes": {}
+              },
+              "Prof SS Boxing Gloves Soft Type (Black Silver)": {
+                "id": "1YmI06wJZMDrSbFU_u2LBLZjwOY4treCl",
+                "media": {
+                  "Professional SS 16oz Black Silver Prize Ring Gloves.JPG": "11Y0y5amqN4GEIarPoahW0ttkZbdblUwg"
+                },
+                "tags": "",
+                "sizes": {}
+              },
+              "Prof. 5.0 (Black Orange)": {
+                "id": "1qWYRAhGdI3zl61_ju2Sqv98uaWQjrtTi",
+                "media": {},
+                "tags": "",
+                "sizes": {}
+              }
             }
           }
         }

@@ -21,25 +21,30 @@ from workflows.control import Control
 
 load_dotenv()
 control_file = 'user/control.yml'
+trawler = None
+tele = None
 
 app = FastAPI()
 
-@app.get("/")
-def root():
-    return {"Hello": "World!"}
 
-
-
-def main() -> None:
+def main():
     ut.clearLogs()
     CONTROL = Control(control_file)
     trawler = dt.TrawlerSet(CONTROL.logic['ID'], CONTROL.logic['Source']['data'])
     with open('user/sku.yml', 'w') as sku:
         yaml.dump(trawler.trawlers['GoogleDrive'].pointers, sku)
-    
+        
     # Temporarily disabled for GDrive testing
     telegram_interface = tl.Tele(CONTROL.logic)
-    
+    return trawler, telegram_interface
 
-if __name__ == "__main__":
-    main()
+if __name__ == "__app__":
+    trawler, tele = main()
+
+@app.get("/")
+def displayTable():
+    return {"hello": "world"}
+    
+@app.post("/")
+def ingestData(e):
+    return e
