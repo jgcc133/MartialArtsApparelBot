@@ -33,7 +33,6 @@ def main():
     telegram_interface = tl.Tele(CONTROL.logic)
     return trawler, telegram_interface
 
-    
 trawler, telegram_interface = main()
 app = FastAPI()
 
@@ -47,4 +46,7 @@ async def displayProducts(trawl_cache = trawler):
 
 @app.get("/api/v1/products/table")
 async def displayProducts(trawl_cache = trawler):    
-    return trawl_cache.trawlers['GoogleDrive'].productTable
+    return list(trawl_cache.trawlers['GoogleDrive'].productTable)
+
+
+telegram_interface.start()

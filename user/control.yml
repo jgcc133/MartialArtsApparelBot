@@ -13,7 +13,7 @@ Auth:
         - AUTH_TELE_APP_HASH
       bots:
         b2d: API_TELE_B2D_BOT
-        b2c: API_TELE_B2C_BOT
+        # b2c: API_TELE_B2C_BOT
     whatsapp:
 
 Source:

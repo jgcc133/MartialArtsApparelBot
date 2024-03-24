@@ -12,6 +12,7 @@ import os
 import datetime
 
 from dotenv import load_dotenv
+from enum import Enum
 
 load_dotenv()
 
@@ -82,3 +83,10 @@ def clearLogs():
         elif "Log" in log:
             with open(log, "w") as log:
                 log.write("")
+
+class ExtendedEnum(Enum):
+    
+
+    @classmethod
+    def list(cls):
+        return list(map(lambda c: c.value, cls))

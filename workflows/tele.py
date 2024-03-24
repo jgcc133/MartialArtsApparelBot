@@ -17,7 +17,14 @@ class Tele:
         self.getKeys(control)
         self.createBots(control)
 
-
+    def start(self):
+        try:
+            for bot in self.BOTS:
+                self.BOTS[bot].start(bot_token=self.APIS[bot])
+                ut.pLog("Telegram Chat Bots are online!", p1=True)
+                self.BOTS[bot].run_until_disconnected()
+        except:
+            ut.pLog("Telegram Chat Bot failed to start", p1=True)
     
     def getKeys(self, control) -> None:
         ut.pLog("Obtaining Authentication for Telegram...")
@@ -44,12 +51,9 @@ class Tele:
                         'bot_session',
                         self.AUTH["AUTH_TELE_APP_ID"],
                         self.AUTH["AUTH_TELE_APP_HASH"]
-                        ).start(bot_token=self.APIS[api])
+                        )
                     self.addB2DHandlers(control, Client)
-                    ut.pLog("Telegram Chat Bot is online!", p1=True)
-
-                    Client.run_until_disconnected()
-
+                    ut.pLog("Telegram Chat Bot Logic Flow Created!", p1=True)
                     self.BOTS[api] = Client
         except:
             ut.pLog("Failed to add handlers")

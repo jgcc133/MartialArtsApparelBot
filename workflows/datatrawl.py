@@ -18,6 +18,8 @@ import gspread
 import json
 import urllib3
 import pandas as pd
+import dotenv
+import requests
 
 import google.auth.transport.urllib3
 
@@ -72,14 +74,13 @@ class Trawler:
             "Inventory": 10
         }
         self.productTable = pd.DataFrame(columns=self.metaHeaders.keys())
-
+        self.mediaList = {}
         self.svcID = None
         self.svckey = None
                         
         self.setCreds()
         self.initialIDPull()
         self.metaTablePull()
-        self.compareMD2Dict()
 
 
     def setCreds(self):
@@ -107,9 +108,17 @@ class Trawler:
                     client_secret=stored_token['client_secret'],
                     scopes=stored_token['scopes']
                 )
-                http = urllib3.PoolManager()
-                request = google.auth.transport.urllib3.Request(http)
-                self.creds.refresh(request)
+                params = {
+                    "grant_type": "refresh_token",
+                    "client_id": self.creds.client_id,
+                    "client_secret": self.creds.client_secret,
+                    "refresh_token": self.creds.refresh_token
+                }
+                authorization_url = "https://oauth2.googleapis.com/token"
+                r = requests.post(authorization_url, data=params)
+                response_body = r.json()
+                self.creds.token = response_body['access_token']                
+                dotenv.set_key(".env", "GOOGLE_TOKEN", self.creds.to_json())
             except:
                 ut.pLog(f"No Token Found. Please get token from your existing Credentials")
                 stored_creds=os.environ.get("GOOGLE_CREDENTIALS")
@@ -117,6 +126,7 @@ class Trawler:
                     stored_creds = json.loads(stored_creds)
                     flow = InstalledAppFlow.from_client_config(stored_creds, scopes=self.SCOPES)
                     self.creds = flow.run_local_server(port=0)
+                    dotenv.set_key(".env", "GOOGLE_TOKEN", self.creds.to_json())
                 else:
                     ut.pLog("No credentials found (Require at least 1). Please contact administrator.", p1=True)
                     return None
@@ -212,6 +222,7 @@ class Trawler:
                                 else:
                                     #  Assume Product Media File, add to product media dict
                                     self.pointers[cat_name]["products"][pro_name]["media"][var_name] = var_id
+                                    self.mediaList[var_id] = var.getBlob()
             ut.logObj(self.pointers, name= f"{self.trawl_for} Pointers")
             ut.pLog(f"File and Folder IDs have been loaded from {self.trawl_for}.", p1=True)
         except:
@@ -224,43 +235,9 @@ class Trawler:
         except PermissionError:
             ut.pLog("You have not enabled Sheets API on the Google Cloud Platform project associated with this chatbot!")
         sht = md_sht.worksheet("AAMAA")
-        df = pd.DataFrame(sht.get_all_records())
-        print(df)
+        self.productTable = pd.DataFrame(sht.get_all_records())
+        return self.productTable
 
-
-    def compareMD2Dict(self):
-        '''
-        from self.pointers, each to query response get a file from G Drive (tags GSheets)
-        '''
-        self.pointers
-        self.metaHeaders
-        self.productTable
-
-        # Try for one item
-        for cat in self.pointers.keys():
-            cat_ID = self.pointers[cat]['id']
-            for prod in self.pointers[cat]['products'].keys():
-                prod_ID = self.pointers[cat]['products'][prod]['id']
-
-                # Product Media ID list concatenation
-                common_media_IDs = ''
-                for common_media in self.pointers[cat]['products'][prod]['media'].keys():
-                    common_media_IDs += self.pointers[cat]['products'][prod]['media'][common_media] + ", "
-                common_media_IDs = common_media_IDs[:-2]
-
-                for var in self.pointers[cat]['products'][prod]['variations'].keys():
-                    var_ID = self.pointers[cat]['products'][prod]['variations'][var]['id']
-
-                    media_IDs = ''
-                    for media in self.pointers[cat]['products'][prod]['variations'][var]['media'].keys():
-                        media_IDs += self.pointers[cat]['products'][prod]['variations'][var]['media'][media] + ", "
-                    media_IDs = media_IDs[:-2]
-
-                    self.productTable.loc[len(self.productTable.index)] = [
-                        cat_ID, prod_ID, common_media_IDs, var_ID, media_IDs, '' , cat, prod, var, '', 0
-                    ]
-        print("tabulated")
-        
 
     
 
