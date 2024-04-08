@@ -20,18 +20,20 @@ import urllib3
 import pandas as pd
 import dotenv
 import requests
+import io
 
 import google.auth.transport.urllib3
 
 from workflows import utils as ut
 
+from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.errors import HttpError
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseDownload
 
 
-from googleapiclient.errors import HttpError
 
 
 class Trawler:
@@ -41,13 +43,13 @@ class Trawler:
     def __init__(self, trawl_for, key_dict):
 
         '''
-        wh stands for webhook. Every Trawler can only have one webhook (or URL endpoint, such
-        as GDrive root URL)
-        pan indicates the pan that we use to sieve for gold. It is the current blob of data that
-        we're working on.
-        vault inidicates storage. Anything once deemed of value, can be stored in self.vault
+        Initialise Trawler
 
-        Each Trawler has a trawling protocol
+        Variables:
+        trawl_for: string = ['GoogleDrive']
+        key_dict: dict = <control dict loaded from control.yml>
+        
+        returns an instance of a Trawler, with .productTable, .mediaList, .uiTable set
         '''
         
         self.url = key_dict["url"]
@@ -55,6 +57,7 @@ class Trawler:
         self.SCOPES = key_dict["apiUse"]["scopes"]
         self.driveId = key_dict["apiUse"]["driveId"]
         self.metaId = key_dict["apiUse"]["metaId"]
+        
         self.creds = None
         self.drive_client = None
         self.spreadsheet_client = None
@@ -73,10 +76,9 @@ class Trawler:
             "Sizes": 9,
             "Inventory": 10
         }
-        self.productTable = pd.DataFrame(columns=self.metaHeaders.keys())
+        
+        self._media_storage_location = key_dict["storage"]
         self.mediaList = {}
-        self.svcID = None
-        self.svckey = None
                         
         self.setCreds()
         self.initialIDPull()
@@ -137,13 +139,17 @@ class Trawler:
             ut.pLog(f"Credentials for {self.trawl_for} successfully set.", p1=True)
         except:
             ut.pLog(f"Credentials for {self.trawl_for} could not be set", p1=True)
+        
+        return self.creds
 
     def initialIDPull(self):
         '''
-        Initial pull method. Also to pull every single file and endpoint to display.
-        Shortened form of pullFiles.
-        Causes self.pointers to be filled with a dict object of ids that we can use to
-        pull and download photos.
+        Initial pull of IDs.
+        
+        Also to pull every single file and endpoint to display.
+        Based on self.url as base root GDrive folder url, pulls and populates productTable
+
+        returns .pointers
         Note: This function only returns IDs as pointers to later download the files.
 
         To reduce the need for complexity of GDrive structure to be listed on control.yml
@@ -214,19 +220,31 @@ class Trawler:
                                         
                                         file_id = file.get('id')
                                         file_name = file.get('name')
-                                        # deal with as photo, record tag ID if name contains tag and media if otherwhise
-                                        if 'tag' in file_name.lower():
-                                            self.pointers[cat_name]["products"][pro_name]["variations"][var_name]["tag"] = file_id
-                                        else:
-                                            self.pointers[cat_name]["products"][pro_name]["variations"][var_name]["media"][file_name] = file_id
+                                        # deal with as variation photo, record tag ID if name contains tag and media if otherwhise
+                                        self.pointers[cat_name]["products"][pro_name]["variations"][var_name]["media"][file_name] = file_id
+                                        self.mediaList[file_id] = self._media_storage_location + file_name
+                                        # self.__download(file)
                                 else:
                                     #  Assume Product Media File, add to product media dict
                                     self.pointers[cat_name]["products"][pro_name]["media"][var_name] = var_id
-                                    self.mediaList[var_id] = var.getBlob()
+                                    self.mediaList[var_id] = self._media_storage_location + var_name
+                                    # self.__download(var)
             ut.logObj(self.pointers, name= f"{self.trawl_for} Pointers")
+            ut.logObj(self.mediaList, name=f"{self.trawl_for} Media List")
             ut.pLog(f"File and Folder IDs have been loaded from {self.trawl_for}.", p1=True)
         except:
             ut.pLog(f"Could not load file IDs from {self.trawl_for}", p1=True)
+
+        return self.pointers
+
+    def __download(self, dict_):
+        service = self.drive_client
+        request = service.files().get_media(fileId=dict_['id'])
+        fh = io.FileIO(self._media_storage_location + dict_['name'], mode='wb')
+        downloader = MediaIoBaseDownload(fh, request, chunksize=1024*1024)
+        done = False
+        while done is False:
+            status, done = downloader.next_chunk()
 
     def metaTablePull(self):
         gs_client = self.spreadsheet_client
