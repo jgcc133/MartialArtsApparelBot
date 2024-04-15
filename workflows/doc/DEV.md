@@ -118,3 +118,14 @@ Deployed to Railway.app successfully. Telegram bot able to respond, google drive
 Next Steps:
 1) control.yml: build search query on control.yml
 2) google sheets metada: pull tags sizes and inventory data
+
+8 Apr 24:
+Successfully downloaded media files on Google Drive (To check Railway's Hosting filesize cap before committing to Railway)
+getCategories, getProducts, getVariations successfully created.
+
+Next Steps:
+1) create methode to update control flow + control.yml on command and callback handlers
+2) FastAPI app methods to link to getC+P+V methods.
+
+14 Apr 24:
+Completed get end point and corresponding utils methods, trawler.getMediaFiles to get products

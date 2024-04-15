@@ -17,16 +17,28 @@ class Tele:
         self.getKeys(control)
         self.createBots(control)
 
-    def start(self):
+    async def start(self):
+        '''
+        Starts the various telegram bots within self.BOTS
+        (For projects with more than one chatbot)        
+        '''
         try:
             for bot in self.BOTS:
-                self.BOTS[bot].start(bot_token=self.APIS[bot])
+                await self.BOTS[bot].start(bot_token=self.APIS[bot])
                 ut.pLog("Telegram Chat Bots are online!", p1=True)
-                self.BOTS[bot].run_until_disconnected()
+                await self.BOTS[bot].run_until_disconnected()
         except:
             ut.pLog("Telegram Chat Bot failed to start", p1=True)
     
     def getKeys(self, control) -> None:
+        '''
+        Loads keys from environment variables based on configuration provided in control.yml
+
+        Variables:
+        control - control dictionary loaded from control.yml
+
+        returns None (self.AUTH and self.APIS are set without any return value)
+        '''
         ut.pLog("Obtaining Authentication for Telegram...")
         try:
             AuthRequired = control["Auth"]["data"]["tele"]["app"]
@@ -41,7 +53,13 @@ class Tele:
 
     def createBots(self, control) -> None:
         '''
-        untested with connection to telegram server
+        Creates a Telegram Bot based on API key provided in the environment variables
+        Calls addB2DHandlers based on B2DFlow in control.yml
+
+        Variables:
+        control - control dictionary loaded from control.yml
+
+        returns self.BOTS[<platform>] = telegram bot client, which can be called to start
         '''
         ut.pLog("Imbuing Telegram Bot with Logic Flow...")
         try:
@@ -60,7 +78,14 @@ class Tele:
 
     def addB2DHandlers(self, control, Client) -> None:
         '''
-        Setting the commands to be added as event.newMessage
+        Adds callback handlers (for buttons) and commands (for shortcut commands)
+        to one individual Telegram Bot. Logs as event.newMessage. Default category is a
+        catchall for error messages to deal with when users send a message that the client
+        has not been programmed with.
+
+        Variables:
+        control - control dictionary loaded from control.yml
+        Client - instance of telegram client as initialised
         '''
         
         Commands = control["B2DFlow"]["data"]["commands"]

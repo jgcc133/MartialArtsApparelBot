@@ -10,16 +10,12 @@ Logging messages have to be stored as a JSON string before calling writeLog
 import json
 import os
 import datetime
+import urllib.parse as urlp
 
 from dotenv import load_dotenv
 from enum import Enum
 
 load_dotenv()
-
-if os.environ.get('IS_DEV') == 'True':
-    Is_Dev = True
-else:
-    Is_Dev = False
 
 Is_Dev = True if os.environ.get('IS_DEV') == 'True' else False
 Save_Logs = True if os.environ.get('SAVE_LOGS') == 'True' else False
@@ -83,6 +79,28 @@ def clearLogs():
         elif "Log" in log:
             with open(log, "w") as log:
                 log.write("")
+
+def extractObjFromURL(url, label='query'):
+    """
+    URL String converted to string literal
+    """
+    parsed_url = urlp.urlparse(url)
+    try:
+        a=eval(parsed_url.path)
+        if isinstance(a, dict):
+            return a
+    except TypeError as e:
+        print(e.args)
+    except BaseException as e:
+        print(e.args)
+
+def objToURL(http, obj, path='filter', label='q'):
+    return f"{http}{path}?{urlp.urlencode({label:obj})}"
+
+def testURL(obj: dict):
+    http = 'http://127.0.0.1:8000/api/v1/products/'
+    url = objToURL(http, obj)
+    print(url)
 
 class ExtendedEnum(Enum):
     
