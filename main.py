@@ -82,11 +82,11 @@ def main():
     # trawler is a periodic, completable cycle, whereas tele is a persistent, run till
     # updated or disconnected process
 
-    control = Control.update(trawler)
-    with open(control_file, 'wb') as file:
-        yaml.dump(control, file)
+    control = control.update(trawler)
+    # with open(control_file, 'wb') as file:
+    #     yaml.dump(control, file)
 
-    # Temporarily disabled for GDrive testing
+    # initialise settings for telegram chat bot
     telegram_interface = tl.Tele(control.logic)
     
 
