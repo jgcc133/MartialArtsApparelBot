@@ -129,3 +129,15 @@ Next Steps:
 
 14 Apr 24:
 Completed get end point and corresponding utils methods, trawler.getMediaFiles to get products
+
+18 Apr 24:
+On app branch, managed to deploy both uvicorn FastAPI and telegram simultaneously
+(telegramClient.run_until_disconnected() IS NOT REQUIRED, just async with start)
+(don't use uvicorn.run, as it has it's own asyncio.run loop, which throws errors if you try to execute a uvicorn run task within an asyncio.run or gather. Instead, use uvicorn.Config, .Server, then server.serve)
+control flow is updated with each deployment, callback handlers are now automatically added
+
+Next Steps:
+1) return media via telegram
+2) check how to deploy on railway with a listener on a web domain that we own (can temporarily use:
+www.peta-femto.com/active-apparels/(martial-arts-apparel-bot) as the root for this project)
+3) telegram filter query handler

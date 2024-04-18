@@ -40,7 +40,7 @@ async def displayProducts():
     return list(trawler.trawlers['GoogleDrive'].productTable)
 
 @app.get("/api/v1/products/{query_type}")
-async def queryVariations(query_type: str = 'filter', q: str ='all'):
+async def queryVariations(query_type: str = 'filter', q: str ='all', trawler=trawler):
     full_product_list = None
     if query_type == 'filter':
         # return a list of products (min 0) that fit the tuple string fed in, with
