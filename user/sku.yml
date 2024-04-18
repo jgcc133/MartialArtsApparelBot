@@ -10,42 +10,42 @@ Boxing Gloves:
           id: 19v_bASC5F_0kPE0ZGVQrTZp0rLojVs0P
           media: {}
           sizes: {}
-          tags: ''
+          tags: []
         Prof SS Boxing Gloves Soft Type (All White):
           id: 11m1d_-fj9Jyn1ycjqHdgS2umYA_0cfTS
           media:
             All white prize ring.JPG: 11no2T4zgGAghJIiObYsiAKKxcVJwQvtv
           sizes: {}
-          tags: ''
+          tags: []
         Prof SS Boxing Gloves Soft Type (Black Silver):
           id: 1YmI06wJZMDrSbFU_u2LBLZjwOY4treCl
           media:
             Professional SS 16oz Black Silver Prize Ring Gloves.JPG: 11Y0y5amqN4GEIarPoahW0ttkZbdblUwg
           sizes: {}
-          tags: ''
+          tags: []
         Prof. 5.0 (Black Orange):
           id: 1qWYRAhGdI3zl61_ju2Sqv98uaWQjrtTi
           media: {}
           sizes: {}
-          tags: ''
+          tags: []
         Prof. 5.0 (Blue White):
           id: 11u-dRzo2G-GyBZUm7RTQgdCZhmtlgByQ
           media:
             blue white prize ring.JPG: 11vQf3tIZ0cRAvbD7HY5Cttic2_pWNVs5
           sizes: {}
-          tags: ''
+          tags: []
         Prof. 5.0 (Maroon Black Piping):
           id: 11rSjCjNn7Q5mUsflCbVvxlZKu6tw94-P
           media:
             Maroon Black Prize Ring.JPG: 11yq7BYLTNMyH0ZrkbUVwA3XK7HvwJYZx
           sizes: {}
-          tags: ''
+          tags: []
         Prof. 5.0 (White Blue Red):
           id: 11tAmM9uoGpDU1AQ4YV8bIW7PMbE338MX
           media:
             white blue red prize ring.JPG: 11yuY65sBoEQhEgX1ytgf0FNn2RUCSnxI
           sizes: {}
-          tags: ''
+          tags: []
 Handwraps:
   id: 123x132fQvpM5SdzZxkj23bYXibNyG4Eb
   products:
@@ -58,7 +58,7 @@ Handwraps:
           media:
             Sky Blue Handwraps Prize Ring.JPG: 12NS9h6GlDs_RmWFOyj5GbVfaTMo9pOEa
           sizes: {}
-          tags: ''
+          tags: []
 Head Gear:
   id: 16FkSyv0PnoE0ups7JOQannHvJqeIOeNK
   products:
@@ -87,7 +87,7 @@ Shoes:
             1081A021_001_SR_RT_GLB.jpg: 1BEaoelulMThw5mSNw-4flDvIFoVRikc8
             1081A021_001_SR_TP_GLB.jpg: 1oQtIae8ekPLINKUWu5hfpBWevQhK2TVP
           sizes: {}
-          tags: ''
+          tags: []
         Frost Gold:
           id: 1CXDc4P1uZzjKW4160TjKH4fTNjqL--pP
           media:
@@ -99,7 +99,7 @@ Shoes:
             1081A021_021_SR_LT_GLB.jpg: 1I4IzHD9Bn3TPwMaXxRI2DVQQKfHmp2w9
             1081A021_021_SR_RT_GLB.jpg: 1TNLfjKDycMvvOIBQfI5H9wCmEetwijku
           sizes: {}
-          tags: ''
+          tags: []
     Asics Matflex 7 Shoes:
       id: 1o8x1KzZlJHYiSIAbkz2YYx7oWcNtt5I2
       media:
@@ -109,12 +109,12 @@ Shoes:
           id: 1b4PTX_ib7XkGB5by3bb5XhtlBdoM0zEx
           media: {}
           sizes: {}
-          tags: ''
+          tags: []
         White:
           id: 1ecO8jpZzkPHBouqGoOrW1DKV0b0_AQI7
           media: {}
           sizes: {}
-          tags: ''
+          tags: []
         items_approved_photo_global_2023_2_asics_footwear:
           id: 12Q8yi9d1G4O1vxlw-6ufZ9BPzj5s6jPt
           media:
@@ -135,7 +135,7 @@ Shoes:
             1081A051_020_SR_LT_GLB.png: 13SPd5lsL6xSzIyeMla7Zscok_-ZFdEIm
             1081A051_020_SR_RT_GLB.png: 13MPsl2KL57zn17vd6_KvhDbD0zDrJWIU
           sizes: {}
-          tags: ''
+          tags: []
 Sweat Pants:
   id: 1pofGSzAuy4RiF5XB2GvAvrYYiJgU9uk3
   products: {}

@@ -92,8 +92,7 @@ class Trawler:
         self.mediaList = {}
                         
         self.setCreds()
-        self.initialIDPull()
-        self.getVariations(product_list=[('Shoes',), ('Head Gear',), ('Boxing Gloves', 'Prize Ring Boxing Gloves')])
+        self.idPull() # Add download_media=True when deployed
 
     def setCreds(self):
         ut.pLog(f"Setting Credentials for {self.trawl_for}...")
@@ -152,7 +151,7 @@ class Trawler:
         
         return self.creds
 
-    def initialIDPull(self):
+    def idPull(self, download_media=False):
         '''
         Initial pull of IDs.
         
@@ -223,7 +222,7 @@ class Trawler:
                                     self.pointers[cat_name]["products"][pro_name]["variations"][var_name] = {
                                             "id": var_id,
                                             "media": {},
-                                            "tags": "",
+                                            "tags": [],
                                             "sizes": {}
                                         }
                                     self.__breadcrumbs['variations'][var_name] = {'category': cat_name, 'product': pro_name}                                   
@@ -236,12 +235,12 @@ class Trawler:
                                         # deal with as variation photo, record tag ID if name contains tag and media if otherwhise
                                         self.pointers[cat_name]["products"][pro_name]["variations"][var_name]["media"][file_name] = file_id
                                         self.mediaList[file_id] = self._media_storage_location + file_name
-                                        # self.__download(file)
+                                        if download_media: self.__download(file)
                                 else:
                                     #  Assume Product Media File, add to product media dict
                                     self.pointers[cat_name]["products"][pro_name]["media"][var_name] = var_id
                                     self.mediaList[var_id] = self._media_storage_location + var_name
-                                    # self.__download(var)
+                                    if download_media: self.__download(var)
             ut.logObj(self.pointers, name= f"{self.trawl_for} Pointers")
             ut.logObj(self.mediaList, name=f"{self.trawl_for} Media List")
             ut.pLog(f"File and Folder IDs have been loaded from {self.trawl_for}.", p1=True)
@@ -270,100 +269,14 @@ class Trawler:
         return self.productTable
     
     def getCategories(self):
-        '''
-        Gets a list of categories from self.pointers
+        return self.__breadcrumbs['categories'].keys()
+
+    def getProducts(self):        
+        return self.__breadcrumbs['products'].keys()
         
-        returns a list of tuples
-        '''
-        return [(x,) for x in list(self.pointers.keys())]
-
-    def getProducts(self, category_list=None):
-        '''
-        Gets a list of products. Category list is a list of tuples
-        
-        Variables
-        category_list: list = None. If none is provided, all the product lines are returned
-        
-        returns a list of strings
-        '''
-        products = []
-        if category_list is None:
-            categories = self.getCategories()
-            for category in categories:
-                products += [(category[0], prod) for prod in list(self.pointers[category[0]]['products'].keys())]
-        else:
-            if isinstance(category_list, list):
-                if isinstance(category_list[0], tuple):
-                    # Passed in a list of tuples
-                    for category in category_list:
-                        if len(category) == 1:
-                            if category[0] in self.pointers.keys():
-                                products += [(category[0],prod) for prod in list(self.pointers[category[0]]['products'].keys())]
-                        else:
-                            if category[0] in self.pointers.keys() and category[1] in self.pointers[category[0]]['products'].keys():
-                                products += [(category[0], category[1])]
-
-                elif isinstance(category_list[0], str):
-                    # Passed in a list of strings
-                    for category in category_list:
-                        if category in self.pointers.keys():
-                            products += [(category,prod) for prod in list(self.pointers[category]['products'].keys())]
-                else:
-                    try:
-                        a = str(category_list[0])
-                    except ValueError:
-                        return None
-                    if a in self.pointers.keys():
-                        products = [(a, prod) for prod in category]
-            elif isinstance(category_list, tuple):
-                # passed in a tuple
-                if len(category_list) < 3:
-                    if a in self.pointers.keys():
-                        products = (a, prod)
-                else:
-                    pass
-            elif isinstance(category_list, str):
-                # Passed in a string
-                    category = self.pointers[category_list]['products'].keys()
-                    products = [(category_list, prod) for prod in category]
-            else:
-                raise ValueError(f"category_list was of type: {type(category_list)}. Category_list must be a tuple, list of tuples, or string version of a tuple!")
-        return products
-
-    def getVariations(self, category_list=None, product_list=None, query_list=None):
-        '''
-        Gets a list of variations (i.e. colours) based on the category_list and product_list
-        passed in. If none are passed in, returns everything. In the case of invalid category
-        names, but valid product names (i.e. 'Shoe' instead of 'Shoes', but 'Asics Matflex 6 Shoes'
-        is a valid product name), the corresponding variations will also be added in)
-
-        Variables:
-        category_list: list = None. List of strings of valid category names
-        product_list: list = None. List of strings of valid product names
-        query_list: list = None. If provided, this list supercedes the other two lists
-
-        returns a list of strings of variation names
-        '''
-        products = []
-        variations = []
-
-        # Use .getCategories to get list of products. Where none is passed in, all products
-        # are valid
-        if query_list is None:
-            if category_list is None and product_list is None:
-                products = self.getProducts()
-            elif category_list is None:
-                products = self.getProducts(product_list)
-            elif product_list is None:
-                products = self.getProducts(category_list)
-        else:
-            # query list is not None. Check for number of arguments in query_list
-            products = self.getProducts(query_list)        
-        for category, product in products:
-            prod = self.pointers[category]['products'][product]
-            variations += [(category, product, variation) for variation in prod['variations'].keys()]
-        return variations
-
+    def getVariations(self):
+        return self.__breadcrumbs['variations'].keys()
+    
     def __getMediaFile(self, identifier: dict):
         """
         Internal method: dicitionaries passed in must have all fields. Returnes an object:
@@ -430,6 +343,9 @@ class Trawler:
         map_query = dict(self.metaQuery)
         if query is None:
             query = map_query
+            category_query = list(self.__breadcrumbs['categories'].keys())
+            product_query = list(self.__breadcrumbs['products'].keys())
+            variation_query = list(self.__breadcrumbs['variations'].keys())
         else:
             for k, v in query.items():
                 if not isinstance(v, list):
@@ -437,8 +353,7 @@ class Trawler:
                 else:
                     map_query[k] = v
             query = map_query
-
-        category_query, product_query, variation_query = query['categories'], query['products'], query['variations']
+            category_query, product_query, variation_query = query['categories'], query['products'], query['variations']
         
         # Check if variations exist (start bottom up)
         if len(variation_query) > 0:
@@ -476,6 +391,15 @@ class Trawler:
         
         return media, errors
     
+    def update(self):
+        """
+        Re run ID pull. If there are differences, compare changes
+        get new tree / re-initialise whole trawler"""
+        ut.pLog(f"Updating Trawler.pointers from {self.trawl_for}")
+        new_tree = self.idPull()
+        print(self.pointers == new_tree)
+        return
+
 class TrawlerSet:
     '''
     Utilises Source section under control.yml to generate x number of trawlers, each with its

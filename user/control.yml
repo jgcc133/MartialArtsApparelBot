@@ -1,92 +1,166 @@
-# Control Flow Config File
-# called by respective platform py files
-# returns a python dictionary of control flow configurations
----
-
-ID: 'Martial Arts Apparel'
 Auth:
-  meta: A list of keys required from os.environ
   data:
     tele:
       app:
-        - AUTH_TELE_APP_ID
-        - AUTH_TELE_APP_HASH
+      - AUTH_TELE_APP_ID
+      - AUTH_TELE_APP_HASH
       bots:
         b2d: API_TELE_B2D_BOT
-        # b2c: API_TELE_B2C_BOT
-    whatsapp:
-
+    whatsapp: null
+  meta: A list of keys required from os.environ
+B2CFlow:
+  data:
+    callbacks:
+      Product Enquiry:
+        btn:
+        - MMA
+        - Muay Thai
+        - BJJ
+        - Other Accessories
+        - Back
+        msg: Which areas of products would you like to look at today?
+    commands:
+      /start:
+        btn: &id001
+        - Product Enquiry
+        - Arrange Viewing
+        - Other Services
+        - Back
+        msg: Welcome to Martial Arts Apparel Bot! What services would you like to
+          take a look at?
+  meta: Control Flow config for ControlEngine to read in and generate a list of handlers
+    and callbackquery for B2C chat bot
+B2DFlow:
+  data:
+    callbacks:
+      Arrange Viewing:
+        btn:
+        - Date & Time
+        - Location
+        - Back
+        msg: Please select a suitable time and location for viewing?
+        tag: service
+      Asics Matflex 6 Shoes:
+        btn:
+        - Black Silver
+        - Frost Gold
+        msg: Which variation would you like to explore?
+        tag: product
+      Asics Matflex 7 Shoes:
+        btn:
+        - Black
+        - White
+        - items_approved_photo_global_2023_2_asics_footwear
+        msg: Which variation would you like to explore?
+        tag: product
+      Back to Start:
+        btn: *id001
+        msg: What services would you like to take a look at?
+        tag: service
+      Boxing Gloves:
+        btn:
+        - Prize Ring Boxing Gloves
+        msg: Which product would you like to explore?
+        tag: category
+      Handwraps:
+        btn:
+        - Prize Ring
+        msg: Which product would you like to explore?
+        tag: category
+      Head Gear:
+        btn:
+        - Prize Ring Head Gear
+        msg: Which product would you like to explore?
+        tag: category
+      Other Accessories:
+        btn: []
+        msg: Pulling data on all other accessories...
+        tag: service
+      Other Services:
+        btn:
+        - Contact Seller
+        - Back
+        msg: What other services would you like to explore?
+        tag: service
+      Prize Ring:
+        btn:
+        - Sky Blue Handwraps
+        msg: Which variation would you like to explore?
+        tag: product
+      Prize Ring Boxing Gloves:
+        btn:
+        - Pro Training Velcro (Blue Silver)
+        - Prof SS Boxing Gloves Soft Type (All White)
+        - Prof SS Boxing Gloves Soft Type (Black Silver)
+        - Prof. 5.0 (Black Orange)
+        - Prof. 5.0 (Blue White)
+        - Prof. 5.0 (Maroon Black Piping)
+        - Prof. 5.0 (White Blue Red)
+        msg: Which variation would you like to explore?
+        tag: product
+      Prize Ring Head Gear:
+        btn: []
+        msg: Which variation would you like to explore?
+        tag: product
+      Product Enquiry:
+        btn:
+        - Boxing Gloves
+        - Handwraps
+        - Head Gear
+        - Shoes
+        - Sweat Pants
+        msg: Which areas of products would you like to look at today?
+        tag: service
+      Shoes:
+        btn:
+        - Asics Matflex 6 Shoes
+        - Asics Matflex 7 Shoes
+        msg: Which product would you like to explore?
+        tag: category
+      Sweat Pants:
+        btn: []
+        msg: Which product would you like to explore?
+        tag: category
+    commands:
+      /call:
+        btn:
+        - Call
+        - Chat with Live Rep
+        - Back
+        msg: Speak to our sales representatives?
+      /help:
+        btn:
+        - Product Enquiry
+        - Arrange Viewing
+        - Other Services
+        - Back
+        msg: View our list of commands?
+      /start:
+        btn: *id001
+        msg: Welcome to Martial Arts Apparel Bot! What services would you like to
+          take a look at?
+    default:
+      btn:
+      - Back to Start
+      msg: Stay tuned! This function has not been added...
+      tag: macro
+  meta: Control Flow config for ControlEngine to read in and generate a list of handlers
+    and callbackquery
+ID: Martial Arts Apparel
+Platforms:
+  data:
+  - tele
+  - whatsapp
+  meta: A list of platforms supported / to be loaded
 Source:
-  meta: A list of URL/ directory combinations to pull data from
   data:
     GoogleDrive:
-      url: https://drive.google.com/drive/folders/18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5?usp=sharing
       apiUse:
-        scopes: 
-        - https://www.googleapis.com/auth/drive
-        - https://www.googleapis.com/auth/spreadsheets
         driveId: 18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5
         metaId: 1wQ-Z7mAVcpHC1p4DdcBs1sD_ipkC6lGqohOOzpa28Ls
+        scopes:
+        - https://www.googleapis.com/auth/drive
+        - https://www.googleapis.com/auth/spreadsheets
       storage: workflows/media/googledrive/
-
-Platforms:
-  meta: A list of platforms supported / to be loaded
-  data:
-    - tele
-    - whatsapp
-
-B2DFlow:
-  meta: Control Flow config for ControlEngine to read in and generate a list of handlers and callbackquery
-  data:
-
-    commands:
-      /start:
-        msg: Welcome to Martial Arts Apparel Bot! What services would you like to take a look at?
-        btn: &startbtn [Product Enquiry, Arrange Viewing, Other Services, Back]
-      /help:
-        msg: View our list of commands?
-        btn: [Product Enquiry, Arrange Viewing, Other Services, Back]
-      /call:
-        msg: Speak to our sales representatives?
-        btn: [Call, Chat with Live Rep, Back]
-
-    callbacks:
-      Product Enquiry:
-        msg: Which areas of products would you like to look at today?
-        btn: [MMA, Muay Thai, BJJ, Other Accessories, Back]
-      Arrange Viewing:
-        msg: Please select a suitable time and location for viewing?
-        btn: [Date & Time, Location, Back]
-      Other Services:
-        msg: What other services would you like to explore?
-        btn: [Contact Seller, Back]
-      MMA:
-        msg: Pulling MMA data...
-        btn: []
-      BJJ:
-        msg: Pulling BJJ data...
-        btn: []
-      MMA:
-        msg: Pulling data on all other accessories...
-        btn: []
-      Back to Start:
-        msg: What services would you like to take a look at?
-        btn: *startbtn
-
-    default:
-      msg : Stay tuned! This function has not been added...
-      btn : [Back to Start]
-
-B2CFlow:
-  meta: Control Flow config for ControlEngine to read in and generate a list of handlers and callbackquery for B2C chat bot
-  data:    
-    commands:
-      /start:
-        msg: Welcome to Martial Arts Apparel Bot! What services would you like to take a look at?
-        btn: *startbtn
-
-    callbacks:
-      Product Enquiry:
-        msg: Which areas of products would you like to look at today?
-        btn: [MMA, Muay Thai, BJJ, Other Accessories, Back]
-...
+      url: https://drive.google.com/drive/folders/18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5?usp=sharing
+  meta: A list of URL/ directory combinations to pull data from

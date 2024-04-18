@@ -1,5 +1,6 @@
 import os
 import math
+import telethon.sync
 
 from telethon import Button, TelegramClient, events, utils
 from workflows import utils as ut
@@ -24,11 +25,24 @@ class Tele:
         '''
         try:
             for bot in self.BOTS:
-                await self.BOTS[bot].start(bot_token=self.APIS[bot])
-                ut.pLog("Telegram Chat Bots are online!", p1=True)
+                # self.BOTS[bot].start(bot_token=self.APIS[bot])
                 await self.BOTS[bot].run_until_disconnected()
+                async with self.BOTS[bot] as client:
+                    await client.run_until_disconnected()
         except:
             ut.pLog("Telegram Chat Bot failed to start", p1=True)
+
+    async def stop(self):
+        '''
+        Stops the various telegram bots within self.BOTS
+        (For projects with more than one chatbot)        
+        '''
+        try:
+            for bot in self.BOTS:
+                async with self.BOTS[bot] as client:
+                    await client.disconnect()
+        except:
+            ut.pLog("Telegram Chat Bot failed to stop", p1=True)
     
     def getKeys(self, control) -> None:
         '''
@@ -51,7 +65,7 @@ class Tele:
         except:
             ut.pLog("Failed to load Authentication for Telegram.", p1=True)
 
-    def createBots(self, control) -> None:
+    def createBots(self, control):
         '''
         Creates a Telegram Bot based on API key provided in the environment variables
         Calls addB2DHandlers based on B2DFlow in control.yml
@@ -63,8 +77,8 @@ class Tele:
         '''
         ut.pLog("Imbuing Telegram Bot with Logic Flow...")
         try:
-            for api in self.APIS:
-                if api != '' and not None:
+            for api_k, api_v in self.APIS.items():
+                if api_k != '' and not None:
                     Client = TelegramClient(
                         'bot_session',
                         self.AUTH["AUTH_TELE_APP_ID"],
@@ -72,7 +86,7 @@ class Tele:
                         )
                     self.addB2DHandlers(control, Client)
                     ut.pLog("Telegram Chat Bot Logic Flow Created!", p1=True)
-                    self.BOTS[api] = Client
+                    self.BOTS[api_k] = Client
         except:
             ut.pLog("Failed to add handlers")
 
