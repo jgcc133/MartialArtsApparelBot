@@ -21,7 +21,7 @@ B2CFlow:
         msg: Which areas of products would you like to look at today?
     commands:
       /start:
-        btn: &id001
+        btn: &id010
         - Product Enquiry
         - Arrange Viewing
         - Other Services
@@ -40,35 +40,46 @@ B2DFlow:
         - Back
         msg: Please select a suitable time and location for viewing?
         tag: service
-      Asics Matflex 6 Shoes:
+      Asics Matflex 6 Shoes: &id007
+        tag: product
+        msg: Which variation would you like to explore?
         btn:
         - Black Silver
         - Frost Gold
-        msg: Which variation would you like to explore?
+        - Back to Shoes
+      Asics Matflex 7 Shoes: &id006
         tag: product
-      Asics Matflex 7 Shoes:
+        msg: Which variation would you like to explore?
         btn:
         - Black
         - White
         - items_approved_photo_global_2023_2_asics_footwear
-        msg: Which variation would you like to explore?
-        tag: product
-      Back to Start:
-        btn: *id001
-        msg: What services would you like to take a look at?
+        - Back to Shoes
+      Product Enquiry: &id001
+        btn:
+        - Boxing Gloves
+        - Handwraps
+        - Head Gear
+        - Shoes
+        - Sweat Pants
+        - Back to Start
+        msg: Which areas of products would you like to look at today?
         tag: service
       Black:
-        btn:
-        - Add to Cart
-        - Back
+        tag: variation
+        msg: 'Shoes
+
+          Black'
         media:
         - 24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf
-        msg: Black
-        tag: variation
-      Black Silver:
         btn:
         - Add to Cart
-        - Back
+        - Back to Asics Matflex 7 Shoes
+      Black Silver:
+        tag: variation
+        msg: 'Shoes
+
+          Black Silver'
         media:
         - Copy of 1081A021_021_SB_BT_GLB.jpg
         - Asics Matflex 6 Shoes Catalog.pdf
@@ -79,17 +90,20 @@ B2DFlow:
         - 1081A021_001_SR_FL_GLB.jpg
         - 1081A021_001_SR_BT_GLB.jpg
         - 1081A021_001_SR_BK_GLB.jpg
-        msg: Black Silver
-        tag: variation
-      Boxing Gloves:
-        btn:
-        - Prize Ring Boxing Gloves
-        msg: Which product would you like to explore?
-        tag: category
-      Frost Gold:
         btn:
         - Add to Cart
-        - Back
+        - Back to Asics Matflex 6 Shoes
+      Boxing Gloves: &id004
+        tag: category
+        msg: Which product would you like to explore?
+        btn:
+        - Prize Ring Boxing Gloves
+        - Back to Categories
+      Frost Gold:
+        tag: variation
+        msg: 'Shoes
+
+          Frost Gold'
         media:
         - Copy of 1081A021_021_SB_BT_GLB.jpg
         - Asics Matflex 6 Shoes Catalog.pdf
@@ -100,18 +114,21 @@ B2DFlow:
         - 1081A021_021_SB_FL_GLB.jpg
         - 1081A021_021_SB_BT_GLB.jpg
         - 1081A021_021_SB_BK_GLB.jpg
-        msg: Frost Gold
-        tag: variation
-      Handwraps:
+        btn:
+        - Add to Cart
+        - Back to Asics Matflex 6 Shoes
+      Handwraps: &id003
+        tag: category
+        msg: Which product would you like to explore?
         btn:
         - Prize Ring
-        msg: Which product would you like to explore?
+        - Back to Categories
+      Head Gear: &id005
         tag: category
-      Head Gear:
+        msg: Which product would you like to explore?
         btn:
         - Prize Ring Head Gear
-        msg: Which product would you like to explore?
-        tag: category
+        - Back to Categories
       Other Accessories:
         btn: []
         msg: Pulling data on all other accessories...
@@ -122,12 +139,15 @@ B2DFlow:
         - Back
         msg: What other services would you like to explore?
         tag: service
-      Prize Ring:
+      Prize Ring: &id009
+        tag: product
+        msg: Which variation would you like to explore?
         btn:
         - Sky Blue Handwraps
-        msg: Which variation would you like to explore?
+        - Back to Handwraps
+      Prize Ring Boxing Gloves: &id008
         tag: product
-      Prize Ring Boxing Gloves:
+        msg: Which variation would you like to explore?
         btn:
         - Pro Training Velcro (Blue Silver)
         - Prof SS Boxing Gloves Soft Type (All White)
@@ -136,112 +156,125 @@ B2DFlow:
         - Prof. 5.0 (Blue White)
         - Prof. 5.0 (Maroon Black Piping)
         - Prof. 5.0 (White Blue Red)
-        msg: Which variation would you like to explore?
-        tag: product
+        - Back to Boxing Gloves
       Prize Ring Head Gear:
-        btn: []
-        msg: Which variation would you like to explore?
         tag: product
-      Pro Training Velcro (Blue Silver):
+        msg: Which variation would you like to explore?
         btn:
-        - Add to Cart
-        - Back
+        - Back to Head Gear
+      Pro Training Velcro (Blue Silver):
+        tag: variation
+        msg: 'Boxing Gloves
+
+          Pro Training Velcro (Blue Silver)'
         media:
         - Catalogue-PRIZERINGSports-2023.pdf
-        msg: Pro Training Velcro (Blue Silver)
-        tag: variation
-      Product Enquiry:
-        btn:
-        - Boxing Gloves
-        - Handwraps
-        - Head Gear
-        - Shoes
-        - Sweat Pants
-        msg: Which areas of products would you like to look at today?
-        tag: service
-      Prof SS Boxing Gloves Soft Type (All White):
         btn:
         - Add to Cart
-        - Back
+        - Back to Prize Ring Boxing Gloves
+      Back to Categories: *id001
+      Prof SS Boxing Gloves Soft Type (All White):
+        tag: variation
+        msg: 'Boxing Gloves
+
+          Prof SS Boxing Gloves Soft Type (All White)'
         media:
         - Catalogue-PRIZERINGSports-2023.pdf
         - All white prize ring.JPG
-        msg: Prof SS Boxing Gloves Soft Type (All White)
-        tag: variation
-      Prof SS Boxing Gloves Soft Type (Black Silver):
         btn:
         - Add to Cart
-        - Back
+        - Back to Prize Ring Boxing Gloves
+      Prof SS Boxing Gloves Soft Type (Black Silver):
+        tag: variation
+        msg: 'Boxing Gloves
+
+          Prof SS Boxing Gloves Soft Type (Black Silver)'
         media:
         - Catalogue-PRIZERINGSports-2023.pdf
         - Professional SS 16oz Black Silver Prize Ring Gloves.JPG
-        msg: Prof SS Boxing Gloves Soft Type (Black Silver)
-        tag: variation
-      Prof. 5.0 (Black Orange):
         btn:
         - Add to Cart
-        - Back
+        - Back to Prize Ring Boxing Gloves
+      Prof. 5.0 (Black Orange):
+        tag: variation
+        msg: 'Boxing Gloves
+
+          Prof. 5.0 (Black Orange)'
         media:
         - Catalogue-PRIZERINGSports-2023.pdf
-        msg: Prof. 5.0 (Black Orange)
-        tag: variation
-      Prof. 5.0 (Blue White):
         btn:
         - Add to Cart
-        - Back
+        - Back to Prize Ring Boxing Gloves
+      Prof. 5.0 (Blue White):
+        tag: variation
+        msg: 'Boxing Gloves
+
+          Prof. 5.0 (Blue White)'
         media:
         - Catalogue-PRIZERINGSports-2023.pdf
         - blue white prize ring.JPG
-        msg: Prof. 5.0 (Blue White)
-        tag: variation
-      Prof. 5.0 (Maroon Black Piping):
         btn:
         - Add to Cart
-        - Back
+        - Back to Prize Ring Boxing Gloves
+      Prof. 5.0 (Maroon Black Piping):
+        tag: variation
+        msg: 'Boxing Gloves
+
+          Prof. 5.0 (Maroon Black Piping)'
         media:
         - Catalogue-PRIZERINGSports-2023.pdf
         - Maroon Black Prize Ring.JPG
-        msg: Prof. 5.0 (Maroon Black Piping)
-        tag: variation
-      Prof. 5.0 (White Blue Red):
         btn:
         - Add to Cart
-        - Back
+        - Back to Prize Ring Boxing Gloves
+      Prof. 5.0 (White Blue Red):
+        tag: variation
+        msg: 'Boxing Gloves
+
+          Prof. 5.0 (White Blue Red)'
         media:
         - Catalogue-PRIZERINGSports-2023.pdf
         - white blue red prize ring.JPG
-        msg: Prof. 5.0 (White Blue Red)
-        tag: variation
-      Shoes:
+        btn:
+        - Add to Cart
+        - Back to Prize Ring Boxing Gloves
+      Shoes: &id002
+        tag: category
+        msg: Which product would you like to explore?
         btn:
         - Asics Matflex 6 Shoes
         - Asics Matflex 7 Shoes
-        msg: Which product would you like to explore?
-        tag: category
+        - Back to Categories
       Sky Blue Handwraps:
-        btn:
-        - Add to Cart
-        - Back
+        tag: variation
+        msg: 'Handwraps
+
+          Sky Blue Handwraps'
         media:
         - Sky Blue Handwraps Prize Ring.JPG
-        msg: Sky Blue Handwraps
-        tag: variation
-      Sweat Pants:
-        btn: []
-        msg: Which product would you like to explore?
-        tag: category
-      White:
         btn:
         - Add to Cart
-        - Back
+        - Back to Prize Ring
+      Sweat Pants:
+        tag: category
+        msg: Which product would you like to explore?
+        btn:
+        - Back to Categories
+      White:
+        tag: variation
+        msg: 'Shoes
+
+          White'
         media:
         - 24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf
-        msg: White
-        tag: variation
-      items_approved_photo_global_2023_2_asics_footwear:
         btn:
         - Add to Cart
-        - Back
+        - Back to Asics Matflex 7 Shoes
+      items_approved_photo_global_2023_2_asics_footwear:
+        tag: variation
+        msg: 'Shoes
+
+          items_approved_photo_global_2023_2_asics_footwear'
         media:
         - 24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf
         - 1081A051_020_SB_BT_GLB.png
@@ -260,8 +293,17 @@ B2DFlow:
         - 1081A051_020_SB_FL_GLB.png
         - 1081A051_020_SR_RT_GLB.png
         - 1081A051_020_SL_RT_GLB.png
-        msg: items_approved_photo_global_2023_2_asics_footwear
-        tag: variation
+        btn:
+        - Add to Cart
+        - Back to Asics Matflex 7 Shoes
+      Back to Shoes: *id002
+      Back to Handwraps: *id003
+      Back to Boxing Gloves: *id004
+      Back to Head Gear: *id005
+      Back to Asics Matflex 7 Shoes: *id006
+      Back to Asics Matflex 6 Shoes: *id007
+      Back to Prize Ring Boxing Gloves: *id008
+      Back to Prize Ring: *id009
     commands:
       /call:
         btn:
@@ -277,7 +319,7 @@ B2DFlow:
         - Back
         msg: View our list of commands?
       /start:
-        btn: *id001
+        btn: *id010
         msg: Welcome to Martial Arts Apparel Bot! What services would you like to
           take a look at?
     default:
@@ -290,52 +332,52 @@ B2DFlow:
 ID: Martial Arts Apparel
 MediaList:
   data:
-    1081A021_001_SR_BK_GLB.jpg: workflows/media/googledrive/1081A021_001_SR_BK_GLB.jpg
-    1081A021_001_SR_BT_GLB.jpg: workflows/media/googledrive/1081A021_001_SR_BT_GLB.jpg
-    1081A021_001_SR_FL_GLB.jpg: workflows/media/googledrive/1081A021_001_SR_FL_GLB.jpg
-    1081A021_001_SR_FR_GLB.jpg: workflows/media/googledrive/1081A021_001_SR_FR_GLB.jpg
-    1081A021_001_SR_LT_GLB.jpg: workflows/media/googledrive/1081A021_001_SR_LT_GLB.jpg
-    1081A021_001_SR_RT_GLB.jpg: workflows/media/googledrive/1081A021_001_SR_RT_GLB.jpg
-    1081A021_001_SR_TP_GLB.jpg: workflows/media/googledrive/1081A021_001_SR_TP_GLB.jpg
-    1081A021_021_SB_BK_GLB.jpg: workflows/media/googledrive/1081A021_021_SB_BK_GLB.jpg
-    1081A021_021_SB_BT_GLB.jpg: workflows/media/googledrive/1081A021_021_SB_BT_GLB.jpg
-    1081A021_021_SB_FL_GLB.jpg: workflows/media/googledrive/1081A021_021_SB_FL_GLB.jpg
-    1081A021_021_SB_FR_GLB.jpg: workflows/media/googledrive/1081A021_021_SB_FR_GLB.jpg
-    1081A021_021_SB_TP_GLB.jpg: workflows/media/googledrive/1081A021_021_SB_TP_GLB.jpg
-    1081A021_021_SR_LT_GLB.jpg: workflows/media/googledrive/1081A021_021_SR_LT_GLB.jpg
-    1081A021_021_SR_RT_GLB.jpg: workflows/media/googledrive/1081A021_021_SR_RT_GLB.jpg
-    1081A051_001_SB_BK_GLB.png: workflows/media/googledrive/1081A051_001_SB_BK_GLB.png
-    1081A051_001_SB_BT_GLB.png: workflows/media/googledrive/1081A051_001_SB_BT_GLB.png
-    1081A051_001_SB_FL_GLB.png: workflows/media/googledrive/1081A051_001_SB_FL_GLB.png
-    1081A051_001_SB_FR_GLB.png: workflows/media/googledrive/1081A051_001_SB_FR_GLB.png
-    1081A051_001_SB_TP_GLB.png: workflows/media/googledrive/1081A051_001_SB_TP_GLB.png
-    1081A051_001_SL_RT_GLB.png: workflows/media/googledrive/1081A051_001_SL_RT_GLB.png
-    1081A051_001_SR_LT_GLB.png: workflows/media/googledrive/1081A051_001_SR_LT_GLB.png
-    1081A051_001_SR_RT_GLB.png: workflows/media/googledrive/1081A051_001_SR_RT_GLB.png
-    1081A051_020_SB_BK_GLB.png: workflows/media/googledrive/1081A051_020_SB_BK_GLB.png
-    1081A051_020_SB_BT_GLB.png: workflows/media/googledrive/1081A051_020_SB_BT_GLB.png
-    1081A051_020_SB_FL_GLB.png: workflows/media/googledrive/1081A051_020_SB_FL_GLB.png
-    1081A051_020_SB_FR_GLB.png: workflows/media/googledrive/1081A051_020_SB_FR_GLB.png
-    1081A051_020_SB_TP_GLB.png: workflows/media/googledrive/1081A051_020_SB_TP_GLB.png
-    1081A051_020_SL_RT_GLB.png: workflows/media/googledrive/1081A051_020_SL_RT_GLB.png
-    1081A051_020_SR_LT_GLB.png: workflows/media/googledrive/1081A051_020_SR_LT_GLB.png
-    1081A051_020_SR_RT_GLB.png: workflows/media/googledrive/1081A051_020_SR_RT_GLB.png
-    24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf: workflows/media/googledrive/24AW
-      ASICS FTW LINESHEET - CPS - WRESTLING.pdf
-    All white prize ring.JPG: workflows/media/googledrive/All white prize ring.JPG
-    Asics Matflex 6 Shoes Catalog.pdf: workflows/media/googledrive/Asics Matflex 6
-      Shoes Catalog.pdf
-    Catalogue-PRIZERINGSports-2023.pdf: workflows/media/googledrive/Catalogue-PRIZERINGSports-2023.pdf
-    Copy of 1081A021_021_SB_BT_GLB.jpg: workflows/media/googledrive/Copy of 1081A021_021_SB_BT_GLB.jpg
-    Maroon Black Prize Ring.JPG: workflows/media/googledrive/Maroon Black Prize Ring.JPG
-    Professional SS 16oz Black Silver Prize Ring Gloves.JPG: workflows/media/googledrive/Professional
-      SS 16oz Black Silver Prize Ring Gloves.JPG
+    prize ring black nosebar.png: workflows/media/googledrive/prize ring black nosebar.png
     Sky Blue Handwraps Prize Ring.JPG: workflows/media/googledrive/Sky Blue Handwraps
       Prize Ring.JPG
-    blue white prize ring.JPG: workflows/media/googledrive/blue white prize ring.JPG
-    prize ring black nosebar.png: workflows/media/googledrive/prize ring black nosebar.png
+    1081A051_020_SB_BT_GLB.png: workflows/media/googledrive/1081A051_020_SB_BT_GLB.png
+    1081A051_001_SB_BK_GLB.png: workflows/media/googledrive/1081A051_001_SB_BK_GLB.png
+    1081A051_001_SB_TP_GLB.png: workflows/media/googledrive/1081A051_001_SB_TP_GLB.png
+    1081A051_020_SB_BK_GLB.png: workflows/media/googledrive/1081A051_020_SB_BK_GLB.png
+    1081A051_001_SB_BT_GLB.png: workflows/media/googledrive/1081A051_001_SB_BT_GLB.png
+    1081A051_020_SB_FR_GLB.png: workflows/media/googledrive/1081A051_020_SB_FR_GLB.png
+    1081A051_001_SR_RT_GLB.png: workflows/media/googledrive/1081A051_001_SR_RT_GLB.png
+    1081A051_020_SB_TP_GLB.png: workflows/media/googledrive/1081A051_020_SB_TP_GLB.png
+    1081A051_001_SL_RT_GLB.png: workflows/media/googledrive/1081A051_001_SL_RT_GLB.png
+    1081A051_001_SR_LT_GLB.png: workflows/media/googledrive/1081A051_001_SR_LT_GLB.png
+    1081A051_020_SR_LT_GLB.png: workflows/media/googledrive/1081A051_020_SR_LT_GLB.png
+    1081A051_001_SB_FL_GLB.png: workflows/media/googledrive/1081A051_001_SB_FL_GLB.png
+    1081A051_001_SB_FR_GLB.png: workflows/media/googledrive/1081A051_001_SB_FR_GLB.png
+    1081A051_020_SB_FL_GLB.png: workflows/media/googledrive/1081A051_020_SB_FL_GLB.png
+    1081A051_020_SR_RT_GLB.png: workflows/media/googledrive/1081A051_020_SR_RT_GLB.png
+    1081A051_020_SL_RT_GLB.png: workflows/media/googledrive/1081A051_020_SL_RT_GLB.png
+    24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf: workflows/media/googledrive/24AW
+      ASICS FTW LINESHEET - CPS - WRESTLING.pdf
+    Copy of 1081A021_021_SB_BT_GLB.jpg: workflows/media/googledrive/Copy of 1081A021_021_SB_BT_GLB.jpg
+    1081A021_001_SR_TP_GLB.jpg: workflows/media/googledrive/1081A021_001_SR_TP_GLB.jpg
+    1081A021_001_SR_RT_GLB.jpg: workflows/media/googledrive/1081A021_001_SR_RT_GLB.jpg
+    1081A021_001_SR_LT_GLB.jpg: workflows/media/googledrive/1081A021_001_SR_LT_GLB.jpg
+    1081A021_001_SR_FR_GLB.jpg: workflows/media/googledrive/1081A021_001_SR_FR_GLB.jpg
+    1081A021_001_SR_FL_GLB.jpg: workflows/media/googledrive/1081A021_001_SR_FL_GLB.jpg
+    1081A021_001_SR_BT_GLB.jpg: workflows/media/googledrive/1081A021_001_SR_BT_GLB.jpg
+    1081A021_001_SR_BK_GLB.jpg: workflows/media/googledrive/1081A021_001_SR_BK_GLB.jpg
+    1081A021_021_SR_RT_GLB.jpg: workflows/media/googledrive/1081A021_021_SR_RT_GLB.jpg
+    1081A021_021_SR_LT_GLB.jpg: workflows/media/googledrive/1081A021_021_SR_LT_GLB.jpg
+    1081A021_021_SB_TP_GLB.jpg: workflows/media/googledrive/1081A021_021_SB_TP_GLB.jpg
+    1081A021_021_SB_FR_GLB.jpg: workflows/media/googledrive/1081A021_021_SB_FR_GLB.jpg
+    1081A021_021_SB_FL_GLB.jpg: workflows/media/googledrive/1081A021_021_SB_FL_GLB.jpg
+    1081A021_021_SB_BT_GLB.jpg: workflows/media/googledrive/1081A021_021_SB_BT_GLB.jpg
+    1081A021_021_SB_BK_GLB.jpg: workflows/media/googledrive/1081A021_021_SB_BK_GLB.jpg
+    Asics Matflex 6 Shoes Catalog.pdf: workflows/media/googledrive/Asics Matflex 6
+      Shoes Catalog.pdf
     white blue red prize ring.JPG: workflows/media/googledrive/white blue red prize
       ring.JPG
+    blue white prize ring.JPG: workflows/media/googledrive/blue white prize ring.JPG
+    Maroon Black Prize Ring.JPG: workflows/media/googledrive/Maroon Black Prize Ring.JPG
+    All white prize ring.JPG: workflows/media/googledrive/All white prize ring.JPG
+    Professional SS 16oz Black Silver Prize Ring Gloves.JPG: workflows/media/googledrive/Professional
+      SS 16oz Black Silver Prize Ring Gloves.JPG
+    Catalogue-PRIZERINGSports-2023.pdf: workflows/media/googledrive/Catalogue-PRIZERINGSports-2023.pdf
   meta: A list of URL / ID Key Value pairs across all the trawlers, where it is stored
     locally (or online servers), and where on telegram
 Platforms:

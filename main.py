@@ -83,14 +83,16 @@ async def main(control, trawler, telegram_interface):
     # trawler is a periodic, completable cycle, whereas tele is a persistent, run till
     # updated or disconnected process
 
-    control.update(trawler)
-    with open(control_file, 'w') as file:
-        yaml.dump(control.logic, file)
 
     # initialise settings for telegram chat bot
     telegram_interface = tl.Tele(control.logic)
     await telegram_interface.BOTS['b2d'].start(bot_token=telegram_interface.APIS['b2d'])
-    await telegram_interface._Tele__uploadMedia(control.logic)
+
+    await control.update(trawler, telegram_interface)
+    with open(control_file, 'w') as file:
+        yaml.dump(control.logic, file, sort_keys=False)
+
+    # await telegram_interface._Tele__uploadMedia(control.logic)
     await run_uvicorn(app)
        
 

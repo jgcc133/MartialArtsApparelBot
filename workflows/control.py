@@ -24,7 +24,7 @@ class Control():
         except:
             ut.pLog(f"Unable to load control flow from {control_file}", p1=True)
 
-    def update(self, trawler):
+    async def update(self, trawler, tele):
         ut.pLog(f"Updating control with {list(trawler.trawlers.keys())}")
         try:
             tree = trawler.trawlers['GoogleDrive'].pointers
@@ -39,7 +39,8 @@ class Control():
             new_media = {}
 
             # update 'Product Enquiry' buttons
-            new_flow['Product Enquiry']['btn'] = sorted(list(tree.keys()))
+            new_flow['Product Enquiry']['btn'] = sorted(list(tree.keys())) + ['Back to Start']
+            
             categories = sorted(list(tree.keys()))
             products = sorted(list(bc['products'].keys()))
             variations = sorted(list(bc['variations'].keys()))
@@ -49,49 +50,47 @@ class Control():
             
             # Loop 1: Iterate over current_flow, if it is a category/ product/ variation and it is not in tree.keys(), remove it
             for key, callback in current_flow.items():
-                if callback['tag'] == 'category':
-                    if key not in categories:
-                        del new_flow[key]
-                    pass
-                elif callback['tag'] == 'product':
-                    if key not in products:
-                        del new_flow[key]
-                    pass
-                elif callback['tag'] == 'variation':
-                    if key not in variations:
-                        del new_flow[key]
-                    pass
-                else:
-
-                    pass
+                if callback:
+                    if callback['tag'] == 'category':
+                        if key not in categories: del new_flow[key]
+                    elif callback['tag'] == 'product':
+                        if key not in products: del new_flow[key]
+                    elif callback['tag'] == 'variation':
+                        if key not in variations: del new_flow[key]
+                    else:
+                        pass
 
             # Loop 2: Iterate over tree.keys(), add new category key
             for cat in categories:
-                if cat not in new_flow.keys():
-                    # add new callback
-                    new_flow[cat] = {'tag': 'category',
-                                     'msg': 'Which product would you like to explore?',
-                                     'btn': sorted(list(tree[cat]['products'].keys()))}
+                # add new callback
+                new_flow[cat] = {'tag': 'category',
+                                    'msg': 'Which product would you like to explore?',
+                                    'btn': sorted(list(tree[cat]['products'].keys()))
+                                    + ["Back to Categories"]}            
+            new_flow["Back to Categories"] = new_flow["Product Enquiry"]
+
             for prod in products:
-                if prod not in new_flow.keys():
-                    # add new callback
-                    cate = bc['products'][prod]['category']
-                    new_flow[prod] = {'tag': 'product',
-                                     'msg': 'Which variation would you like to explore?',
-                                     'btn': sorted(list(tree[cate]['products'][prod]['variations'].keys()))}
-            
+                # add new callback
+                cate = bc['products'][prod]['category']
+                new_flow[prod] = {'tag': 'product',
+                                    'msg': 'Which variation would you like to explore?',
+                                    'btn': sorted(list(tree[cate]['products'][prod]['variations'].keys()))
+                                    + [f"Back to {cate}"]}
+                new_flow[f"Back to {cate}"] = new_flow[cate]
+
             for vari in variations:
-                if vari not in new_flow.keys():
-                    # add new callback, that sends media, with 1 add to cart and 1 back button
-                    cate, prod = bc['variations'][vari]['category'], bc['variations'][vari]['product']
-                    new_flow[vari] = {'tag': 'variation',
-                                      'msg': cate + "\n" + vari,
-                                      'media': list(tree[cate]['products'][prod]['media'].keys())
-                                                     + list(tree[cate]['products'][prod]['variations'][vari]['media'].keys()),
-                                      'btn': ['Add to Cart', 'Back']}
+                # add new callback, that sends media, with 1 add to cart and 1 back button
+                cate, prod = bc['variations'][vari]['category'], bc['variations'][vari]['product']
+                new_flow[vari] = {'tag': 'variation',
+                                    'msg': cate + "\n" + vari,
+                                    'media': list(tree[cate]['products'][prod]['media'].keys())
+                                                    + list(tree[cate]['products'][prod]['variations'][vari]['media'].keys()),
+                                    'btn': ['Add to Cart', f"Back to {prod}"]}
+                new_flow[f"Back to {prod}"] = new_flow[prod]
                     
             # Loop 3: Iterate over media, and consolidate into new_meda
-            # await tele._Tele__uploadMedia(self.logic)
+            ut.pLog(f"Uploading Media from Google Drive to Tele")
+            await tele.update(self.logic)
             for name, media in trawler.trawlers['GoogleDrive'].mediaList.items():
                 new_media[name] = media['storage']
         except:

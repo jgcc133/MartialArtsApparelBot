@@ -1,11 +1,8 @@
-[ 2024-04-22 11:24:17.075786 | 1 | system ] : 	 Control has been loaded from user/control.yml
-[ 2024-04-22 11:24:17.220791 | 1 | system ] : 	 Credentials for GoogleDrive successfully set.
-[ 2024-04-22 11:24:17.222786 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
-[ 2024-04-22 11:24:27.001890 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
-[ 2024-04-22 11:24:27.002941 | 1 | system ] : 	 Trawler created: GoogleDrive for Martial Arts Apparel.
-[ 2024-04-22 11:24:27.080893 | 1 | system ] : 	 Authentication for Telegram Complete.
-[ 2024-04-22 11:24:27.083908 | 1 | system ] : 	 Telegram Chat Bot Logic Flow Created!
-[ 2024-04-22 11:24:27.084891 | 1 | system ] : 	 Telegram Chat Bot Media Uploaded!
-[ 2024-04-22 11:41:26.837482 | 63144080 | Jon Chow ] : 	 Clicked on [Back] button that has not been added to the Config list.
-[ 2024-04-22 11:41:46.747021 | 63144080 | Jon Chow ] : 	 Clicked on [Back] button that has not been added to the Config list.
-[ 2024-04-22 11:42:05.238872 | 63144080 | Jon Chow ] : 	 Clicked on [Back] button that has not been added to the Config list.
+[ 2024-04-22 18:30:36.667552 | 1 | system ] : 	 Control has been loaded from user/control.yml
+[ 2024-04-22 18:30:36.858301 | 1 | system ] : 	 Credentials for GoogleDrive successfully set.
+[ 2024-04-22 18:30:36.859810 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
+[ 2024-04-22 18:31:05.051517 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
+[ 2024-04-22 18:31:05.053516 | 1 | system ] : 	 Trawler created: GoogleDrive for Martial Arts Apparel.
+[ 2024-04-22 18:31:05.141894 | 1 | system ] : 	 Authentication for Telegram Complete.
+[ 2024-04-22 18:31:05.150900 | 1 | system ] : 	 Telegram Chat Bot Logic Flow Created!
+[ 2024-04-22 18:34:25.369872 | 1 | system ] : 	 Telegram Chat Bot Media Uploaded!

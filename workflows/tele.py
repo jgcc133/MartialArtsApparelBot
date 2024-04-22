@@ -17,7 +17,7 @@ class Tele:
         self.__target_coro = {}
 
         self.getKeys(control)
-        self.createBots(control)
+        self.createBots()
         pass
     """
     async def start(self):
@@ -69,7 +69,7 @@ class Tele:
         except:
             ut.pLog("Failed to load Authentication for Telegram.", p1=True)
 
-    def createBots(self, control):
+    def createBots(self):
         '''
         Creates a Telegram Bot based on API key provided in the environment variables
         Calls addB2DHandlers based on B2DFlow in control.yml
@@ -88,12 +88,18 @@ class Tele:
                         self.AUTH["AUTH_TELE_APP_ID"],
                         self.AUTH["AUTH_TELE_APP_HASH"]
                         )
-                    self.addB2DHandlers(control, Client)
-                    ut.pLog("Telegram Chat Bot Logic Flow Created!", p1=True)      
-                    ut.pLog("Telegram Chat Bot Media Uploaded!", p1=True)
+                    # self.addB2DHandlers(control, Client)
+                    ut.pLog("Telegram Chat Bot Logic Flow Created!", p1=True)
                     self.BOTS[api_k] = Client
+            return Client
         except:
-            ut.pLog("Failed to add handlers")
+            ut.pLog("Failed to create bots")
+
+    async def update(self, control):
+        
+        self.__addB2DHandlers(control)
+        await self.__uploadMedia(control)
+
 
     async def __uploadMedia(self, control):
         Client = self.BOTS['b2d']
@@ -101,26 +107,23 @@ class Tele:
         media_prefix = control['Source']['data']['GoogleDrive']['storage']
         for file_name in media_list.keys():
             # For dev: TODO - remove this limiter of 4 files (2 photos, 2 pdfs)
-            # if file_name in ["1081A051_020_SB_BT_GLB.png",
-            #                  "1081A051_001_SB_BK_GLB.png",
-            #                  "24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf",
-            #                  "Catalogue-PRIZERINGSports-2023.pdf"]:
+            if file_name in ["1081A051_020_SB_BT_GLB.png"]:
 
-            with open(media_prefix + file_name, "rb") as media:
-                self.__target_coro[file_name]= await Client.send_file(
-                    entity = 63144080,
-                    file=media,
-                    file_name=file_name,
-                    )
-            # And remove indentation of with block and await block as well
+                with open(media_prefix + file_name, "rb") as media:
+                    self.__target_coro[file_name]= await Client.send_file(
+                        entity = 63144080,
+                        file=media,
+                        file_name=file_name,
+                        )
+            # TODO And remove indentation of with block and await block as well
             
-            await Client.send_message(
-                            entity=63144080,
-                            message=f"[File {len(self.__target_coro)} out of {len(media_list.keys())}] {file_name} uploaded!")
+                await Client.send_message(
+                                entity=63144080,
+                                message=f"[File {len(self.__target_coro)} out of {len(media_list.keys())}] {file_name} uploaded!")
                             
-        pass
+        ut.pLog("Telegram Chat Bot Media Uploaded!", p1=True)
         
-    def addB2DHandlers(self, control, Client) -> None:
+    def __addB2DHandlers(self, control) -> None:
         '''
         Adds callback handlers (for buttons) and commands (for shortcut commands)
         to one individual Telegram Bot. Logs as event.newMessage. Default category is a
@@ -135,7 +138,7 @@ class Tele:
         Commands = control["B2DFlow"]["data"]["commands"]
         Callbacks = control["B2DFlow"]["data"]["callbacks"]
         Default = control["B2DFlow"]["data"]["default"]
-        # Client = Client
+        Client = self.BOTS["b2d"]
         
         try:        
             @Client.on(events.NewMessage())
@@ -190,13 +193,10 @@ class Tele:
                             
                             # Paired with setup: first upload all files in setup and store ID of each of the media file in
                             # trawler.Trawler.mediaList, then retrieve here accordingly
-                            ut.pLog(f"Sending Media for {data} to {chat_id}")
-
-                            media_file_names = Callbacks[data]['media']
-                            # media_file_names = ["1081A051_020_SB_BT_GLB.png",
-                            #  "1081A051_001_SB_BK_GLB.png",
-                            #  "24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf",
-                            #  "Catalogue-PRIZERINGSports-2023.pdf"]
+                            ut.pLog(f"Sending Media for [{data}] to user", chat_id, chat_username)
+                            # TODO swap back the declaration of media_file_names
+                            # media_file_names = Callbacks[data]['media']
+                            media_file_names = ["1081A051_020_SB_BT_GLB.png"]
                             
                             photo_coros = [self.__target_coro[key] for key in media_file_names if key[-4:] != '.pdf']
                             pdf_coros = [self.__target_coro[key] for key in media_file_names if key[-4:] == '.pdf']
@@ -226,8 +226,7 @@ class Tele:
                                     message=Callbacks[data]["msg"],
                                     buttons=buttons
                                 )
-
-                            ut.pLog(f"Sent media of {data} to {chat_id}.")
+                            ut.pLog(f"Sent media of [{data}] to user", chat_id, chat_username)
 
                         else:                                
                             # Send message based on control flow
