@@ -90,6 +90,7 @@ async def main(control, trawler, telegram_interface):
     # initialise settings for telegram chat bot
     telegram_interface = tl.Tele(control.logic)
     await telegram_interface.BOTS['b2d'].start(bot_token=telegram_interface.APIS['b2d'])
+    await telegram_interface._Tele__uploadMedia(control.logic)
     await run_uvicorn(app)
        
 
@@ -108,11 +109,10 @@ async def run_uvicorn(app, host='127.0.0.1', port=8000):
 
 async def tasks():
     await asyncio.gather(
-        await main(control=control,
+        main(control=control,
                    trawler=trawler,
                    telegram_interface=telegram_interface)
-        # await telegram_interface.BOTS['b2d'].run_until_disconnected()
-                     )
+        )
 
 if __name__=="__main__":
     asyncio.run(tasks())

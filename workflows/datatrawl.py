@@ -181,7 +181,7 @@ class Trawler:
             service = self.drive_client
             cat_query = f"('{self.driveId}' in parents) and (trashed = false)"
             ut.pLog(f"Querying {self.trawl_for} with \t {cat_query}", p1=True)
-            fields = 'nextPageToken, files(id, name, capabilities(canListChildren))'
+            fields = 'nextPageToken, files(id, name, webContentLink, capabilities(canListChildren))'
             cat_response = service.files().list(q=cat_query,fields=fields).execute()
             
             # Iterate Category
@@ -234,12 +234,16 @@ class Trawler:
                                         file_name = file.get('name')
                                         # deal with as variation photo, record tag ID if name contains tag and media if otherwhise
                                         self.pointers[cat_name]["products"][pro_name]["variations"][var_name]["media"][file_name] = file_id
-                                        self.mediaList[file_id] = self._media_storage_location + file_name
+                                        self.mediaList[file_name] = {'storage': self._media_storage_location + file_name,
+                                                                     'googleID': file_id,
+                                                                     'googleURL': file.get('webContentLink')}
                                         if download_media: self.__download(file)
                                 else:
                                     #  Assume Product Media File, add to product media dict
                                     self.pointers[cat_name]["products"][pro_name]["media"][var_name] = var_id
-                                    self.mediaList[var_id] = self._media_storage_location + var_name
+                                    self.mediaList[var_name] = {'storage': self._media_storage_location + var_name,
+                                                                     'googleID': var_id,
+                                                                     'googleURL': var.get('webContentLink')}
                                     if download_media: self.__download(var)
             ut.logObj(self.pointers, name= f"{self.trawl_for} Pointers")
             ut.logObj(self.mediaList, name=f"{self.trawl_for} Media List")

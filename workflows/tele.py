@@ -14,10 +14,12 @@ class Tele:
         self.AUTH = {}
         self.APIS = {}
         self.BOTS = {}
+        self.__target_coro = {}
 
         self.getKeys(control)
         self.createBots(control)
-
+        pass
+    """
     async def start(self):
         '''
         Starts the various telegram bots within self.BOTS
@@ -32,6 +34,7 @@ class Tele:
         except:
             ut.pLog("Telegram Chat Bot failed to start", p1=True)
 
+    
     async def stop(self):
         '''
         Stops the various telegram bots within self.BOTS
@@ -43,6 +46,7 @@ class Tele:
                     await client.disconnect()
         except:
             ut.pLog("Telegram Chat Bot failed to stop", p1=True)
+    """
     
     def getKeys(self, control) -> None:
         '''
@@ -85,11 +89,37 @@ class Tele:
                         self.AUTH["AUTH_TELE_APP_HASH"]
                         )
                     self.addB2DHandlers(control, Client)
-                    ut.pLog("Telegram Chat Bot Logic Flow Created!", p1=True)
+                    ut.pLog("Telegram Chat Bot Logic Flow Created!", p1=True)      
+                    ut.pLog("Telegram Chat Bot Media Uploaded!", p1=True)
                     self.BOTS[api_k] = Client
         except:
             ut.pLog("Failed to add handlers")
 
+    async def __uploadMedia(self, control):
+        Client = self.BOTS['b2d']
+        media_list = control['MediaList']['data']
+        media_prefix = control['Source']['data']['GoogleDrive']['storage']
+        for file_name in media_list.keys():
+            # For dev: TODO - remove this limiter of 4 files (2 photos, 2 pdfs)
+            # if file_name in ["1081A051_020_SB_BT_GLB.png",
+            #                  "1081A051_001_SB_BK_GLB.png",
+            #                  "24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf",
+            #                  "Catalogue-PRIZERINGSports-2023.pdf"]:
+
+            with open(media_prefix + file_name, "rb") as media:
+                self.__target_coro[file_name]= await Client.send_file(
+                    entity = 63144080,
+                    file=media,
+                    file_name=file_name,
+                    )
+            # And remove indentation of with block and await block as well
+            
+            await Client.send_message(
+                            entity=63144080,
+                            message=f"[File {len(self.__target_coro)} out of {len(media_list.keys())}] {file_name} uploaded!")
+                            
+        pass
+        
     def addB2DHandlers(self, control, Client) -> None:
         '''
         Adds callback handlers (for buttons) and commands (for shortcut commands)
@@ -105,7 +135,7 @@ class Tele:
         Commands = control["B2DFlow"]["data"]["commands"]
         Callbacks = control["B2DFlow"]["data"]["callbacks"]
         Default = control["B2DFlow"]["data"]["default"]
-        Client = Client
+        # Client = Client
         
         try:        
             @Client.on(events.NewMessage())
@@ -152,12 +182,60 @@ class Tele:
                 
                 if data in Callbacks.keys():
                     try:
-                        # Send message based on control flow
-                        buttons = None if len(Callbacks[data]["btn"]) == 0 else self.beauButtons(Callbacks[data]["btn"]) 
-                        await Client.send_message(
-                            entity=chat_id,
-                            message=Callbacks[data]["msg"],
-                            buttons=buttons)
+                        if Callbacks[data]['tag'] == 'variation':
+                            buttons = None if len(Callbacks[data]["btn"]) == 0 else self.beauButtons(Callbacks[data]["btn"]) 
+                            await Client.send_message(
+                                entity=chat_id,
+                                message='Please wait while we retrieve the product images...')
+                            
+                            # Paired with setup: first upload all files in setup and store ID of each of the media file in
+                            # trawler.Trawler.mediaList, then retrieve here accordingly
+                            ut.pLog(f"Sending Media for {data} to {chat_id}")
+
+                            media_file_names = Callbacks[data]['media']
+                            # media_file_names = ["1081A051_020_SB_BT_GLB.png",
+                            #  "1081A051_001_SB_BK_GLB.png",
+                            #  "24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf",
+                            #  "Catalogue-PRIZERINGSports-2023.pdf"]
+                            
+                            photo_coros = [self.__target_coro[key] for key in media_file_names if key[-4:] != '.pdf']
+                            pdf_coros = [self.__target_coro[key] for key in media_file_names if key[-4:] == '.pdf']
+                                                        
+                            if len(photo_coros) > 0 :
+                                await Client.send_file(
+                                    entity=chat_id,
+                                    file=photo_coros,
+                                    caption=Callbacks[data]['msg']
+                                )
+                            if len(pdf_coros) > 0:
+                                await Client.send_file(
+                                    entity=chat_id,
+                                    file=pdf_coros
+                                )
+
+                            if len(photo_coros) > 0 or len(pdf_coros) > 0:
+                                # If any media or file has been sent at all
+                                await Client.send_message(
+                                    entity=chat_id,
+                                    message=Callbacks[data]["msg"],
+                                    buttons=buttons
+                                )
+                            else:
+                                await Client.send_message(
+                                    entity=chat_id,
+                                    message=Callbacks[data]["msg"],
+                                    buttons=buttons
+                                )
+
+                            ut.pLog(f"Sent media of {data} to {chat_id}.")
+
+                        else:                                
+                            # Send message based on control flow
+                            buttons = None if len(Callbacks[data]["btn"]) == 0 else self.beauButtons(Callbacks[data]["btn"]) 
+                            await Client.send_message(
+                                entity=chat_id,
+                                message=Callbacks[data]["msg"],
+                                buttons=buttons)
                         ut.pLog(f"Sent [{data}] message to user", chat_id, chat_username)
 
                         # Append response and clear buttons

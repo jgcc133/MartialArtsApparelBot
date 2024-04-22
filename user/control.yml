@@ -57,11 +57,51 @@ B2DFlow:
         btn: *id001
         msg: What services would you like to take a look at?
         tag: service
+      Black:
+        btn:
+        - Add to Cart
+        - Back
+        media:
+        - 24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf
+        msg: Black
+        tag: variation
+      Black Silver:
+        btn:
+        - Add to Cart
+        - Back
+        media:
+        - Copy of 1081A021_021_SB_BT_GLB.jpg
+        - Asics Matflex 6 Shoes Catalog.pdf
+        - 1081A021_001_SR_TP_GLB.jpg
+        - 1081A021_001_SR_RT_GLB.jpg
+        - 1081A021_001_SR_LT_GLB.jpg
+        - 1081A021_001_SR_FR_GLB.jpg
+        - 1081A021_001_SR_FL_GLB.jpg
+        - 1081A021_001_SR_BT_GLB.jpg
+        - 1081A021_001_SR_BK_GLB.jpg
+        msg: Black Silver
+        tag: variation
       Boxing Gloves:
         btn:
         - Prize Ring Boxing Gloves
         msg: Which product would you like to explore?
         tag: category
+      Frost Gold:
+        btn:
+        - Add to Cart
+        - Back
+        media:
+        - Copy of 1081A021_021_SB_BT_GLB.jpg
+        - Asics Matflex 6 Shoes Catalog.pdf
+        - 1081A021_021_SR_RT_GLB.jpg
+        - 1081A021_021_SR_LT_GLB.jpg
+        - 1081A021_021_SB_TP_GLB.jpg
+        - 1081A021_021_SB_FR_GLB.jpg
+        - 1081A021_021_SB_FL_GLB.jpg
+        - 1081A021_021_SB_BT_GLB.jpg
+        - 1081A021_021_SB_BK_GLB.jpg
+        msg: Frost Gold
+        tag: variation
       Handwraps:
         btn:
         - Prize Ring
@@ -102,6 +142,14 @@ B2DFlow:
         btn: []
         msg: Which variation would you like to explore?
         tag: product
+      Pro Training Velcro (Blue Silver):
+        btn:
+        - Add to Cart
+        - Back
+        media:
+        - Catalogue-PRIZERINGSports-2023.pdf
+        msg: Pro Training Velcro (Blue Silver)
+        tag: variation
       Product Enquiry:
         btn:
         - Boxing Gloves
@@ -111,16 +159,109 @@ B2DFlow:
         - Sweat Pants
         msg: Which areas of products would you like to look at today?
         tag: service
+      Prof SS Boxing Gloves Soft Type (All White):
+        btn:
+        - Add to Cart
+        - Back
+        media:
+        - Catalogue-PRIZERINGSports-2023.pdf
+        - All white prize ring.JPG
+        msg: Prof SS Boxing Gloves Soft Type (All White)
+        tag: variation
+      Prof SS Boxing Gloves Soft Type (Black Silver):
+        btn:
+        - Add to Cart
+        - Back
+        media:
+        - Catalogue-PRIZERINGSports-2023.pdf
+        - Professional SS 16oz Black Silver Prize Ring Gloves.JPG
+        msg: Prof SS Boxing Gloves Soft Type (Black Silver)
+        tag: variation
+      Prof. 5.0 (Black Orange):
+        btn:
+        - Add to Cart
+        - Back
+        media:
+        - Catalogue-PRIZERINGSports-2023.pdf
+        msg: Prof. 5.0 (Black Orange)
+        tag: variation
+      Prof. 5.0 (Blue White):
+        btn:
+        - Add to Cart
+        - Back
+        media:
+        - Catalogue-PRIZERINGSports-2023.pdf
+        - blue white prize ring.JPG
+        msg: Prof. 5.0 (Blue White)
+        tag: variation
+      Prof. 5.0 (Maroon Black Piping):
+        btn:
+        - Add to Cart
+        - Back
+        media:
+        - Catalogue-PRIZERINGSports-2023.pdf
+        - Maroon Black Prize Ring.JPG
+        msg: Prof. 5.0 (Maroon Black Piping)
+        tag: variation
+      Prof. 5.0 (White Blue Red):
+        btn:
+        - Add to Cart
+        - Back
+        media:
+        - Catalogue-PRIZERINGSports-2023.pdf
+        - white blue red prize ring.JPG
+        msg: Prof. 5.0 (White Blue Red)
+        tag: variation
       Shoes:
         btn:
         - Asics Matflex 6 Shoes
         - Asics Matflex 7 Shoes
         msg: Which product would you like to explore?
         tag: category
+      Sky Blue Handwraps:
+        btn:
+        - Add to Cart
+        - Back
+        media:
+        - Sky Blue Handwraps Prize Ring.JPG
+        msg: Sky Blue Handwraps
+        tag: variation
       Sweat Pants:
         btn: []
         msg: Which product would you like to explore?
         tag: category
+      White:
+        btn:
+        - Add to Cart
+        - Back
+        media:
+        - 24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf
+        msg: White
+        tag: variation
+      items_approved_photo_global_2023_2_asics_footwear:
+        btn:
+        - Add to Cart
+        - Back
+        media:
+        - 24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf
+        - 1081A051_020_SB_BT_GLB.png
+        - 1081A051_001_SB_BK_GLB.png
+        - 1081A051_001_SB_TP_GLB.png
+        - 1081A051_020_SB_BK_GLB.png
+        - 1081A051_001_SB_BT_GLB.png
+        - 1081A051_020_SB_FR_GLB.png
+        - 1081A051_001_SR_RT_GLB.png
+        - 1081A051_020_SB_TP_GLB.png
+        - 1081A051_001_SL_RT_GLB.png
+        - 1081A051_001_SR_LT_GLB.png
+        - 1081A051_020_SR_LT_GLB.png
+        - 1081A051_001_SB_FL_GLB.png
+        - 1081A051_001_SB_FR_GLB.png
+        - 1081A051_020_SB_FL_GLB.png
+        - 1081A051_020_SR_RT_GLB.png
+        - 1081A051_020_SL_RT_GLB.png
+        msg: items_approved_photo_global_2023_2_asics_footwear
+        tag: variation
     commands:
       /call:
         btn:
@@ -147,6 +288,56 @@ B2DFlow:
   meta: Control Flow config for ControlEngine to read in and generate a list of handlers
     and callbackquery
 ID: Martial Arts Apparel
+MediaList:
+  data:
+    1081A021_001_SR_BK_GLB.jpg: workflows/media/googledrive/1081A021_001_SR_BK_GLB.jpg
+    1081A021_001_SR_BT_GLB.jpg: workflows/media/googledrive/1081A021_001_SR_BT_GLB.jpg
+    1081A021_001_SR_FL_GLB.jpg: workflows/media/googledrive/1081A021_001_SR_FL_GLB.jpg
+    1081A021_001_SR_FR_GLB.jpg: workflows/media/googledrive/1081A021_001_SR_FR_GLB.jpg
+    1081A021_001_SR_LT_GLB.jpg: workflows/media/googledrive/1081A021_001_SR_LT_GLB.jpg
+    1081A021_001_SR_RT_GLB.jpg: workflows/media/googledrive/1081A021_001_SR_RT_GLB.jpg
+    1081A021_001_SR_TP_GLB.jpg: workflows/media/googledrive/1081A021_001_SR_TP_GLB.jpg
+    1081A021_021_SB_BK_GLB.jpg: workflows/media/googledrive/1081A021_021_SB_BK_GLB.jpg
+    1081A021_021_SB_BT_GLB.jpg: workflows/media/googledrive/1081A021_021_SB_BT_GLB.jpg
+    1081A021_021_SB_FL_GLB.jpg: workflows/media/googledrive/1081A021_021_SB_FL_GLB.jpg
+    1081A021_021_SB_FR_GLB.jpg: workflows/media/googledrive/1081A021_021_SB_FR_GLB.jpg
+    1081A021_021_SB_TP_GLB.jpg: workflows/media/googledrive/1081A021_021_SB_TP_GLB.jpg
+    1081A021_021_SR_LT_GLB.jpg: workflows/media/googledrive/1081A021_021_SR_LT_GLB.jpg
+    1081A021_021_SR_RT_GLB.jpg: workflows/media/googledrive/1081A021_021_SR_RT_GLB.jpg
+    1081A051_001_SB_BK_GLB.png: workflows/media/googledrive/1081A051_001_SB_BK_GLB.png
+    1081A051_001_SB_BT_GLB.png: workflows/media/googledrive/1081A051_001_SB_BT_GLB.png
+    1081A051_001_SB_FL_GLB.png: workflows/media/googledrive/1081A051_001_SB_FL_GLB.png
+    1081A051_001_SB_FR_GLB.png: workflows/media/googledrive/1081A051_001_SB_FR_GLB.png
+    1081A051_001_SB_TP_GLB.png: workflows/media/googledrive/1081A051_001_SB_TP_GLB.png
+    1081A051_001_SL_RT_GLB.png: workflows/media/googledrive/1081A051_001_SL_RT_GLB.png
+    1081A051_001_SR_LT_GLB.png: workflows/media/googledrive/1081A051_001_SR_LT_GLB.png
+    1081A051_001_SR_RT_GLB.png: workflows/media/googledrive/1081A051_001_SR_RT_GLB.png
+    1081A051_020_SB_BK_GLB.png: workflows/media/googledrive/1081A051_020_SB_BK_GLB.png
+    1081A051_020_SB_BT_GLB.png: workflows/media/googledrive/1081A051_020_SB_BT_GLB.png
+    1081A051_020_SB_FL_GLB.png: workflows/media/googledrive/1081A051_020_SB_FL_GLB.png
+    1081A051_020_SB_FR_GLB.png: workflows/media/googledrive/1081A051_020_SB_FR_GLB.png
+    1081A051_020_SB_TP_GLB.png: workflows/media/googledrive/1081A051_020_SB_TP_GLB.png
+    1081A051_020_SL_RT_GLB.png: workflows/media/googledrive/1081A051_020_SL_RT_GLB.png
+    1081A051_020_SR_LT_GLB.png: workflows/media/googledrive/1081A051_020_SR_LT_GLB.png
+    1081A051_020_SR_RT_GLB.png: workflows/media/googledrive/1081A051_020_SR_RT_GLB.png
+    24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf: workflows/media/googledrive/24AW
+      ASICS FTW LINESHEET - CPS - WRESTLING.pdf
+    All white prize ring.JPG: workflows/media/googledrive/All white prize ring.JPG
+    Asics Matflex 6 Shoes Catalog.pdf: workflows/media/googledrive/Asics Matflex 6
+      Shoes Catalog.pdf
+    Catalogue-PRIZERINGSports-2023.pdf: workflows/media/googledrive/Catalogue-PRIZERINGSports-2023.pdf
+    Copy of 1081A021_021_SB_BT_GLB.jpg: workflows/media/googledrive/Copy of 1081A021_021_SB_BT_GLB.jpg
+    Maroon Black Prize Ring.JPG: workflows/media/googledrive/Maroon Black Prize Ring.JPG
+    Professional SS 16oz Black Silver Prize Ring Gloves.JPG: workflows/media/googledrive/Professional
+      SS 16oz Black Silver Prize Ring Gloves.JPG
+    Sky Blue Handwraps Prize Ring.JPG: workflows/media/googledrive/Sky Blue Handwraps
+      Prize Ring.JPG
+    blue white prize ring.JPG: workflows/media/googledrive/blue white prize ring.JPG
+    prize ring black nosebar.png: workflows/media/googledrive/prize ring black nosebar.png
+    white blue red prize ring.JPG: workflows/media/googledrive/white blue red prize
+      ring.JPG
+  meta: A list of URL / ID Key Value pairs across all the trawlers, where it is stored
+    locally (or online servers), and where on telegram
 Platforms:
   data:
   - tele

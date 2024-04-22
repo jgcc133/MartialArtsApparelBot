@@ -36,6 +36,7 @@ class Control():
 
             current_flow = self.logic['B2DFlow']['data']['callbacks']
             new_flow = current_flow.copy()
+            new_media = {}
 
             # update 'Product Enquiry' buttons
             new_flow['Product Enquiry']['btn'] = sorted(list(tree.keys()))
@@ -79,11 +80,23 @@ class Control():
                                      'msg': 'Which variation would you like to explore?',
                                      'btn': sorted(list(tree[cate]['products'][prod]['variations'].keys()))}
             
-            # TODO: add in variations
-            
-            print(len(new_flow))
-
+            for vari in variations:
+                if vari not in new_flow.keys():
+                    # add new callback, that sends media, with 1 add to cart and 1 back button
+                    cate, prod = bc['variations'][vari]['category'], bc['variations'][vari]['product']
+                    new_flow[vari] = {'tag': 'variation',
+                                      'msg': cate + "\n" + vari,
+                                      'media': list(tree[cate]['products'][prod]['media'].keys())
+                                                     + list(tree[cate]['products'][prod]['variations'][vari]['media'].keys()),
+                                      'btn': ['Add to Cart', 'Back']}
+                    
+            # Loop 3: Iterate over media, and consolidate into new_meda
+            # await tele._Tele__uploadMedia(self.logic)
+            for name, media in trawler.trawlers['GoogleDrive'].mediaList.items():
+                new_media[name] = media['storage']
         except:
             raise ValueError(f"Unable to update control")
         self.logic['B2DFlow']['data']['callbacks'] = new_flow
+        self.logic['MediaList']['data'] = new_media
+
         return self.logic

@@ -1,6 +1,6 @@
 {
   "Control": {
-    "Time": "2024-04-18 11:25:04.969028",
+    "Time": "2024-04-22 11:24:17.077786",
     "Data": {
       "Auth": {
         "data": {
@@ -84,12 +84,61 @@
               "msg": "What services would you like to take a look at?",
               "tag": "service"
             },
+            "Black": {
+              "btn": [
+                "Add to Cart",
+                "Back"
+              ],
+              "media": [
+                "24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf"
+              ],
+              "msg": "Black",
+              "tag": "variation"
+            },
+            "Black Silver": {
+              "btn": [
+                "Add to Cart",
+                "Back"
+              ],
+              "media": [
+                "Copy of 1081A021_021_SB_BT_GLB.jpg",
+                "Asics Matflex 6 Shoes Catalog.pdf",
+                "1081A021_001_SR_TP_GLB.jpg",
+                "1081A021_001_SR_RT_GLB.jpg",
+                "1081A021_001_SR_LT_GLB.jpg",
+                "1081A021_001_SR_FR_GLB.jpg",
+                "1081A021_001_SR_FL_GLB.jpg",
+                "1081A021_001_SR_BT_GLB.jpg",
+                "1081A021_001_SR_BK_GLB.jpg"
+              ],
+              "msg": "Black Silver",
+              "tag": "variation"
+            },
             "Boxing Gloves": {
               "btn": [
                 "Prize Ring Boxing Gloves"
               ],
               "msg": "Which product would you like to explore?",
               "tag": "category"
+            },
+            "Frost Gold": {
+              "btn": [
+                "Add to Cart",
+                "Back"
+              ],
+              "media": [
+                "Copy of 1081A021_021_SB_BT_GLB.jpg",
+                "Asics Matflex 6 Shoes Catalog.pdf",
+                "1081A021_021_SR_RT_GLB.jpg",
+                "1081A021_021_SR_LT_GLB.jpg",
+                "1081A021_021_SB_TP_GLB.jpg",
+                "1081A021_021_SB_FR_GLB.jpg",
+                "1081A021_021_SB_FL_GLB.jpg",
+                "1081A021_021_SB_BT_GLB.jpg",
+                "1081A021_021_SB_BK_GLB.jpg"
+              ],
+              "msg": "Frost Gold",
+              "tag": "variation"
             },
             "Handwraps": {
               "btn": [
@@ -143,6 +192,17 @@
               "msg": "Which variation would you like to explore?",
               "tag": "product"
             },
+            "Pro Training Velcro (Blue Silver)": {
+              "btn": [
+                "Add to Cart",
+                "Back"
+              ],
+              "media": [
+                "Catalogue-PRIZERINGSports-2023.pdf"
+              ],
+              "msg": "Pro Training Velcro (Blue Silver)",
+              "tag": "variation"
+            },
             "Product Enquiry": {
               "btn": [
                 "Boxing Gloves",
@@ -154,6 +214,77 @@
               "msg": "Which areas of products would you like to look at today?",
               "tag": "service"
             },
+            "Prof SS Boxing Gloves Soft Type (All White)": {
+              "btn": [
+                "Add to Cart",
+                "Back"
+              ],
+              "media": [
+                "Catalogue-PRIZERINGSports-2023.pdf",
+                "All white prize ring.JPG"
+              ],
+              "msg": "Prof SS Boxing Gloves Soft Type (All White)",
+              "tag": "variation"
+            },
+            "Prof SS Boxing Gloves Soft Type (Black Silver)": {
+              "btn": [
+                "Add to Cart",
+                "Back"
+              ],
+              "media": [
+                "Catalogue-PRIZERINGSports-2023.pdf",
+                "Professional SS 16oz Black Silver Prize Ring Gloves.JPG"
+              ],
+              "msg": "Prof SS Boxing Gloves Soft Type (Black Silver)",
+              "tag": "variation"
+            },
+            "Prof. 5.0 (Black Orange)": {
+              "btn": [
+                "Add to Cart",
+                "Back"
+              ],
+              "media": [
+                "Catalogue-PRIZERINGSports-2023.pdf"
+              ],
+              "msg": "Prof. 5.0 (Black Orange)",
+              "tag": "variation"
+            },
+            "Prof. 5.0 (Blue White)": {
+              "btn": [
+                "Add to Cart",
+                "Back"
+              ],
+              "media": [
+                "Catalogue-PRIZERINGSports-2023.pdf",
+                "blue white prize ring.JPG"
+              ],
+              "msg": "Prof. 5.0 (Blue White)",
+              "tag": "variation"
+            },
+            "Prof. 5.0 (Maroon Black Piping)": {
+              "btn": [
+                "Add to Cart",
+                "Back"
+              ],
+              "media": [
+                "Catalogue-PRIZERINGSports-2023.pdf",
+                "Maroon Black Prize Ring.JPG"
+              ],
+              "msg": "Prof. 5.0 (Maroon Black Piping)",
+              "tag": "variation"
+            },
+            "Prof. 5.0 (White Blue Red)": {
+              "btn": [
+                "Add to Cart",
+                "Back"
+              ],
+              "media": [
+                "Catalogue-PRIZERINGSports-2023.pdf",
+                "white blue red prize ring.JPG"
+              ],
+              "msg": "Prof. 5.0 (White Blue Red)",
+              "tag": "variation"
+            },
             "Shoes": {
               "btn": [
                 "Asics Matflex 6 Shoes",
@@ -162,10 +293,59 @@
               "msg": "Which product would you like to explore?",
               "tag": "category"
             },
+            "Sky Blue Handwraps": {
+              "btn": [
+                "Add to Cart",
+                "Back"
+              ],
+              "media": [
+                "Sky Blue Handwraps Prize Ring.JPG"
+              ],
+              "msg": "Sky Blue Handwraps",
+              "tag": "variation"
+            },
             "Sweat Pants": {
               "btn": [],
               "msg": "Which product would you like to explore?",
               "tag": "category"
+            },
+            "White": {
+              "btn": [
+                "Add to Cart",
+                "Back"
+              ],
+              "media": [
+                "24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf"
+              ],
+              "msg": "White",
+              "tag": "variation"
+            },
+            "items_approved_photo_global_2023_2_asics_footwear": {
+              "btn": [
+                "Add to Cart",
+                "Back"
+              ],
+              "media": [
+                "24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf",
+                "1081A051_020_SB_BT_GLB.png",
+                "1081A051_001_SB_BK_GLB.png",
+                "1081A051_001_SB_TP_GLB.png",
+                "1081A051_020_SB_BK_GLB.png",
+                "1081A051_001_SB_BT_GLB.png",
+                "1081A051_020_SB_FR_GLB.png",
+                "1081A051_001_SR_RT_GLB.png",
+                "1081A051_020_SB_TP_GLB.png",
+                "1081A051_001_SL_RT_GLB.png",
+                "1081A051_001_SR_LT_GLB.png",
+                "1081A051_020_SR_LT_GLB.png",
+                "1081A051_001_SB_FL_GLB.png",
+                "1081A051_001_SB_FR_GLB.png",
+                "1081A051_020_SB_FL_GLB.png",
+                "1081A051_020_SR_RT_GLB.png",
+                "1081A051_020_SL_RT_GLB.png"
+              ],
+              "msg": "items_approved_photo_global_2023_2_asics_footwear",
+              "tag": "variation"
             }
           },
           "commands": {
@@ -207,6 +387,52 @@
         "meta": "Control Flow config for ControlEngine to read in and generate a list of handlers and callbackquery"
       },
       "ID": "Martial Arts Apparel",
+      "MediaList": {
+        "data": {
+          "1081A021_001_SR_BK_GLB.jpg": "workflows/media/googledrive/1081A021_001_SR_BK_GLB.jpg",
+          "1081A021_001_SR_BT_GLB.jpg": "workflows/media/googledrive/1081A021_001_SR_BT_GLB.jpg",
+          "1081A021_001_SR_FL_GLB.jpg": "workflows/media/googledrive/1081A021_001_SR_FL_GLB.jpg",
+          "1081A021_001_SR_FR_GLB.jpg": "workflows/media/googledrive/1081A021_001_SR_FR_GLB.jpg",
+          "1081A021_001_SR_LT_GLB.jpg": "workflows/media/googledrive/1081A021_001_SR_LT_GLB.jpg",
+          "1081A021_001_SR_RT_GLB.jpg": "workflows/media/googledrive/1081A021_001_SR_RT_GLB.jpg",
+          "1081A021_001_SR_TP_GLB.jpg": "workflows/media/googledrive/1081A021_001_SR_TP_GLB.jpg",
+          "1081A021_021_SB_BK_GLB.jpg": "workflows/media/googledrive/1081A021_021_SB_BK_GLB.jpg",
+          "1081A021_021_SB_BT_GLB.jpg": "workflows/media/googledrive/1081A021_021_SB_BT_GLB.jpg",
+          "1081A021_021_SB_FL_GLB.jpg": "workflows/media/googledrive/1081A021_021_SB_FL_GLB.jpg",
+          "1081A021_021_SB_FR_GLB.jpg": "workflows/media/googledrive/1081A021_021_SB_FR_GLB.jpg",
+          "1081A021_021_SB_TP_GLB.jpg": "workflows/media/googledrive/1081A021_021_SB_TP_GLB.jpg",
+          "1081A021_021_SR_LT_GLB.jpg": "workflows/media/googledrive/1081A021_021_SR_LT_GLB.jpg",
+          "1081A021_021_SR_RT_GLB.jpg": "workflows/media/googledrive/1081A021_021_SR_RT_GLB.jpg",
+          "1081A051_001_SB_BK_GLB.png": "workflows/media/googledrive/1081A051_001_SB_BK_GLB.png",
+          "1081A051_001_SB_BT_GLB.png": "workflows/media/googledrive/1081A051_001_SB_BT_GLB.png",
+          "1081A051_001_SB_FL_GLB.png": "workflows/media/googledrive/1081A051_001_SB_FL_GLB.png",
+          "1081A051_001_SB_FR_GLB.png": "workflows/media/googledrive/1081A051_001_SB_FR_GLB.png",
+          "1081A051_001_SB_TP_GLB.png": "workflows/media/googledrive/1081A051_001_SB_TP_GLB.png",
+          "1081A051_001_SL_RT_GLB.png": "workflows/media/googledrive/1081A051_001_SL_RT_GLB.png",
+          "1081A051_001_SR_LT_GLB.png": "workflows/media/googledrive/1081A051_001_SR_LT_GLB.png",
+          "1081A051_001_SR_RT_GLB.png": "workflows/media/googledrive/1081A051_001_SR_RT_GLB.png",
+          "1081A051_020_SB_BK_GLB.png": "workflows/media/googledrive/1081A051_020_SB_BK_GLB.png",
+          "1081A051_020_SB_BT_GLB.png": "workflows/media/googledrive/1081A051_020_SB_BT_GLB.png",
+          "1081A051_020_SB_FL_GLB.png": "workflows/media/googledrive/1081A051_020_SB_FL_GLB.png",
+          "1081A051_020_SB_FR_GLB.png": "workflows/media/googledrive/1081A051_020_SB_FR_GLB.png",
+          "1081A051_020_SB_TP_GLB.png": "workflows/media/googledrive/1081A051_020_SB_TP_GLB.png",
+          "1081A051_020_SL_RT_GLB.png": "workflows/media/googledrive/1081A051_020_SL_RT_GLB.png",
+          "1081A051_020_SR_LT_GLB.png": "workflows/media/googledrive/1081A051_020_SR_LT_GLB.png",
+          "1081A051_020_SR_RT_GLB.png": "workflows/media/googledrive/1081A051_020_SR_RT_GLB.png",
+          "24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf": "workflows/media/googledrive/24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf",
+          "All white prize ring.JPG": "workflows/media/googledrive/All white prize ring.JPG",
+          "Asics Matflex 6 Shoes Catalog.pdf": "workflows/media/googledrive/Asics Matflex 6 Shoes Catalog.pdf",
+          "Catalogue-PRIZERINGSports-2023.pdf": "workflows/media/googledrive/Catalogue-PRIZERINGSports-2023.pdf",
+          "Copy of 1081A021_021_SB_BT_GLB.jpg": "workflows/media/googledrive/Copy of 1081A021_021_SB_BT_GLB.jpg",
+          "Maroon Black Prize Ring.JPG": "workflows/media/googledrive/Maroon Black Prize Ring.JPG",
+          "Professional SS 16oz Black Silver Prize Ring Gloves.JPG": "workflows/media/googledrive/Professional SS 16oz Black Silver Prize Ring Gloves.JPG",
+          "Sky Blue Handwraps Prize Ring.JPG": "workflows/media/googledrive/Sky Blue Handwraps Prize Ring.JPG",
+          "blue white prize ring.JPG": "workflows/media/googledrive/blue white prize ring.JPG",
+          "prize ring black nosebar.png": "workflows/media/googledrive/prize ring black nosebar.png",
+          "white blue red prize ring.JPG": "workflows/media/googledrive/white blue red prize ring.JPG"
+        },
+        "meta": "A list of URL / ID Key Value pairs across all the trawlers, where it is stored locally (or online servers), and where on telegram"
+      },
       "Platforms": {
         "data": [
           "tele",
@@ -234,7 +460,7 @@
     }
   },
   "GoogleDrive Pointers": {
-    "Time": "2024-04-18 11:25:15.553905",
+    "Time": "2024-04-22 11:24:26.962893",
     "Data": {
       "Head Gear": {
         "id": "16FkSyv0PnoE0ups7JOQannHvJqeIOeNK",
@@ -424,49 +650,213 @@
     }
   },
   "GoogleDrive Media List": {
-    "Time": "2024-04-18 11:25:15.569674",
+    "Time": "2024-04-22 11:24:26.985991",
     "Data": {
-      "16FqOdWAjxl_wO-7qAio0A1mx0qOrqr_4": "workflows/media/googledrive/prize ring black nosebar.png",
-      "12NS9h6GlDs_RmWFOyj5GbVfaTMo9pOEa": "workflows/media/googledrive/Sky Blue Handwraps Prize Ring.JPG",
-      "12oaUqmG-KLKTBhHoZBw1mTepnQg6GzC6": "workflows/media/googledrive/1081A051_020_SB_BT_GLB.png",
-      "12g2hWqUbPsJiqqsvaPjeElp9HGv-2nM6": "workflows/media/googledrive/1081A051_001_SB_BK_GLB.png",
-      "12iyyFqSkRj9pJ8aHicDOaqTKTDfGPvmx": "workflows/media/googledrive/1081A051_001_SB_TP_GLB.png",
-      "12teKPx_3W7rvYaMQcIh6RgdfAtM3vsYu": "workflows/media/googledrive/1081A051_020_SB_BK_GLB.png",
-      "12fITpWpNUwjIizWLTBTLjvAUcjm2vsRV": "workflows/media/googledrive/1081A051_001_SB_BT_GLB.png",
-      "12zo70CAqyLSt-HnonWjKSDly_FzXkmeh": "workflows/media/googledrive/1081A051_020_SB_FR_GLB.png",
-      "12vmHLcVYMHGC51sMz7hn6yqc35mTTzUc": "workflows/media/googledrive/1081A051_001_SR_RT_GLB.png",
-      "12wHY5g_loxzrSRNdpL_MdTEmVWAyXuPw": "workflows/media/googledrive/1081A051_020_SB_TP_GLB.png",
-      "12hZXdRH5fikDcIQSs-mSaKWTZ5BlAi9-": "workflows/media/googledrive/1081A051_001_SL_RT_GLB.png",
-      "12gIY_aMQRKvkKtQIDTSOizPPHM_9it7q": "workflows/media/googledrive/1081A051_001_SR_LT_GLB.png",
-      "13SPd5lsL6xSzIyeMla7Zscok_-ZFdEIm": "workflows/media/googledrive/1081A051_020_SR_LT_GLB.png",
-      "12_tgp22UwMnkLDwYOFjvwgDEYoOd2fke": "workflows/media/googledrive/1081A051_001_SB_FL_GLB.png",
-      "12U_bIfEmEc7B_VP8glr3ZBjcB5Q3-4JJ": "workflows/media/googledrive/1081A051_001_SB_FR_GLB.png",
-      "13EQJC3ib63BY5h1cniDMBzNuGtL7UdW_": "workflows/media/googledrive/1081A051_020_SB_FL_GLB.png",
-      "13MPsl2KL57zn17vd6_KvhDbD0zDrJWIU": "workflows/media/googledrive/1081A051_020_SR_RT_GLB.png",
-      "13V7e2N60qqj05bdBXH_ObA-tj3-95kdA": "workflows/media/googledrive/1081A051_020_SL_RT_GLB.png",
-      "1iZO60OQ7m2xd49io_q1YQlk-6UKfHQu-": "workflows/media/googledrive/24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf",
-      "1Kx1fZTzWVaOE7gxEs6oXM4wiNr22AXI9": "workflows/media/googledrive/Copy of 1081A021_021_SB_BT_GLB.jpg",
-      "1oQtIae8ekPLINKUWu5hfpBWevQhK2TVP": "workflows/media/googledrive/1081A021_001_SR_TP_GLB.jpg",
-      "1BEaoelulMThw5mSNw-4flDvIFoVRikc8": "workflows/media/googledrive/1081A021_001_SR_RT_GLB.jpg",
-      "1PDekC5sBtTNwIMKYtoypSET_rexF0Mu6": "workflows/media/googledrive/1081A021_001_SR_LT_GLB.jpg",
-      "1qSdLQ3zZdO3zTtX9BkLKqUUzVz42d9gE": "workflows/media/googledrive/1081A021_001_SR_FR_GLB.jpg",
-      "1b8slotH9D_ZW9laK3y_gxVUbvfmPJHNC": "workflows/media/googledrive/1081A021_001_SR_FL_GLB.jpg",
-      "1tocVAYZUM81BvFHGOYjCchRnFId0Lftw": "workflows/media/googledrive/1081A021_001_SR_BT_GLB.jpg",
-      "1eNmEpqfa5wMuojUgHHB5rN-r0kK_FX1P": "workflows/media/googledrive/1081A021_001_SR_BK_GLB.jpg",
-      "1TNLfjKDycMvvOIBQfI5H9wCmEetwijku": "workflows/media/googledrive/1081A021_021_SR_RT_GLB.jpg",
-      "1I4IzHD9Bn3TPwMaXxRI2DVQQKfHmp2w9": "workflows/media/googledrive/1081A021_021_SR_LT_GLB.jpg",
-      "1b7VVkaCKhONtDTK74-38i_62uS3fxrg5": "workflows/media/googledrive/1081A021_021_SB_TP_GLB.jpg",
-      "1zMe1YuUD8m2Y-35zTc3hdIcN17YYs_TM": "workflows/media/googledrive/1081A021_021_SB_FR_GLB.jpg",
-      "19HUsKEjyz-nT6qYKo7K6ozGtA1ysi93H": "workflows/media/googledrive/1081A021_021_SB_FL_GLB.jpg",
-      "1iVX-8GMYKb6OJkn57xhrTTQLeSy_rTBs": "workflows/media/googledrive/1081A021_021_SB_BT_GLB.jpg",
-      "1QWkuJNGYHZe-UiqKvnEMoLOdxLRpck6r": "workflows/media/googledrive/1081A021_021_SB_BK_GLB.jpg",
-      "1zXTvJgapeUvRAg_tlXhDctA1zC66qxcf": "workflows/media/googledrive/Asics Matflex 6 Shoes Catalog.pdf",
-      "11yuY65sBoEQhEgX1ytgf0FNn2RUCSnxI": "workflows/media/googledrive/white blue red prize ring.JPG",
-      "11vQf3tIZ0cRAvbD7HY5Cttic2_pWNVs5": "workflows/media/googledrive/blue white prize ring.JPG",
-      "11yq7BYLTNMyH0ZrkbUVwA3XK7HvwJYZx": "workflows/media/googledrive/Maroon Black Prize Ring.JPG",
-      "11no2T4zgGAghJIiObYsiAKKxcVJwQvtv": "workflows/media/googledrive/All white prize ring.JPG",
-      "11Y0y5amqN4GEIarPoahW0ttkZbdblUwg": "workflows/media/googledrive/Professional SS 16oz Black Silver Prize Ring Gloves.JPG",
-      "1Qwz5lNy6JoqAWX_h8OSV965alpM1OS7q": "workflows/media/googledrive/Catalogue-PRIZERINGSports-2023.pdf"
+      "prize ring black nosebar.png": {
+        "storage": "workflows/media/googledrive/prize ring black nosebar.png",
+        "googleID": "16FqOdWAjxl_wO-7qAio0A1mx0qOrqr_4",
+        "googleURL": "https://drive.google.com/uc?id=16FqOdWAjxl_wO-7qAio0A1mx0qOrqr_4&export=download"
+      },
+      "Sky Blue Handwraps Prize Ring.JPG": {
+        "storage": "workflows/media/googledrive/Sky Blue Handwraps Prize Ring.JPG",
+        "googleID": "12NS9h6GlDs_RmWFOyj5GbVfaTMo9pOEa",
+        "googleURL": "https://drive.google.com/uc?id=12NS9h6GlDs_RmWFOyj5GbVfaTMo9pOEa&export=download"
+      },
+      "1081A051_020_SB_BT_GLB.png": {
+        "storage": "workflows/media/googledrive/1081A051_020_SB_BT_GLB.png",
+        "googleID": "12oaUqmG-KLKTBhHoZBw1mTepnQg6GzC6",
+        "googleURL": "https://drive.google.com/uc?id=12oaUqmG-KLKTBhHoZBw1mTepnQg6GzC6&export=download"
+      },
+      "1081A051_001_SB_BK_GLB.png": {
+        "storage": "workflows/media/googledrive/1081A051_001_SB_BK_GLB.png",
+        "googleID": "12g2hWqUbPsJiqqsvaPjeElp9HGv-2nM6",
+        "googleURL": "https://drive.google.com/uc?id=12g2hWqUbPsJiqqsvaPjeElp9HGv-2nM6&export=download"
+      },
+      "1081A051_001_SB_TP_GLB.png": {
+        "storage": "workflows/media/googledrive/1081A051_001_SB_TP_GLB.png",
+        "googleID": "12iyyFqSkRj9pJ8aHicDOaqTKTDfGPvmx",
+        "googleURL": "https://drive.google.com/uc?id=12iyyFqSkRj9pJ8aHicDOaqTKTDfGPvmx&export=download"
+      },
+      "1081A051_020_SB_BK_GLB.png": {
+        "storage": "workflows/media/googledrive/1081A051_020_SB_BK_GLB.png",
+        "googleID": "12teKPx_3W7rvYaMQcIh6RgdfAtM3vsYu",
+        "googleURL": "https://drive.google.com/uc?id=12teKPx_3W7rvYaMQcIh6RgdfAtM3vsYu&export=download"
+      },
+      "1081A051_001_SB_BT_GLB.png": {
+        "storage": "workflows/media/googledrive/1081A051_001_SB_BT_GLB.png",
+        "googleID": "12fITpWpNUwjIizWLTBTLjvAUcjm2vsRV",
+        "googleURL": "https://drive.google.com/uc?id=12fITpWpNUwjIizWLTBTLjvAUcjm2vsRV&export=download"
+      },
+      "1081A051_020_SB_FR_GLB.png": {
+        "storage": "workflows/media/googledrive/1081A051_020_SB_FR_GLB.png",
+        "googleID": "12zo70CAqyLSt-HnonWjKSDly_FzXkmeh",
+        "googleURL": "https://drive.google.com/uc?id=12zo70CAqyLSt-HnonWjKSDly_FzXkmeh&export=download"
+      },
+      "1081A051_001_SR_RT_GLB.png": {
+        "storage": "workflows/media/googledrive/1081A051_001_SR_RT_GLB.png",
+        "googleID": "12vmHLcVYMHGC51sMz7hn6yqc35mTTzUc",
+        "googleURL": "https://drive.google.com/uc?id=12vmHLcVYMHGC51sMz7hn6yqc35mTTzUc&export=download"
+      },
+      "1081A051_020_SB_TP_GLB.png": {
+        "storage": "workflows/media/googledrive/1081A051_020_SB_TP_GLB.png",
+        "googleID": "12wHY5g_loxzrSRNdpL_MdTEmVWAyXuPw",
+        "googleURL": "https://drive.google.com/uc?id=12wHY5g_loxzrSRNdpL_MdTEmVWAyXuPw&export=download"
+      },
+      "1081A051_001_SL_RT_GLB.png": {
+        "storage": "workflows/media/googledrive/1081A051_001_SL_RT_GLB.png",
+        "googleID": "12hZXdRH5fikDcIQSs-mSaKWTZ5BlAi9-",
+        "googleURL": "https://drive.google.com/uc?id=12hZXdRH5fikDcIQSs-mSaKWTZ5BlAi9-&export=download"
+      },
+      "1081A051_001_SR_LT_GLB.png": {
+        "storage": "workflows/media/googledrive/1081A051_001_SR_LT_GLB.png",
+        "googleID": "12gIY_aMQRKvkKtQIDTSOizPPHM_9it7q",
+        "googleURL": "https://drive.google.com/uc?id=12gIY_aMQRKvkKtQIDTSOizPPHM_9it7q&export=download"
+      },
+      "1081A051_020_SR_LT_GLB.png": {
+        "storage": "workflows/media/googledrive/1081A051_020_SR_LT_GLB.png",
+        "googleID": "13SPd5lsL6xSzIyeMla7Zscok_-ZFdEIm",
+        "googleURL": "https://drive.google.com/uc?id=13SPd5lsL6xSzIyeMla7Zscok_-ZFdEIm&export=download"
+      },
+      "1081A051_001_SB_FL_GLB.png": {
+        "storage": "workflows/media/googledrive/1081A051_001_SB_FL_GLB.png",
+        "googleID": "12_tgp22UwMnkLDwYOFjvwgDEYoOd2fke",
+        "googleURL": "https://drive.google.com/uc?id=12_tgp22UwMnkLDwYOFjvwgDEYoOd2fke&export=download"
+      },
+      "1081A051_001_SB_FR_GLB.png": {
+        "storage": "workflows/media/googledrive/1081A051_001_SB_FR_GLB.png",
+        "googleID": "12U_bIfEmEc7B_VP8glr3ZBjcB5Q3-4JJ",
+        "googleURL": "https://drive.google.com/uc?id=12U_bIfEmEc7B_VP8glr3ZBjcB5Q3-4JJ&export=download"
+      },
+      "1081A051_020_SB_FL_GLB.png": {
+        "storage": "workflows/media/googledrive/1081A051_020_SB_FL_GLB.png",
+        "googleID": "13EQJC3ib63BY5h1cniDMBzNuGtL7UdW_",
+        "googleURL": "https://drive.google.com/uc?id=13EQJC3ib63BY5h1cniDMBzNuGtL7UdW_&export=download"
+      },
+      "1081A051_020_SR_RT_GLB.png": {
+        "storage": "workflows/media/googledrive/1081A051_020_SR_RT_GLB.png",
+        "googleID": "13MPsl2KL57zn17vd6_KvhDbD0zDrJWIU",
+        "googleURL": "https://drive.google.com/uc?id=13MPsl2KL57zn17vd6_KvhDbD0zDrJWIU&export=download"
+      },
+      "1081A051_020_SL_RT_GLB.png": {
+        "storage": "workflows/media/googledrive/1081A051_020_SL_RT_GLB.png",
+        "googleID": "13V7e2N60qqj05bdBXH_ObA-tj3-95kdA",
+        "googleURL": "https://drive.google.com/uc?id=13V7e2N60qqj05bdBXH_ObA-tj3-95kdA&export=download"
+      },
+      "24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf": {
+        "storage": "workflows/media/googledrive/24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf",
+        "googleID": "1iZO60OQ7m2xd49io_q1YQlk-6UKfHQu-",
+        "googleURL": "https://drive.google.com/uc?id=1iZO60OQ7m2xd49io_q1YQlk-6UKfHQu-&export=download"
+      },
+      "Copy of 1081A021_021_SB_BT_GLB.jpg": {
+        "storage": "workflows/media/googledrive/Copy of 1081A021_021_SB_BT_GLB.jpg",
+        "googleID": "1Kx1fZTzWVaOE7gxEs6oXM4wiNr22AXI9",
+        "googleURL": "https://drive.google.com/uc?id=1Kx1fZTzWVaOE7gxEs6oXM4wiNr22AXI9&export=download"
+      },
+      "1081A021_001_SR_TP_GLB.jpg": {
+        "storage": "workflows/media/googledrive/1081A021_001_SR_TP_GLB.jpg",
+        "googleID": "1oQtIae8ekPLINKUWu5hfpBWevQhK2TVP",
+        "googleURL": "https://drive.google.com/uc?id=1oQtIae8ekPLINKUWu5hfpBWevQhK2TVP&export=download"
+      },
+      "1081A021_001_SR_RT_GLB.jpg": {
+        "storage": "workflows/media/googledrive/1081A021_001_SR_RT_GLB.jpg",
+        "googleID": "1BEaoelulMThw5mSNw-4flDvIFoVRikc8",
+        "googleURL": "https://drive.google.com/uc?id=1BEaoelulMThw5mSNw-4flDvIFoVRikc8&export=download"
+      },
+      "1081A021_001_SR_LT_GLB.jpg": {
+        "storage": "workflows/media/googledrive/1081A021_001_SR_LT_GLB.jpg",
+        "googleID": "1PDekC5sBtTNwIMKYtoypSET_rexF0Mu6",
+        "googleURL": "https://drive.google.com/uc?id=1PDekC5sBtTNwIMKYtoypSET_rexF0Mu6&export=download"
+      },
+      "1081A021_001_SR_FR_GLB.jpg": {
+        "storage": "workflows/media/googledrive/1081A021_001_SR_FR_GLB.jpg",
+        "googleID": "1qSdLQ3zZdO3zTtX9BkLKqUUzVz42d9gE",
+        "googleURL": "https://drive.google.com/uc?id=1qSdLQ3zZdO3zTtX9BkLKqUUzVz42d9gE&export=download"
+      },
+      "1081A021_001_SR_FL_GLB.jpg": {
+        "storage": "workflows/media/googledrive/1081A021_001_SR_FL_GLB.jpg",
+        "googleID": "1b8slotH9D_ZW9laK3y_gxVUbvfmPJHNC",
+        "googleURL": "https://drive.google.com/uc?id=1b8slotH9D_ZW9laK3y_gxVUbvfmPJHNC&export=download"
+      },
+      "1081A021_001_SR_BT_GLB.jpg": {
+        "storage": "workflows/media/googledrive/1081A021_001_SR_BT_GLB.jpg",
+        "googleID": "1tocVAYZUM81BvFHGOYjCchRnFId0Lftw",
+        "googleURL": "https://drive.google.com/uc?id=1tocVAYZUM81BvFHGOYjCchRnFId0Lftw&export=download"
+      },
+      "1081A021_001_SR_BK_GLB.jpg": {
+        "storage": "workflows/media/googledrive/1081A021_001_SR_BK_GLB.jpg",
+        "googleID": "1eNmEpqfa5wMuojUgHHB5rN-r0kK_FX1P",
+        "googleURL": "https://drive.google.com/uc?id=1eNmEpqfa5wMuojUgHHB5rN-r0kK_FX1P&export=download"
+      },
+      "1081A021_021_SR_RT_GLB.jpg": {
+        "storage": "workflows/media/googledrive/1081A021_021_SR_RT_GLB.jpg",
+        "googleID": "1TNLfjKDycMvvOIBQfI5H9wCmEetwijku",
+        "googleURL": "https://drive.google.com/uc?id=1TNLfjKDycMvvOIBQfI5H9wCmEetwijku&export=download"
+      },
+      "1081A021_021_SR_LT_GLB.jpg": {
+        "storage": "workflows/media/googledrive/1081A021_021_SR_LT_GLB.jpg",
+        "googleID": "1I4IzHD9Bn3TPwMaXxRI2DVQQKfHmp2w9",
+        "googleURL": "https://drive.google.com/uc?id=1I4IzHD9Bn3TPwMaXxRI2DVQQKfHmp2w9&export=download"
+      },
+      "1081A021_021_SB_TP_GLB.jpg": {
+        "storage": "workflows/media/googledrive/1081A021_021_SB_TP_GLB.jpg",
+        "googleID": "1b7VVkaCKhONtDTK74-38i_62uS3fxrg5",
+        "googleURL": "https://drive.google.com/uc?id=1b7VVkaCKhONtDTK74-38i_62uS3fxrg5&export=download"
+      },
+      "1081A021_021_SB_FR_GLB.jpg": {
+        "storage": "workflows/media/googledrive/1081A021_021_SB_FR_GLB.jpg",
+        "googleID": "1zMe1YuUD8m2Y-35zTc3hdIcN17YYs_TM",
+        "googleURL": "https://drive.google.com/uc?id=1zMe1YuUD8m2Y-35zTc3hdIcN17YYs_TM&export=download"
+      },
+      "1081A021_021_SB_FL_GLB.jpg": {
+        "storage": "workflows/media/googledrive/1081A021_021_SB_FL_GLB.jpg",
+        "googleID": "19HUsKEjyz-nT6qYKo7K6ozGtA1ysi93H",
+        "googleURL": "https://drive.google.com/uc?id=19HUsKEjyz-nT6qYKo7K6ozGtA1ysi93H&export=download"
+      },
+      "1081A021_021_SB_BT_GLB.jpg": {
+        "storage": "workflows/media/googledrive/1081A021_021_SB_BT_GLB.jpg",
+        "googleID": "1iVX-8GMYKb6OJkn57xhrTTQLeSy_rTBs",
+        "googleURL": "https://drive.google.com/uc?id=1iVX-8GMYKb6OJkn57xhrTTQLeSy_rTBs&export=download"
+      },
+      "1081A021_021_SB_BK_GLB.jpg": {
+        "storage": "workflows/media/googledrive/1081A021_021_SB_BK_GLB.jpg",
+        "googleID": "1QWkuJNGYHZe-UiqKvnEMoLOdxLRpck6r",
+        "googleURL": "https://drive.google.com/uc?id=1QWkuJNGYHZe-UiqKvnEMoLOdxLRpck6r&export=download"
+      },
+      "Asics Matflex 6 Shoes Catalog.pdf": {
+        "storage": "workflows/media/googledrive/Asics Matflex 6 Shoes Catalog.pdf",
+        "googleID": "1zXTvJgapeUvRAg_tlXhDctA1zC66qxcf",
+        "googleURL": "https://drive.google.com/uc?id=1zXTvJgapeUvRAg_tlXhDctA1zC66qxcf&export=download"
+      },
+      "white blue red prize ring.JPG": {
+        "storage": "workflows/media/googledrive/white blue red prize ring.JPG",
+        "googleID": "11yuY65sBoEQhEgX1ytgf0FNn2RUCSnxI",
+        "googleURL": "https://drive.google.com/uc?id=11yuY65sBoEQhEgX1ytgf0FNn2RUCSnxI&export=download"
+      },
+      "blue white prize ring.JPG": {
+        "storage": "workflows/media/googledrive/blue white prize ring.JPG",
+        "googleID": "11vQf3tIZ0cRAvbD7HY5Cttic2_pWNVs5",
+        "googleURL": "https://drive.google.com/uc?id=11vQf3tIZ0cRAvbD7HY5Cttic2_pWNVs5&export=download"
+      },
+      "Maroon Black Prize Ring.JPG": {
+        "storage": "workflows/media/googledrive/Maroon Black Prize Ring.JPG",
+        "googleID": "11yq7BYLTNMyH0ZrkbUVwA3XK7HvwJYZx",
+        "googleURL": "https://drive.google.com/uc?id=11yq7BYLTNMyH0ZrkbUVwA3XK7HvwJYZx&export=download"
+      },
+      "All white prize ring.JPG": {
+        "storage": "workflows/media/googledrive/All white prize ring.JPG",
+        "googleID": "11no2T4zgGAghJIiObYsiAKKxcVJwQvtv",
+        "googleURL": "https://drive.google.com/uc?id=11no2T4zgGAghJIiObYsiAKKxcVJwQvtv&export=download"
+      },
+      "Professional SS 16oz Black Silver Prize Ring Gloves.JPG": {
+        "storage": "workflows/media/googledrive/Professional SS 16oz Black Silver Prize Ring Gloves.JPG",
+        "googleID": "11Y0y5amqN4GEIarPoahW0ttkZbdblUwg",
+        "googleURL": "https://drive.google.com/uc?id=11Y0y5amqN4GEIarPoahW0ttkZbdblUwg&export=download"
+      },
+      "Catalogue-PRIZERINGSports-2023.pdf": {
+        "storage": "workflows/media/googledrive/Catalogue-PRIZERINGSports-2023.pdf",
+        "googleID": "1Qwz5lNy6JoqAWX_h8OSV965alpM1OS7q",
+        "googleURL": "https://drive.google.com/uc?id=1Qwz5lNy6JoqAWX_h8OSV965alpM1OS7q&export=download"
+      }
     }
   }
 }
