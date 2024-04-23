@@ -9,20 +9,21 @@ from workflows import utils as ut
 
 class Control():
     def __init__(self, control_file_path:str ):
-        self.logic = self._load(control_file_path)
+        self.__filepath = control_file_path
+        self.logic = self._load()
     
-    def _load(self, control_file: str):
+    def _load(self):
         '''Loads control flow from control file (yml file) into the global const CONTROL'''    
         
-        ut.pLog(f"Loading Control from {control_file}...")
+        ut.pLog(f"Loading Control from {self.__filepath}...")
         try:
-            with open(control_file, 'r') as file:
+            with open(self.__filepath, 'r') as file:
                 control = yaml.safe_load(file)            
-            ut.pLog(f"Control has been loaded from {control_file}", p1=True)
+            ut.pLog(f"Control has been loaded from {self.__filepath}", p1=True)
             ut.logObj(control, "Control")
             return control
         except:
-            ut.pLog(f"Unable to load control flow from {control_file}", p1=True)
+            ut.pLog(f"Unable to load control flow from {self.__filepath}", p1=True)
 
     async def update(self, trawler, tele):
         ut.pLog(f"Updating control with {list(trawler.trawlers.keys())}")
@@ -87,7 +88,10 @@ class Control():
                                                     + list(tree[cate]['products'][prod]['variations'][vari]['media'].keys()),
                                     'btn': ['Add to Cart', f"Back to {prod}"]}
                 new_flow[f"Back to {prod}"] = new_flow[prod]
-                    
+                        
+            self.logic['B2DFlow']['data']['callbacks'] = new_flow
+            self.logic['MediaList']['data'] = new_media
+            
             # Loop 3: Iterate over media, and consolidate into new_meda
             ut.pLog(f"Uploading Media from Google Drive to Tele")
             await tele.update(self.logic)
@@ -95,7 +99,7 @@ class Control():
                 new_media[name] = media['storage']
         except:
             raise ValueError(f"Unable to update control")
-        self.logic['B2DFlow']['data']['callbacks'] = new_flow
-        self.logic['MediaList']['data'] = new_media
+        with open(self.__filepath, 'w') as file:
+            yaml.dump(self.logic, file, sort_keys=False)
 
         return self.logic
