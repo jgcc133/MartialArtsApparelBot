@@ -64,29 +64,53 @@ class Control():
             # Loop 2: Iterate over tree.keys(), add new category key
             for cat in categories:
                 # add new callback
-                new_flow[cat] = {'tag': 'category',
-                                    'msg': 'Which product would you like to explore?',
-                                    'btn': sorted(list(tree[cat]['products'].keys()))
-                                    + ["Back to Categories"]}            
+                available_products = sorted(list(tree[cat]['products'].keys()))
+                if len(available_products) == 0:
+                    new_flow[cat] = {'tag': 'category',
+                                     'msg': f"Stay tuned! More {cat} will be added to the store soon!",
+                                     'btn': available_products + ["Back to Categories"]}
+                else:
+                    new_flow[cat] = {'tag': 'category',
+                                     'msg': 'Which product would you like to explore?',
+                                     'btn': available_products + ["Back to Categories"]}            
             new_flow["Back to Categories"] = new_flow["Product Enquiry"]
 
             for prod in products:
                 # add new callback
                 cate = bc['products'][prod]['category']
-                new_flow[prod] = {'tag': 'product',
+                available_variations = sorted(list(tree[cate]['products'][prod]['variations'].keys()))
+                product_media = list(tree[cate]['products'][prod]['media'].keys())
+                if len(available_variations) == 0 and len(product_media) == 0:
+                    new_flow[prod] = {'tag': 'product',
+                                    'msg':  f"Stay tuned! We will be adding more {prod} photos soon!",
+                                    'media': product_media,
+                                    'btn': available_variations + [f"Back to {cate}"]}
+                elif len(available_variations) == 0 and len(product_media) != 0:
+                    new_flow[prod] = {'tag': 'product',
+                                    'msg':  prod,
+                                    'media': product_media,
+                                    'btn': available_variations + [f"Back to {cate}", "Back to Start"]}
+                else:
+                    new_flow[prod] = {'tag': 'product',
                                     'msg': 'Which variation would you like to explore?',
-                                    'btn': sorted(list(tree[cate]['products'][prod]['variations'].keys()))
-                                    + [f"Back to {cate}"]}
+                                    'media': product_media,
+                                    'btn': available_variations + [f"Back to {cate}", "Back to Start"]}
                 new_flow[f"Back to {cate}"] = new_flow[cate]
 
             for vari in variations:
                 # add new callback, that sends media, with 1 add to cart and 1 back button
                 cate, prod = bc['variations'][vari]['category'], bc['variations'][vari]['product']
-                new_flow[vari] = {'tag': 'variation',
-                                    'msg': cate + "\n" + vari,
-                                    'media': list(tree[cate]['products'][prod]['media'].keys())
-                                                    + list(tree[cate]['products'][prod]['variations'][vari]['media'].keys()),
-                                    'btn': ['Add to Cart', f"Back to {prod}"]}
+                variation_media = list(tree[cate]['products'][prod]['variations'][vari]['media'].keys())
+                if len(variation_media) == 0:
+                    new_flow[vari] = {'tag': 'variation',
+                                    'msg': f"Stay tuned! We will be adding more {vari} photos soon!",
+                                    'media': variation_media,
+                                    'btn': ['Add to Cart', f"Back to {prod}", f"Back to {cate}", "Back to Start"]}
+                else:
+                    new_flow[vari] = {'tag': 'variation',
+                                    'msg': prod + "\n" + vari,
+                                    'media': variation_media,
+                                    'btn': ['Add to Cart', f"Back to {prod}", f"Back to {cate}", "Back to Start"]}
                 new_flow[f"Back to {prod}"] = new_flow[prod]
                         
             # Loop 3: Iterate over media, and consolidate into new_meda

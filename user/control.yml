@@ -43,6 +43,9 @@ B2DFlow:
       Asics Matflex 6 Shoes: &id008
         tag: product
         msg: Which variation would you like to explore?
+        media:
+        - Copy of 1081A021_021_SB_BT_GLB.jpg
+        - Asics Matflex 6 Shoes Catalog.pdf
         btn:
         - Black Silver
         - Frost Gold
@@ -50,6 +53,8 @@ B2DFlow:
       Asics Matflex 7 Shoes: &id007
         tag: product
         msg: Which variation would you like to explore?
+        media:
+        - 24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf
         btn:
         - Black
         - White
@@ -61,22 +66,19 @@ B2DFlow:
         tag: service
       Black:
         tag: variation
-        msg: 'Shoes
+        msg: 'Asics Matflex 7 Shoes
 
           Black'
-        media:
-        - 24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf
+        media: []
         btn:
         - Add to Cart
         - Back to Asics Matflex 7 Shoes
       Black Silver:
         tag: variation
-        msg: 'Shoes
+        msg: 'Asics Matflex 6 Shoes
 
           Black Silver'
         media:
-        - Copy of 1081A021_021_SB_BT_GLB.jpg
-        - Asics Matflex 6 Shoes Catalog.pdf
         - 1081A021_001_SR_TP_GLB.jpg
         - 1081A021_001_SR_RT_GLB.jpg
         - 1081A021_001_SR_LT_GLB.jpg
@@ -95,12 +97,10 @@ B2DFlow:
         - Back to Categories
       Frost Gold:
         tag: variation
-        msg: 'Shoes
+        msg: 'Asics Matflex 6 Shoes
 
           Frost Gold'
         media:
-        - Copy of 1081A021_021_SB_BT_GLB.jpg
-        - Asics Matflex 6 Shoes Catalog.pdf
         - 1081A021_021_SR_RT_GLB.jpg
         - 1081A021_021_SR_LT_GLB.jpg
         - 1081A021_021_SB_TP_GLB.jpg
@@ -136,12 +136,15 @@ B2DFlow:
       Prize Ring: &id010
         tag: product
         msg: Which variation would you like to explore?
+        media: []
         btn:
         - Sky Blue Handwraps
         - Back to Handwraps
       Prize Ring Boxing Gloves: &id009
         tag: product
         msg: Which variation would you like to explore?
+        media:
+        - Catalogue-PRIZERINGSports-2023.pdf
         btn:
         - Pro Training Velcro (Blue Silver)
         - Prof SS Boxing Gloves Soft Type (All White)
@@ -153,16 +156,17 @@ B2DFlow:
         - Back to Boxing Gloves
       Prize Ring Head Gear:
         tag: product
-        msg: Which variation would you like to explore?
+        msg: Prize Ring Head Gear
+        media:
+        - prize ring black nosebar.png
         btn:
         - Back to Head Gear
       Pro Training Velcro (Blue Silver):
         tag: variation
-        msg: 'Boxing Gloves
+        msg: 'Prize Ring Boxing Gloves
 
           Pro Training Velcro (Blue Silver)'
-        media:
-        - Catalogue-PRIZERINGSports-2023.pdf
+        media: []
         btn:
         - Add to Cart
         - Back to Prize Ring Boxing Gloves
@@ -178,65 +182,59 @@ B2DFlow:
         tag: service
       Prof SS Boxing Gloves Soft Type (All White):
         tag: variation
-        msg: 'Boxing Gloves
+        msg: 'Prize Ring Boxing Gloves
 
           Prof SS Boxing Gloves Soft Type (All White)'
         media:
-        - Catalogue-PRIZERINGSports-2023.pdf
         - All white prize ring.JPG
         btn:
         - Add to Cart
         - Back to Prize Ring Boxing Gloves
       Prof SS Boxing Gloves Soft Type (Black Silver):
         tag: variation
-        msg: 'Boxing Gloves
+        msg: 'Prize Ring Boxing Gloves
 
           Prof SS Boxing Gloves Soft Type (Black Silver)'
         media:
-        - Catalogue-PRIZERINGSports-2023.pdf
         - Professional SS 16oz Black Silver Prize Ring Gloves.JPG
         btn:
         - Add to Cart
         - Back to Prize Ring Boxing Gloves
       Prof. 5.0 (Black Orange):
         tag: variation
-        msg: 'Boxing Gloves
+        msg: 'Prize Ring Boxing Gloves
 
           Prof. 5.0 (Black Orange)'
-        media:
-        - Catalogue-PRIZERINGSports-2023.pdf
+        media: []
         btn:
         - Add to Cart
         - Back to Prize Ring Boxing Gloves
       Prof. 5.0 (Blue White):
         tag: variation
-        msg: 'Boxing Gloves
+        msg: 'Prize Ring Boxing Gloves
 
           Prof. 5.0 (Blue White)'
         media:
-        - Catalogue-PRIZERINGSports-2023.pdf
         - blue white prize ring.JPG
         btn:
         - Add to Cart
         - Back to Prize Ring Boxing Gloves
       Prof. 5.0 (Maroon Black Piping):
         tag: variation
-        msg: 'Boxing Gloves
+        msg: 'Prize Ring Boxing Gloves
 
           Prof. 5.0 (Maroon Black Piping)'
         media:
-        - Catalogue-PRIZERINGSports-2023.pdf
         - Maroon Black Prize Ring.JPG
         btn:
         - Add to Cart
         - Back to Prize Ring Boxing Gloves
       Prof. 5.0 (White Blue Red):
         tag: variation
-        msg: 'Boxing Gloves
+        msg: 'Prize Ring Boxing Gloves
 
           Prof. 5.0 (White Blue Red)'
         media:
-        - Catalogue-PRIZERINGSports-2023.pdf
         - white blue red prize ring.JPG
         btn:
         - Add to Cart
@@ -250,7 +248,7 @@ B2DFlow:
         - Back to Categories
       Sky Blue Handwraps:
         tag: variation
-        msg: 'Handwraps
+        msg: 'Prize Ring
 
           Sky Blue Handwraps'
         media:
@@ -260,26 +258,24 @@ B2DFlow:
         - Back to Prize Ring
       Sweat Pants:
         tag: category
-        msg: Which product would you like to explore?
+        msg: Stay tuned! More Sweat Pants will be added to the store soon!
         btn:
         - Back to Categories
       White:
         tag: variation
-        msg: 'Shoes
+        msg: 'Asics Matflex 7 Shoes
 
           White'
-        media:
-        - 24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf
+        media: []
         btn:
         - Add to Cart
         - Back to Asics Matflex 7 Shoes
       items_approved_photo_global_2023_2_asics_footwear:
         tag: variation
-        msg: 'Shoes
+        msg: 'Asics Matflex 7 Shoes
 
           items_approved_photo_global_2023_2_asics_footwear'
         media:
-        - 24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf
         - 1081A051_020_SB_BT_GLB.png
         - 1081A051_001_SB_BK_GLB.png
         - 1081A051_001_SB_TP_GLB.png

@@ -1,6 +1,6 @@
 {
   "Control": {
-    "Time": "2024-04-24 10:56:28.453141",
+    "Time": "2024-04-24 12:09:38.396973",
     "Data": {
       "Auth": {
         "data": {
@@ -60,6 +60,10 @@
             "Asics Matflex 6 Shoes": {
               "tag": "product",
               "msg": "Which variation would you like to explore?",
+              "media": [
+                "Copy of 1081A021_021_SB_BT_GLB.jpg",
+                "Asics Matflex 6 Shoes Catalog.pdf"
+              ],
               "btn": [
                 "Black Silver",
                 "Frost Gold",
@@ -69,6 +73,9 @@
             "Asics Matflex 7 Shoes": {
               "tag": "product",
               "msg": "Which variation would you like to explore?",
+              "media": [
+                "24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf"
+              ],
               "btn": [
                 "Black",
                 "White",
@@ -88,10 +95,8 @@
             },
             "Black": {
               "tag": "variation",
-              "msg": "Shoes\nBlack",
-              "media": [
-                "24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf"
-              ],
+              "msg": "Asics Matflex 7 Shoes\nBlack",
+              "media": [],
               "btn": [
                 "Add to Cart",
                 "Back to Asics Matflex 7 Shoes"
@@ -99,10 +104,8 @@
             },
             "Black Silver": {
               "tag": "variation",
-              "msg": "Shoes\nBlack Silver",
+              "msg": "Asics Matflex 6 Shoes\nBlack Silver",
               "media": [
-                "Copy of 1081A021_021_SB_BT_GLB.jpg",
-                "Asics Matflex 6 Shoes Catalog.pdf",
                 "1081A021_001_SR_TP_GLB.jpg",
                 "1081A021_001_SR_RT_GLB.jpg",
                 "1081A021_001_SR_LT_GLB.jpg",
@@ -126,10 +129,8 @@
             },
             "Frost Gold": {
               "tag": "variation",
-              "msg": "Shoes\nFrost Gold",
+              "msg": "Asics Matflex 6 Shoes\nFrost Gold",
               "media": [
-                "Copy of 1081A021_021_SB_BT_GLB.jpg",
-                "Asics Matflex 6 Shoes Catalog.pdf",
                 "1081A021_021_SR_RT_GLB.jpg",
                 "1081A021_021_SR_LT_GLB.jpg",
                 "1081A021_021_SB_TP_GLB.jpg",
@@ -175,6 +176,7 @@
             "Prize Ring": {
               "tag": "product",
               "msg": "Which variation would you like to explore?",
+              "media": [],
               "btn": [
                 "Sky Blue Handwraps",
                 "Back to Handwraps"
@@ -183,6 +185,9 @@
             "Prize Ring Boxing Gloves": {
               "tag": "product",
               "msg": "Which variation would you like to explore?",
+              "media": [
+                "Catalogue-PRIZERINGSports-2023.pdf"
+              ],
               "btn": [
                 "Pro Training Velcro (Blue Silver)",
                 "Prof SS Boxing Gloves Soft Type (All White)",
@@ -196,17 +201,18 @@
             },
             "Prize Ring Head Gear": {
               "tag": "product",
-              "msg": "Which variation would you like to explore?",
+              "msg": "Prize Ring Head Gear",
+              "media": [
+                "prize ring black nosebar.png"
+              ],
               "btn": [
                 "Back to Head Gear"
               ]
             },
             "Pro Training Velcro (Blue Silver)": {
               "tag": "variation",
-              "msg": "Boxing Gloves\nPro Training Velcro (Blue Silver)",
-              "media": [
-                "Catalogue-PRIZERINGSports-2023.pdf"
-              ],
+              "msg": "Prize Ring Boxing Gloves\nPro Training Velcro (Blue Silver)",
+              "media": [],
               "btn": [
                 "Add to Cart",
                 "Back to Prize Ring Boxing Gloves"
@@ -226,9 +232,8 @@
             },
             "Prof SS Boxing Gloves Soft Type (All White)": {
               "tag": "variation",
-              "msg": "Boxing Gloves\nProf SS Boxing Gloves Soft Type (All White)",
+              "msg": "Prize Ring Boxing Gloves\nProf SS Boxing Gloves Soft Type (All White)",
               "media": [
-                "Catalogue-PRIZERINGSports-2023.pdf",
                 "All white prize ring.JPG"
               ],
               "btn": [
@@ -238,9 +243,8 @@
             },
             "Prof SS Boxing Gloves Soft Type (Black Silver)": {
               "tag": "variation",
-              "msg": "Boxing Gloves\nProf SS Boxing Gloves Soft Type (Black Silver)",
+              "msg": "Prize Ring Boxing Gloves\nProf SS Boxing Gloves Soft Type (Black Silver)",
               "media": [
-                "Catalogue-PRIZERINGSports-2023.pdf",
                 "Professional SS 16oz Black Silver Prize Ring Gloves.JPG"
               ],
               "btn": [
@@ -250,10 +254,8 @@
             },
             "Prof. 5.0 (Black Orange)": {
               "tag": "variation",
-              "msg": "Boxing Gloves\nProf. 5.0 (Black Orange)",
-              "media": [
-                "Catalogue-PRIZERINGSports-2023.pdf"
-              ],
+              "msg": "Prize Ring Boxing Gloves\nProf. 5.0 (Black Orange)",
+              "media": [],
               "btn": [
                 "Add to Cart",
                 "Back to Prize Ring Boxing Gloves"
@@ -261,9 +263,8 @@
             },
             "Prof. 5.0 (Blue White)": {
               "tag": "variation",
-              "msg": "Boxing Gloves\nProf. 5.0 (Blue White)",
+              "msg": "Prize Ring Boxing Gloves\nProf. 5.0 (Blue White)",
               "media": [
-                "Catalogue-PRIZERINGSports-2023.pdf",
                 "blue white prize ring.JPG"
               ],
               "btn": [
@@ -273,9 +274,8 @@
             },
             "Prof. 5.0 (Maroon Black Piping)": {
               "tag": "variation",
-              "msg": "Boxing Gloves\nProf. 5.0 (Maroon Black Piping)",
+              "msg": "Prize Ring Boxing Gloves\nProf. 5.0 (Maroon Black Piping)",
               "media": [
-                "Catalogue-PRIZERINGSports-2023.pdf",
                 "Maroon Black Prize Ring.JPG"
               ],
               "btn": [
@@ -285,9 +285,8 @@
             },
             "Prof. 5.0 (White Blue Red)": {
               "tag": "variation",
-              "msg": "Boxing Gloves\nProf. 5.0 (White Blue Red)",
+              "msg": "Prize Ring Boxing Gloves\nProf. 5.0 (White Blue Red)",
               "media": [
-                "Catalogue-PRIZERINGSports-2023.pdf",
                 "white blue red prize ring.JPG"
               ],
               "btn": [
@@ -306,7 +305,7 @@
             },
             "Sky Blue Handwraps": {
               "tag": "variation",
-              "msg": "Handwraps\nSky Blue Handwraps",
+              "msg": "Prize Ring\nSky Blue Handwraps",
               "media": [
                 "Sky Blue Handwraps Prize Ring.JPG"
               ],
@@ -317,17 +316,15 @@
             },
             "Sweat Pants": {
               "tag": "category",
-              "msg": "Which product would you like to explore?",
+              "msg": "Stay tuned! More Sweat Pants will be added to the store soon!",
               "btn": [
                 "Back to Categories"
               ]
             },
             "White": {
               "tag": "variation",
-              "msg": "Shoes\nWhite",
-              "media": [
-                "24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf"
-              ],
+              "msg": "Asics Matflex 7 Shoes\nWhite",
+              "media": [],
               "btn": [
                 "Add to Cart",
                 "Back to Asics Matflex 7 Shoes"
@@ -335,9 +332,8 @@
             },
             "items_approved_photo_global_2023_2_asics_footwear": {
               "tag": "variation",
-              "msg": "Shoes\nitems_approved_photo_global_2023_2_asics_footwear",
+              "msg": "Asics Matflex 7 Shoes\nitems_approved_photo_global_2023_2_asics_footwear",
               "media": [
-                "24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf",
                 "1081A051_020_SB_BT_GLB.png",
                 "1081A051_001_SB_BK_GLB.png",
                 "1081A051_001_SB_TP_GLB.png",
@@ -408,6 +404,9 @@
             "Back to Asics Matflex 7 Shoes": {
               "tag": "product",
               "msg": "Which variation would you like to explore?",
+              "media": [
+                "24AW ASICS FTW LINESHEET - CPS - WRESTLING.pdf"
+              ],
               "btn": [
                 "Black",
                 "White",
@@ -418,6 +417,10 @@
             "Back to Asics Matflex 6 Shoes": {
               "tag": "product",
               "msg": "Which variation would you like to explore?",
+              "media": [
+                "Copy of 1081A021_021_SB_BT_GLB.jpg",
+                "Asics Matflex 6 Shoes Catalog.pdf"
+              ],
               "btn": [
                 "Black Silver",
                 "Frost Gold",
@@ -427,6 +430,9 @@
             "Back to Prize Ring Boxing Gloves": {
               "tag": "product",
               "msg": "Which variation would you like to explore?",
+              "media": [
+                "Catalogue-PRIZERINGSports-2023.pdf"
+              ],
               "btn": [
                 "Pro Training Velcro (Blue Silver)",
                 "Prof SS Boxing Gloves Soft Type (All White)",
@@ -441,6 +447,7 @@
             "Back to Prize Ring": {
               "tag": "product",
               "msg": "Which variation would you like to explore?",
+              "media": [],
               "btn": [
                 "Sky Blue Handwraps",
                 "Back to Handwraps"
@@ -559,7 +566,7 @@
     }
   },
   "GoogleDrive Pointers": {
-    "Time": "2024-04-24 10:56:41.220566",
+    "Time": "2024-04-24 12:09:49.455562",
     "Data": {
       "Head Gear": {
         "id": "16FkSyv0PnoE0ups7JOQannHvJqeIOeNK",
@@ -749,7 +756,7 @@
     }
   },
   "GoogleDrive Media List": {
-    "Time": "2024-04-24 10:56:41.232566",
+    "Time": "2024-04-24 12:09:49.508568",
     "Data": {
       "prize ring black nosebar.png": {
         "storage": "workflows/media/googledrive/prize ring black nosebar.png",
