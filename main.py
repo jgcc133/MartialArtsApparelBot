@@ -93,11 +93,15 @@ async def main(control, trawler, telegram_interface):
        
 
 async def update(control, trawler, telegram_interface):
-    # time.sleep(30)
-    trawler.trawlers['GoogleDrive'].update()
-    control.update(trawler)
-    with open(control_file, 'w') as file:
-        yaml.dump(control.logic, file)
+    counter = 1
+    while counter < 10:
+        time.sleep(120)
+        ut.pLog(f"Update {counter}: Updating google drive")
+        trawler.trawlers['GoogleDrive'].update()
+        ut.pLog(f"Update {counter}: Updating telegram")
+        await control.update(trawler, telegram_interface)
+
+        counter+=1
 
 
 async def run_uvicorn(app, host='127.0.0.1', port=8000):
@@ -108,11 +112,15 @@ async def run_uvicorn(app, host='127.0.0.1', port=8000):
 async def tasks():
     await asyncio.gather(
         main(control=control,
-                   trawler=trawler,
-                   telegram_interface=telegram_interface)
+             trawler=trawler,
+             telegram_interface=telegram_interface),
+        # update(control=control,
+        #        trawler=trawler,
+        #        telegram_interface=telegram_interface)
         )
 
 if __name__=="__main__":
     asyncio.run(tasks())
+    # thread
                      
    

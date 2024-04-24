@@ -107,19 +107,19 @@ class Tele:
         media_prefix = control['Source']['data']['GoogleDrive']['storage']
         for file_name in media_list.keys():
             # For dev: TODO - remove this limiter of 4 files (2 photos, 2 pdfs)
-            if file_name in ["1081A051_020_SB_BT_GLB.png"]:
+            # if file_name in ["1081A051_020_SB_BT_GLB.png"]:
 
-                with open(media_prefix + file_name, "rb") as media:
-                    self.__target_coro[file_name]= await Client.send_file(
-                        entity = 63144080,
-                        file=media,
-                        file_name=file_name,
-                        )
+            with open(media_prefix + file_name, "rb") as media:
+                self.__target_coro[file_name]= await Client.send_file(
+                    entity = 63144080,
+                    file=media,
+                    file_name=file_name,
+                    )
             # TODO And remove indentation of with block and await block as well
             
-                await Client.send_message(
-                                entity=63144080,
-                                message=f"[File {len(self.__target_coro)} out of {len(media_list.keys())}] {file_name} uploaded!")
+            await Client.send_message(
+                            entity=63144080,
+                            message=f"[File {len(self.__target_coro)} out of {len(media_list.keys())}] {file_name} uploaded!")
                             
         ut.pLog("Telegram Chat Bot Media Uploaded!", p1=True)
         
@@ -195,8 +195,8 @@ class Tele:
                             # trawler.Trawler.mediaList, then retrieve here accordingly
                             ut.pLog(f"Sending Media for [{data}] to user", chat_id, chat_username)
                             # TODO swap back the declaration of media_file_names
-                            # media_file_names = Callbacks[data]['media']
-                            media_file_names = ["1081A051_020_SB_BT_GLB.png"]
+                            media_file_names = Callbacks[data]['media']
+                            # media_file_names = ["1081A051_020_SB_BT_GLB.png"]
                             
                             photo_coros = [self.__target_coro[key] for key in media_file_names if key[-4:] != '.pdf']
                             pdf_coros = [self.__target_coro[key] for key in media_file_names if key[-4:] == '.pdf']

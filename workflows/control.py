@@ -89,14 +89,15 @@ class Control():
                                     'btn': ['Add to Cart', f"Back to {prod}"]}
                 new_flow[f"Back to {prod}"] = new_flow[prod]
                         
+            # Loop 3: Iterate over media, and consolidate into new_meda
+            ut.pLog(f"Uploading Media from Google Drive to Tele")
+            for name, media in trawler.trawlers['GoogleDrive'].mediaList.items():
+                new_media[name] = media['storage']
+            
             self.logic['B2DFlow']['data']['callbacks'] = new_flow
             self.logic['MediaList']['data'] = new_media
             
-            # Loop 3: Iterate over media, and consolidate into new_meda
-            ut.pLog(f"Uploading Media from Google Drive to Tele")
             await tele.update(self.logic)
-            for name, media in trawler.trawlers['GoogleDrive'].mediaList.items():
-                new_media[name] = media['storage']
         except:
             raise ValueError(f"Unable to update control")
         with open(self.__filepath, 'w') as file:
