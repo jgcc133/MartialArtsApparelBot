@@ -13,9 +13,11 @@ import json
 import uvicorn
 import asyncio
 import time
+import threading
 
 from dotenv import load_dotenv
 from fastapi import FastAPI
+from contextlib import asynccontextmanager
 from workflows import utils as ut
 from workflows import tele as tl
 from workflows import datatrawl as dt
@@ -68,6 +70,7 @@ async def queryVariations(query_type: str = 'filter', q: str ='all', trawler=tra
             pass
     return full_product_list
 
+
 async def main(control, trawler, telegram_interface):    
     ut.clearLogs()
     # One round of update
@@ -78,31 +81,19 @@ async def main(control, trawler, telegram_interface):
     with open('user/sku.yml', 'w') as sku:
         yaml.dump(trawler.trawlers['GoogleDrive'].pointers, sku)
     
-    # after trawler is set up, Control.update should be called to update control and
-    # periodically listen for updates and synchronise between telegram and trawler
-    # trawler is a periodic, completable cycle, whereas tele is a persistent, run till
-    # updated or disconnected process
-
-
     # initialise settings for telegram chat bot
     telegram_interface = tl.Tele(control.logic)
     await telegram_interface.BOTS['b2d'].start(bot_token=telegram_interface.APIS['b2d'])
 
-    await control.update(trawler, telegram_interface)
-    await run_uvicorn(app)
-       
+    await control.firstUpdate(trawler, telegram_interface)
+    # await updater(control, trawler, telegram_interface)
 
-async def update(control, trawler, telegram_interface):
     counter = 1
     while counter < 10:
-        time.sleep(120)
-        ut.pLog(f"Update {counter}: Updating google drive")
-        trawler.trawlers['GoogleDrive'].update()
-        ut.pLog(f"Update {counter}: Updating telegram")
+        await asyncio.sleep(60)
+        ut.pLog(f"Update {counter}")
         await control.update(trawler, telegram_interface)
-
-        counter+=1
-
+        counter += 1
 
 async def run_uvicorn(app, host='127.0.0.1', port=8000):
     config = uvicorn.Config(app=app, port=port, host=host)
@@ -114,13 +105,10 @@ async def tasks():
         main(control=control,
              trawler=trawler,
              telegram_interface=telegram_interface),
-        # update(control=control,
-        #        trawler=trawler,
-        #        telegram_interface=telegram_interface)
+        run_uvicorn(app)
         )
 
 if __name__=="__main__":
     asyncio.run(tasks())
-    # thread
                      
    

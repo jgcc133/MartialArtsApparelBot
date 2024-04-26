@@ -1,8 +1,44 @@
-[ 2024-04-24 12:09:38.393959 | 1 | system ] : 	 Control has been loaded from user/control.yml
-[ 2024-04-24 12:09:38.612158 | 1 | system ] : 	 Credentials for GoogleDrive successfully set.
-[ 2024-04-24 12:09:38.616721 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
-[ 2024-04-24 12:09:49.565268 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
-[ 2024-04-24 12:09:49.566273 | 1 | system ] : 	 Trawler created: GoogleDrive for Martial Arts Apparel.
-[ 2024-04-24 12:09:49.659382 | 1 | system ] : 	 Authentication for Telegram Complete.
-[ 2024-04-24 12:09:49.667370 | 1 | system ] : 	 Telegram Chat Bot Logic Flow Created!
-[ 2024-04-24 12:23:38.409927 | 1 | system ] : 	 Telegram Chat Bot Media Uploaded!
+[ 2024-04-25 17:34:45.530027 | 1 | system ] : 	 Control has been loaded from user/control.yml
+[ 2024-04-25 17:34:45.716383 | 1 | system ] : 	 Credentials for GoogleDrive successfully set.
+[ 2024-04-25 17:34:45.718383 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
+[ 2024-04-25 17:34:55.639848 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
+[ 2024-04-25 17:34:55.639848 | 1 | system ] : 	 Trawler created: GoogleDrive for Martial Arts Apparel.
+[ 2024-04-25 17:34:55.663852 | 1 | system ] : 	 Authentication for Telegram Complete.
+[ 2024-04-25 17:34:55.667851 | 1 | system ] : 	 Telegram Chat Bot Logic Flow Created!
+[ 2024-04-25 17:34:56.077018 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
+[ 2024-04-25 17:35:06.293718 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
+[ 2024-04-25 17:35:08.297474 | 1 | system ] : 	 Telegram Chat Bot Media Uploaded!
+[ 2024-04-25 17:36:08.371566 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
+[ 2024-04-25 17:36:18.592218 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
+[ 2024-04-25 17:37:18.831576 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
+[ 2024-04-25 17:37:30.206789 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
+[ 2024-04-25 17:37:30.534739 | 1 | system ] : 	 Failed to send [Back to Boxing Gloves] message from events.CallbackQuery to user
+[ 2024-04-25 17:37:37.237289 | 1 | system ] : 	 Failed to send [Prize Ring Boxing Gloves] message from events.CallbackQuery to user
+[ 2024-04-25 17:37:39.799962 | 63144080 | Jon Chow ] : 	 Clicked on [Prof. 5.0 (Blue White] button that has not been added to the Config list.
+[ 2024-04-25 17:38:00.202187 | 1 | system ] : 	 Failed to send [Back to Start] message from events.CallbackQuery to user
+[ 2024-04-25 17:38:03.627452 | 1 | system ] : 	 Failed to send [Product Enquiry] message from events.CallbackQuery to user
+[ 2024-04-25 17:38:09.759843 | 1 | system ] : 	 Failed to send [Boxing Gloves] message from events.CallbackQuery to user
+[ 2024-04-25 17:38:17.467063 | 1 | system ] : 	 Failed to send [Prize Ring Boxing Gloves] message from events.CallbackQuery to user
+[ 2024-04-25 17:38:30.219752 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
+[ 2024-04-25 17:38:40.495210 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
+[ 2024-04-25 17:38:40.733672 | 63144080 | Jon Chow ] : 	 Clicked on [Prof. 5.0 (Blue White] button that has not been added to the Config list.
+[ 2024-04-25 17:38:40.932524 | 63144080 | Jon Chow ] : 	 Clicked on [Prof. 5.0 (Blue White] button that has not been added to the Config list.
+[ 2024-04-25 17:39:04.736890 | 1 | system ] : 	 Failed to send [Back to Start] message from events.CallbackQuery to user
+[ 2024-04-25 17:39:04.799155 | 1 | system ] : 	 Failed to send [Back to Start] message from events.CallbackQuery to user
+[ 2024-04-25 17:39:06.590680 | 1 | system ] : 	 Failed to send [Product Enquiry] message from events.CallbackQuery to user
+[ 2024-04-25 17:39:06.666526 | 1 | system ] : 	 Failed to send [Product Enquiry] message from events.CallbackQuery to user
+[ 2024-04-25 17:39:10.410928 | 1 | system ] : 	 Failed to send [Handwraps] message from events.CallbackQuery to user
+[ 2024-04-25 17:39:10.566155 | 1 | system ] : 	 Failed to send [Handwraps] message from events.CallbackQuery to user
+[ 2024-04-25 17:39:16.076815 | 1 | system ] : 	 Failed to send [Back to Categories] message from events.CallbackQuery to user
+[ 2024-04-25 17:39:16.162797 | 1 | system ] : 	 Failed to send [Back to Categories] message from events.CallbackQuery to user
+[ 2024-04-25 17:39:19.767788 | 1 | system ] : 	 Failed to send [Boxing Gloves] message from events.CallbackQuery to user
+[ 2024-04-25 17:39:19.861131 | 1 | system ] : 	 Failed to send [Boxing Gloves] message from events.CallbackQuery to user
+[ 2024-04-25 17:39:22.823120 | 1 | system ] : 	 Failed to send [Prize Ring Boxing Gloves] message from events.CallbackQuery to user
+[ 2024-04-25 17:39:23.051335 | 63144080 | Jon Chow ] : 	 Clicked on [Prof. 5.0 (Blue White)] button that has not been added to the Config list.
+[ 2024-04-25 17:39:23.232864 | 1 | system ] : 	 Failed to send [Prize Ring Boxing Gloves] message from events.CallbackQuery to user
+[ 2024-04-25 17:39:23.428308 | 1 | system ] : 	 Failed to send [Prof. 5.0 (Blue White)] message from events.CallbackQuery to user
+[ 2024-04-25 17:39:40.655684 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
+[ 2024-04-25 17:39:51.502433 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
+[ 2024-04-25 17:40:30.444428 | 1 | system ] : 	 Failed to send [Back to Start] message from events.CallbackQuery to user
+[ 2024-04-25 17:40:30.513331 | 1 | system ] : 	 Failed to send [Back to Start] message from events.CallbackQuery to user
+[ 2024-04-25 17:40:51.519663 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)

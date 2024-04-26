@@ -95,10 +95,9 @@ class Tele:
         except:
             ut.pLog("Failed to create bots")
 
-    async def update(self, control):
-        
+    async def update(self, control, upload_media = False):        
         self.__addB2DHandlers(control)
-        await self.__uploadMedia(control)
+        if upload_media: await self.__uploadMedia(control)
 
 
     async def __uploadMedia(self, control):
@@ -106,8 +105,8 @@ class Tele:
         media_list = control['MediaList']['data']
         media_prefix = control['Source']['data']['GoogleDrive']['storage']
         for file_name in media_list.keys():
-            # For dev: TODO - remove this limiter of 4 files (2 photos, 2 pdfs)
-            # if file_name in ["prize ring black nosebar.png"]:
+            # TODO - remove this limiter of 4 files (2 photos, 2 pdfs)
+            if file_name in ["prize ring black nosebar.png"]:
 
                 with open(media_prefix + file_name, "rb") as media:
                     self.__target_coro[file_name]= await Client.send_file(

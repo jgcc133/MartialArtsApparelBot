@@ -1,6 +1,6 @@
 {
   "Control": {
-    "Time": "2024-04-24 12:09:38.396973",
+    "Time": "2024-04-25 17:34:45.531029",
     "Data": {
       "Auth": {
         "data": {
@@ -67,7 +67,8 @@
               "btn": [
                 "Black Silver",
                 "Frost Gold",
-                "Back to Shoes"
+                "Back to Shoes",
+                "Back to Start"
               ]
             },
             "Asics Matflex 7 Shoes": {
@@ -80,7 +81,8 @@
                 "Black",
                 "White",
                 "items_approved_photo_global_2023_2_asics_footwear",
-                "Back to Shoes"
+                "Back to Shoes",
+                "Back to Start"
               ]
             },
             "Back to Start": {
@@ -95,11 +97,13 @@
             },
             "Black": {
               "tag": "variation",
-              "msg": "Asics Matflex 7 Shoes\nBlack",
+              "msg": "Stay tuned! We will be adding more Black photos soon!",
               "media": [],
               "btn": [
                 "Add to Cart",
-                "Back to Asics Matflex 7 Shoes"
+                "Back to Asics Matflex 7 Shoes",
+                "Back to Shoes",
+                "Back to Start"
               ]
             },
             "Black Silver": {
@@ -116,7 +120,9 @@
               ],
               "btn": [
                 "Add to Cart",
-                "Back to Asics Matflex 6 Shoes"
+                "Back to Asics Matflex 6 Shoes",
+                "Back to Shoes",
+                "Back to Start"
               ]
             },
             "Boxing Gloves": {
@@ -141,7 +147,9 @@
               ],
               "btn": [
                 "Add to Cart",
-                "Back to Asics Matflex 6 Shoes"
+                "Back to Asics Matflex 6 Shoes",
+                "Back to Shoes",
+                "Back to Start"
               ]
             },
             "Handwraps": {
@@ -179,7 +187,8 @@
               "media": [],
               "btn": [
                 "Sky Blue Handwraps",
-                "Back to Handwraps"
+                "Back to Handwraps",
+                "Back to Start"
               ]
             },
             "Prize Ring Boxing Gloves": {
@@ -193,10 +202,11 @@
                 "Prof SS Boxing Gloves Soft Type (All White)",
                 "Prof SS Boxing Gloves Soft Type (Black Silver)",
                 "Prof. 5.0 (Black Orange)",
-                "Prof. 5.0 (Blue White)",
+                "Prof. 5.0 (Blue White",
                 "Prof. 5.0 (Maroon Black Piping)",
                 "Prof. 5.0 (White Blue Red)",
-                "Back to Boxing Gloves"
+                "Back to Boxing Gloves",
+                "Back to Start"
               ]
             },
             "Prize Ring Head Gear": {
@@ -206,16 +216,19 @@
                 "prize ring black nosebar.png"
               ],
               "btn": [
-                "Back to Head Gear"
+                "Back to Head Gear",
+                "Back to Start"
               ]
             },
             "Pro Training Velcro (Blue Silver)": {
               "tag": "variation",
-              "msg": "Prize Ring Boxing Gloves\nPro Training Velcro (Blue Silver)",
+              "msg": "Stay tuned! We will be adding more Pro Training Velcro (Blue Silver) photos soon!",
               "media": [],
               "btn": [
                 "Add to Cart",
-                "Back to Prize Ring Boxing Gloves"
+                "Back to Prize Ring Boxing Gloves",
+                "Back to Boxing Gloves",
+                "Back to Start"
               ]
             },
             "Product Enquiry": {
@@ -238,7 +251,9 @@
               ],
               "btn": [
                 "Add to Cart",
-                "Back to Prize Ring Boxing Gloves"
+                "Back to Prize Ring Boxing Gloves",
+                "Back to Boxing Gloves",
+                "Back to Start"
               ]
             },
             "Prof SS Boxing Gloves Soft Type (Black Silver)": {
@@ -249,27 +264,20 @@
               ],
               "btn": [
                 "Add to Cart",
-                "Back to Prize Ring Boxing Gloves"
+                "Back to Prize Ring Boxing Gloves",
+                "Back to Boxing Gloves",
+                "Back to Start"
               ]
             },
             "Prof. 5.0 (Black Orange)": {
               "tag": "variation",
-              "msg": "Prize Ring Boxing Gloves\nProf. 5.0 (Black Orange)",
+              "msg": "Stay tuned! We will be adding more Prof. 5.0 (Black Orange) photos soon!",
               "media": [],
               "btn": [
                 "Add to Cart",
-                "Back to Prize Ring Boxing Gloves"
-              ]
-            },
-            "Prof. 5.0 (Blue White)": {
-              "tag": "variation",
-              "msg": "Prize Ring Boxing Gloves\nProf. 5.0 (Blue White)",
-              "media": [
-                "blue white prize ring.JPG"
-              ],
-              "btn": [
-                "Add to Cart",
-                "Back to Prize Ring Boxing Gloves"
+                "Back to Prize Ring Boxing Gloves",
+                "Back to Boxing Gloves",
+                "Back to Start"
               ]
             },
             "Prof. 5.0 (Maroon Black Piping)": {
@@ -280,7 +288,9 @@
               ],
               "btn": [
                 "Add to Cart",
-                "Back to Prize Ring Boxing Gloves"
+                "Back to Prize Ring Boxing Gloves",
+                "Back to Boxing Gloves",
+                "Back to Start"
               ]
             },
             "Prof. 5.0 (White Blue Red)": {
@@ -291,7 +301,9 @@
               ],
               "btn": [
                 "Add to Cart",
-                "Back to Prize Ring Boxing Gloves"
+                "Back to Prize Ring Boxing Gloves",
+                "Back to Boxing Gloves",
+                "Back to Start"
               ]
             },
             "Shoes": {
@@ -311,7 +323,9 @@
               ],
               "btn": [
                 "Add to Cart",
-                "Back to Prize Ring"
+                "Back to Prize Ring",
+                "Back to Handwraps",
+                "Back to Start"
               ]
             },
             "Sweat Pants": {
@@ -323,11 +337,13 @@
             },
             "White": {
               "tag": "variation",
-              "msg": "Asics Matflex 7 Shoes\nWhite",
+              "msg": "Stay tuned! We will be adding more White photos soon!",
               "media": [],
               "btn": [
                 "Add to Cart",
-                "Back to Asics Matflex 7 Shoes"
+                "Back to Asics Matflex 7 Shoes",
+                "Back to Shoes",
+                "Back to Start"
               ]
             },
             "items_approved_photo_global_2023_2_asics_footwear": {
@@ -353,7 +369,9 @@
               ],
               "btn": [
                 "Add to Cart",
-                "Back to Asics Matflex 7 Shoes"
+                "Back to Asics Matflex 7 Shoes",
+                "Back to Shoes",
+                "Back to Start"
               ]
             },
             "Back to Categories": {
@@ -411,7 +429,8 @@
                 "Black",
                 "White",
                 "items_approved_photo_global_2023_2_asics_footwear",
-                "Back to Shoes"
+                "Back to Shoes",
+                "Back to Start"
               ]
             },
             "Back to Asics Matflex 6 Shoes": {
@@ -424,7 +443,8 @@
               "btn": [
                 "Black Silver",
                 "Frost Gold",
-                "Back to Shoes"
+                "Back to Shoes",
+                "Back to Start"
               ]
             },
             "Back to Prize Ring Boxing Gloves": {
@@ -438,10 +458,24 @@
                 "Prof SS Boxing Gloves Soft Type (All White)",
                 "Prof SS Boxing Gloves Soft Type (Black Silver)",
                 "Prof. 5.0 (Black Orange)",
-                "Prof. 5.0 (Blue White)",
+                "Prof. 5.0 (Blue White",
                 "Prof. 5.0 (Maroon Black Piping)",
                 "Prof. 5.0 (White Blue Red)",
-                "Back to Boxing Gloves"
+                "Back to Boxing Gloves",
+                "Back to Start"
+              ]
+            },
+            "Prof. 5.0 (Blue White": {
+              "tag": "variation",
+              "msg": "Prize Ring Boxing Gloves\nProf. 5.0 (Blue White",
+              "media": [
+                "blue white prize ring.JPG"
+              ],
+              "btn": [
+                "Add to Cart",
+                "Back to Prize Ring Boxing Gloves",
+                "Back to Boxing Gloves",
+                "Back to Start"
               ]
             },
             "Back to Prize Ring": {
@@ -450,7 +484,8 @@
               "media": [],
               "btn": [
                 "Sky Blue Handwraps",
-                "Back to Handwraps"
+                "Back to Handwraps",
+                "Back to Start"
               ]
             }
           },
@@ -530,8 +565,8 @@
           "1081A021_021_SB_BT_GLB.jpg": "workflows/media/googledrive/1081A021_021_SB_BT_GLB.jpg",
           "1081A021_021_SB_BK_GLB.jpg": "workflows/media/googledrive/1081A021_021_SB_BK_GLB.jpg",
           "Asics Matflex 6 Shoes Catalog.pdf": "workflows/media/googledrive/Asics Matflex 6 Shoes Catalog.pdf",
-          "white blue red prize ring.JPG": "workflows/media/googledrive/white blue red prize ring.JPG",
           "blue white prize ring.JPG": "workflows/media/googledrive/blue white prize ring.JPG",
+          "white blue red prize ring.JPG": "workflows/media/googledrive/white blue red prize ring.JPG",
           "Maroon Black Prize Ring.JPG": "workflows/media/googledrive/Maroon Black Prize Ring.JPG",
           "All white prize ring.JPG": "workflows/media/googledrive/All white prize ring.JPG",
           "Professional SS 16oz Black Silver Prize Ring Gloves.JPG": "workflows/media/googledrive/Professional SS 16oz Black Silver Prize Ring Gloves.JPG",
@@ -566,7 +601,7 @@
     }
   },
   "GoogleDrive Pointers": {
-    "Time": "2024-04-24 12:09:49.455562",
+    "Time": "2024-04-25 17:39:51.466443",
     "Data": {
       "Head Gear": {
         "id": "16FkSyv0PnoE0ups7JOQannHvJqeIOeNK",
@@ -697,18 +732,18 @@
               "Catalogue-PRIZERINGSports-2023.pdf": "1Qwz5lNy6JoqAWX_h8OSV965alpM1OS7q"
             },
             "variations": {
-              "Prof. 5.0 (White Blue Red)": {
-                "id": "11tAmM9uoGpDU1AQ4YV8bIW7PMbE338MX",
-                "media": {
-                  "white blue red prize ring.JPG": "11yuY65sBoEQhEgX1ytgf0FNn2RUCSnxI"
-                },
-                "tags": [],
-                "sizes": {}
-              },
               "Prof. 5.0 (Blue White)": {
                 "id": "11u-dRzo2G-GyBZUm7RTQgdCZhmtlgByQ",
                 "media": {
                   "blue white prize ring.JPG": "11vQf3tIZ0cRAvbD7HY5Cttic2_pWNVs5"
+                },
+                "tags": [],
+                "sizes": {}
+              },
+              "Prof. 5.0 (White Blue Red)": {
+                "id": "11tAmM9uoGpDU1AQ4YV8bIW7PMbE338MX",
+                "media": {
+                  "white blue red prize ring.JPG": "11yuY65sBoEQhEgX1ytgf0FNn2RUCSnxI"
                 },
                 "tags": [],
                 "sizes": {}
@@ -756,7 +791,7 @@
     }
   },
   "GoogleDrive Media List": {
-    "Time": "2024-04-24 12:09:49.508568",
+    "Time": "2024-04-25 17:39:51.487438",
     "Data": {
       "prize ring black nosebar.png": {
         "storage": "workflows/media/googledrive/prize ring black nosebar.png",
@@ -933,15 +968,15 @@
         "googleID": "1zXTvJgapeUvRAg_tlXhDctA1zC66qxcf",
         "googleURL": "https://drive.google.com/uc?id=1zXTvJgapeUvRAg_tlXhDctA1zC66qxcf&export=download"
       },
-      "white blue red prize ring.JPG": {
-        "storage": "workflows/media/googledrive/white blue red prize ring.JPG",
-        "googleID": "11yuY65sBoEQhEgX1ytgf0FNn2RUCSnxI",
-        "googleURL": "https://drive.google.com/uc?id=11yuY65sBoEQhEgX1ytgf0FNn2RUCSnxI&export=download"
-      },
       "blue white prize ring.JPG": {
         "storage": "workflows/media/googledrive/blue white prize ring.JPG",
         "googleID": "11vQf3tIZ0cRAvbD7HY5Cttic2_pWNVs5",
         "googleURL": "https://drive.google.com/uc?id=11vQf3tIZ0cRAvbD7HY5Cttic2_pWNVs5&export=download"
+      },
+      "white blue red prize ring.JPG": {
+        "storage": "workflows/media/googledrive/white blue red prize ring.JPG",
+        "googleID": "11yuY65sBoEQhEgX1ytgf0FNn2RUCSnxI",
+        "googleURL": "https://drive.google.com/uc?id=11yuY65sBoEQhEgX1ytgf0FNn2RUCSnxI&export=download"
       },
       "Maroon Black Prize Ring.JPG": {
         "storage": "workflows/media/googledrive/Maroon Black Prize Ring.JPG",

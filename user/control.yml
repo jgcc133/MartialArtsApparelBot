@@ -50,6 +50,7 @@ B2DFlow:
         - Black Silver
         - Frost Gold
         - Back to Shoes
+        - Back to Start
       Asics Matflex 7 Shoes: &id007
         tag: product
         msg: Which variation would you like to explore?
@@ -60,19 +61,20 @@ B2DFlow:
         - White
         - items_approved_photo_global_2023_2_asics_footwear
         - Back to Shoes
+        - Back to Start
       Back to Start:
         btn: *id001
         msg: What services would you like to take a look at?
         tag: service
       Black:
         tag: variation
-        msg: 'Asics Matflex 7 Shoes
-
-          Black'
+        msg: Stay tuned! We will be adding more Black photos soon!
         media: []
         btn:
         - Add to Cart
         - Back to Asics Matflex 7 Shoes
+        - Back to Shoes
+        - Back to Start
       Black Silver:
         tag: variation
         msg: 'Asics Matflex 6 Shoes
@@ -89,6 +91,8 @@ B2DFlow:
         btn:
         - Add to Cart
         - Back to Asics Matflex 6 Shoes
+        - Back to Shoes
+        - Back to Start
       Boxing Gloves: &id005
         tag: category
         msg: Which product would you like to explore?
@@ -111,6 +115,8 @@ B2DFlow:
         btn:
         - Add to Cart
         - Back to Asics Matflex 6 Shoes
+        - Back to Shoes
+        - Back to Start
       Handwraps: &id004
         tag: category
         msg: Which product would you like to explore?
@@ -140,6 +146,7 @@ B2DFlow:
         btn:
         - Sky Blue Handwraps
         - Back to Handwraps
+        - Back to Start
       Prize Ring Boxing Gloves: &id009
         tag: product
         msg: Which variation would you like to explore?
@@ -154,6 +161,7 @@ B2DFlow:
         - Prof. 5.0 (Maroon Black Piping)
         - Prof. 5.0 (White Blue Red)
         - Back to Boxing Gloves
+        - Back to Start
       Prize Ring Head Gear:
         tag: product
         msg: Prize Ring Head Gear
@@ -161,15 +169,17 @@ B2DFlow:
         - prize ring black nosebar.png
         btn:
         - Back to Head Gear
+        - Back to Start
       Pro Training Velcro (Blue Silver):
         tag: variation
-        msg: 'Prize Ring Boxing Gloves
-
-          Pro Training Velcro (Blue Silver)'
+        msg: Stay tuned! We will be adding more Pro Training Velcro (Blue Silver)
+          photos soon!
         media: []
         btn:
         - Add to Cart
         - Back to Prize Ring Boxing Gloves
+        - Back to Boxing Gloves
+        - Back to Start
       Product Enquiry: &id002
         btn:
         - Boxing Gloves
@@ -190,6 +200,8 @@ B2DFlow:
         btn:
         - Add to Cart
         - Back to Prize Ring Boxing Gloves
+        - Back to Boxing Gloves
+        - Back to Start
       Prof SS Boxing Gloves Soft Type (Black Silver):
         tag: variation
         msg: 'Prize Ring Boxing Gloves
@@ -200,25 +212,17 @@ B2DFlow:
         btn:
         - Add to Cart
         - Back to Prize Ring Boxing Gloves
+        - Back to Boxing Gloves
+        - Back to Start
       Prof. 5.0 (Black Orange):
         tag: variation
-        msg: 'Prize Ring Boxing Gloves
-
-          Prof. 5.0 (Black Orange)'
+        msg: Stay tuned! We will be adding more Prof. 5.0 (Black Orange) photos soon!
         media: []
         btn:
         - Add to Cart
         - Back to Prize Ring Boxing Gloves
-      Prof. 5.0 (Blue White):
-        tag: variation
-        msg: 'Prize Ring Boxing Gloves
-
-          Prof. 5.0 (Blue White)'
-        media:
-        - blue white prize ring.JPG
-        btn:
-        - Add to Cart
-        - Back to Prize Ring Boxing Gloves
+        - Back to Boxing Gloves
+        - Back to Start
       Prof. 5.0 (Maroon Black Piping):
         tag: variation
         msg: 'Prize Ring Boxing Gloves
@@ -229,6 +233,8 @@ B2DFlow:
         btn:
         - Add to Cart
         - Back to Prize Ring Boxing Gloves
+        - Back to Boxing Gloves
+        - Back to Start
       Prof. 5.0 (White Blue Red):
         tag: variation
         msg: 'Prize Ring Boxing Gloves
@@ -239,6 +245,8 @@ B2DFlow:
         btn:
         - Add to Cart
         - Back to Prize Ring Boxing Gloves
+        - Back to Boxing Gloves
+        - Back to Start
       Shoes: &id003
         tag: category
         msg: Which product would you like to explore?
@@ -256,6 +264,8 @@ B2DFlow:
         btn:
         - Add to Cart
         - Back to Prize Ring
+        - Back to Handwraps
+        - Back to Start
       Sweat Pants:
         tag: category
         msg: Stay tuned! More Sweat Pants will be added to the store soon!
@@ -263,13 +273,13 @@ B2DFlow:
         - Back to Categories
       White:
         tag: variation
-        msg: 'Asics Matflex 7 Shoes
-
-          White'
+        msg: Stay tuned! We will be adding more White photos soon!
         media: []
         btn:
         - Add to Cart
         - Back to Asics Matflex 7 Shoes
+        - Back to Shoes
+        - Back to Start
       items_approved_photo_global_2023_2_asics_footwear:
         tag: variation
         msg: 'Asics Matflex 7 Shoes
@@ -295,6 +305,8 @@ B2DFlow:
         btn:
         - Add to Cart
         - Back to Asics Matflex 7 Shoes
+        - Back to Shoes
+        - Back to Start
       Back to Categories: *id002
       Back to Shoes: *id003
       Back to Handwraps: *id004
@@ -303,6 +315,18 @@ B2DFlow:
       Back to Asics Matflex 7 Shoes: *id007
       Back to Asics Matflex 6 Shoes: *id008
       Back to Prize Ring Boxing Gloves: *id009
+      Prof. 5.0 (Blue White):
+        tag: variation
+        msg: 'Prize Ring Boxing Gloves
+
+          Prof. 5.0 (Blue White)'
+        media:
+        - blue white prize ring.JPG
+        btn:
+        - Add to Cart
+        - Back to Prize Ring Boxing Gloves
+        - Back to Boxing Gloves
+        - Back to Start
       Back to Prize Ring: *id010
     commands:
       /call:
@@ -370,9 +394,9 @@ MediaList:
     1081A021_021_SB_BK_GLB.jpg: workflows/media/googledrive/1081A021_021_SB_BK_GLB.jpg
     Asics Matflex 6 Shoes Catalog.pdf: workflows/media/googledrive/Asics Matflex 6
       Shoes Catalog.pdf
+    blue white prize ring.JPG: workflows/media/googledrive/blue white prize ring.JPG
     white blue red prize ring.JPG: workflows/media/googledrive/white blue red prize
       ring.JPG
-    blue white prize ring.JPG: workflows/media/googledrive/blue white prize ring.JPG
     Maroon Black Prize Ring.JPG: workflows/media/googledrive/Maroon Black Prize Ring.JPG
     All white prize ring.JPG: workflows/media/googledrive/All white prize ring.JPG
     Professional SS 16oz Black Silver Prize Ring Gloves.JPG: workflows/media/googledrive/Professional

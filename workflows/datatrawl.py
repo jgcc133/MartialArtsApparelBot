@@ -92,7 +92,7 @@ class Trawler:
         self.mediaList = {}
                         
         self.setCreds()
-        self.idPull() # Add download_media=True when deployed
+        self.idPull()
 
     def setCreds(self):
         ut.pLog(f"Setting Credentials for {self.trawl_for}...")
@@ -179,6 +179,10 @@ class Trawler:
         ut.pLog(f"Pulling files from Drive...")
         try:
             service = self.drive_client
+            self.__breadcrumbs = {'categories': {},
+                              'products': {},
+                              'variations': {},
+                              'sizes': {}}
             cat_query = f"('{self.driveId}' in parents) and (trashed = false)"
             ut.pLog(f"Querying {self.trawl_for} with \t {cat_query}", p1=True)
             fields = 'nextPageToken, files(id, name, webContentLink, capabilities(canListChildren))'
@@ -254,13 +258,14 @@ class Trawler:
         return self.pointers
 
     def __download(self, dict_):
-        service = self.drive_client
-        request = service.files().get_media(fileId=dict_['id'])
-        fh = io.FileIO(self._media_storage_location + dict_['name'], mode='wb')
-        downloader = MediaIoBaseDownload(fh, request, chunksize=1024*1024)
-        done = False
-        while done is False:
-            status, done = downloader.next_chunk()
+        if not os.path.exists(self._media_storage_location + dict_['name']):
+            service = self.drive_client
+            request = service.files().get_media(fileId=dict_['id'])
+            fh = io.FileIO(self._media_storage_location + dict_['name'], mode='wb')
+            downloader = MediaIoBaseDownload(fh, request, chunksize=1024*1024)
+            done = False
+            while done is False:
+                status, done = downloader.next_chunk()
 
     def metaTablePull(self):
         gs_client = self.spreadsheet_client
@@ -400,9 +405,7 @@ class Trawler:
         Re run ID pull. If there are differences, compare changes
         get new tree / re-initialise whole trawler"""
         ut.pLog(f"Updating Trawler.pointers from {self.trawl_for}")
-        new_tree = self.idPull()
-        print(self.pointers == new_tree)
-        return
+        self.idPull()
 
 class TrawlerSet:
     '''
