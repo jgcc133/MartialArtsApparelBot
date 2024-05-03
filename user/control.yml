@@ -186,6 +186,7 @@ B2DFlow:
         - Head Gear
         - Shoes
         - Sweat Pants
+        - Quick Search
         - Back to Start
         msg: Which areas of products would you like to look at today?
         tag: service
