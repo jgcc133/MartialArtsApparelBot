@@ -106,19 +106,19 @@ class Tele:
         media_prefix = control['Source']['data']['GoogleDrive']['storage']
         for file_name in media_list.keys():
             # TODO - remove this limiter of 4 files (2 photos, 2 pdfs)
-            if file_name in ["prize ring black nosebar.png"]:
+            # if file_name in ["prize ring black nosebar.png"]:
 
-                with open(media_prefix + file_name, "rb") as media:
-                    self.__target_coro[file_name]= await Client.send_file(
-                        entity = 63144080,
-                        file=media,
-                        file_name=file_name,
-                        )
+            with open(media_prefix + file_name, "rb") as media:
+                self.__target_coro[file_name]= await Client.send_file(
+                    entity = 63144080,
+                    file=media,
+                    file_name=file_name,
+                    )
             # TODO And remove indentation of with block and await block as well
             
-                await Client.send_message(
-                            entity=63144080,
-                            message=f"[File {len(self.__target_coro)} out of {len(media_list.keys())}] {file_name} uploaded!")
+            await Client.send_message(
+                        entity=63144080,
+                        message=f"[File {len(self.__target_coro)} out of {len(media_list.keys())}] {file_name} uploaded!")
                             
         ut.pLog("Telegram Chat Bot Media Uploaded!", p1=True)
         
@@ -192,8 +192,8 @@ class Tele:
                             ut.pLog(f"Sending Media for [{data}] to user", chat_id, chat_username)
 
                             # TODO swap back the declaration of media_file_names
-                            # media_file_names = Callbacks[data]['media']
-                            media_file_names = ["prize ring black nosebar.png"]
+                            # media_file_names = ["prize ring black nosebar.png"]
+                            media_file_names = Callbacks[data]['media']
                             
                             photo_coros = [self.__target_coro[key] for key in media_file_names if key[-4:] != '.pdf']
                             pdf_coros = [self.__target_coro[key] for key in media_file_names if key[-4:] == '.pdf']
@@ -234,13 +234,6 @@ class Tele:
                                 buttons=buttons)
                         ut.pLog(f"Sent [{data}] message to user", chat_id, chat_username)
 
-                        # Append response and clear buttons
-                        new_text = msg.text + "\n\n__**" + str(event.data, encoding='utf-8') + "**__"
-                        await Client.edit_message(
-                            entity=event.sender_id,
-                            message=msg_id,
-                            text=new_text,
-                            buttons=Button.clear())
                     except:
                         ut.pLog(f"Failed to send [{data}] message from events.CallbackQuery to user", p1=True)
                 else:
@@ -250,6 +243,14 @@ class Tele:
                             entity=chat_id,
                             message=Default["msg"],
                             buttons=buttons)
+        
+                # Append response and clear buttons
+                new_text = msg.text + "\n\n__**" + str(event.data, encoding='utf-8') + "**__"
+                await Client.edit_message(
+                    entity=event.sender_id,
+                    message=msg_id,
+                    text=new_text,
+                    buttons=Button.clear())
         except:
             ut.pLog("Failed to load handlers...", p1=True)
 

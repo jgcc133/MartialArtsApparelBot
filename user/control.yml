@@ -25,7 +25,6 @@ B2CFlow:
         - Product Enquiry
         - Arrange Viewing
         - Other Services
-        - Back
         msg: Welcome to Martial Arts Apparel Bot! What services would you like to
           take a look at?
   meta: Control Flow config for ControlEngine to read in and generate a list of handlers
@@ -308,13 +307,6 @@ B2DFlow:
         - Back to Shoes
         - Back to Start
       Back to Categories: *id002
-      Back to Shoes: *id003
-      Back to Handwraps: *id004
-      Back to Boxing Gloves: *id005
-      Back to Head Gear: *id006
-      Back to Asics Matflex 7 Shoes: *id007
-      Back to Asics Matflex 6 Shoes: *id008
-      Back to Prize Ring Boxing Gloves: *id009
       Prof. 5.0 (Blue White):
         tag: variation
         msg: 'Prize Ring Boxing Gloves
@@ -327,6 +319,13 @@ B2DFlow:
         - Back to Prize Ring Boxing Gloves
         - Back to Boxing Gloves
         - Back to Start
+      Back to Shoes: *id003
+      Back to Handwraps: *id004
+      Back to Boxing Gloves: *id005
+      Back to Head Gear: *id006
+      Back to Asics Matflex 7 Shoes: *id007
+      Back to Asics Matflex 6 Shoes: *id008
+      Back to Prize Ring Boxing Gloves: *id009
       Back to Prize Ring: *id010
     commands:
       /call:

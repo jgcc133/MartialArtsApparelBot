@@ -89,8 +89,8 @@ async def main(control, trawler, telegram_interface):
     # await updater(control, trawler, telegram_interface)
 
     counter = 1
-    while counter < 10:
-        await asyncio.sleep(60)
+    while counter < (24 * 365):
+        await asyncio.sleep(3600)
         ut.pLog(f"Update {counter}")
         await control.update(trawler, telegram_interface)
         counter += 1

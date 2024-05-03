@@ -120,13 +120,13 @@ class Control():
 
 
     async def update(self, trawler, tele, force_update: bool =False):
-        ut.pLog(f"Updating control with {list(trawler.trawlers.keys())}")
         trawler = trawler.trawlers['GoogleDrive']
         current_tree = trawler.pointers.copy()
         trawler.update()
         new_tree = trawler.pointers
 
         if new_tree != current_tree or force_update:
+            ut.pLog("Update of Files Required.")
             try:
                 # trawler.trawlers['GoogleDrive'].idPull(download_media = True)
                 bc = trawler._Trawler__breadcrumbs
@@ -140,7 +140,7 @@ class Control():
                 new_media = {}
 
                 # update 'Product Enquiry' buttons
-                new_flow['Product Enquiry']['btn'] = sorted(list(new_tree.keys())) + ['Back to Start']
+                new_flow['Product Enquiry']['btn'] = sorted(list(new_tree.keys())) + ['Quick Search', 'Back to Start']
                 
                 categories = sorted(list(new_tree.keys()))
                 products = sorted(list(bc['products'].keys()))
