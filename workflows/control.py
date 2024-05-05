@@ -114,7 +114,8 @@ class Control():
         self.logic['B2DFlow']['data']['callbacks'] = new_flow
         self.logic['MediaList']['data'] = new_media
 
-        await tele.update(self.logic, upload_media=True)
+        tele.addB2DHandlers(self.logic)
+        await tele.uploadMedia(self.logic)
         with open(self.__filepath, 'w') as file:
             yaml.dump(self.logic, file, sort_keys=False)
 
@@ -221,7 +222,7 @@ class Control():
                 self.logic['B2DFlow']['data']['callbacks'] = new_flow
                 self.logic['MediaList']['data'] = new_media
                 
-                await tele.update(self.logic)
+                await tele.uploadMedia(self.logic)
             except:
                 raise ValueError(f"Unable to update control")
             with open(self.__filepath, 'w') as file:

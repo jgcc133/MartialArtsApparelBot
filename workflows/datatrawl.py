@@ -89,7 +89,6 @@ class Trawler:
                               'sizes': {}}
         
         self._media_storage_location = key_dict["storage"]
-        self.mediaList = {}
                         
         self.setCreds()
         self.idPull()
@@ -176,6 +175,7 @@ class Trawler:
         |-media(usually pic)    |-media(usually pic)
 
         '''
+        self.mediaList = {}
         ut.pLog(f"Pulling files from Drive...")
         try:
             service = self.drive_client

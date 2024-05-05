@@ -83,16 +83,17 @@ async def main(control, trawler, telegram_interface):
     
     # initialise settings for telegram chat bot
     telegram_interface = tl.Tele(control.logic)
-    await telegram_interface.BOTS['b2d'].start(bot_token=telegram_interface.APIS['b2d'])
+    await telegram_interface.BOTS['b2d'].start(bot_token=telegram_interface._Tele__AUTH['API_KEYS']['b2d'])
 
     await control.firstUpdate(trawler, telegram_interface)
     # await updater(control, trawler, telegram_interface)
 
     counter = 1
-    while counter < (24 * 365):
+    while counter < (365 * 24):
         await asyncio.sleep(3600)
         ut.pLog(f"Update {counter}")
         await control.update(trawler, telegram_interface)
+        ut.pLog(f'Update {counter} complete')
         counter += 1
 
 async def run_uvicorn(app, host='127.0.0.1', port=8000):
