@@ -7,64 +7,38 @@ from workflows import utils as ut
 from workflows.control import Control
 
 class Tele:
+    """
+    Creates an instance of Tele class, based of the telethon library.
+    """
 
     def __init__(self, control: Control):
         '''init takes in a control dict obj from Main and creates an instance of chat bot session'''
 
-        self.AUTH = {}
-        self.APIS = {}
-        self.BOTS = {}
+        self.__AUTH = {}
         self.__target_coro = {}
 
-        self.getKeys(control)
-        self.createBots()
-        pass
-    """
-    async def start(self):
-        '''
-        Starts the various telegram bots within self.BOTS
-        (For projects with more than one chatbot)        
-        '''
-        try:
-            for bot in self.BOTS:
-                # self.BOTS[bot].start(bot_token=self.APIS[bot])
-                await self.BOTS[bot].run_until_disconnected()
-                async with self.BOTS[bot] as client:
-                    await client.run_until_disconnected()
-        except:
-            ut.pLog("Telegram Chat Bot failed to start", p1=True)
+        self.BOTS = {}
 
+        self.setKeys(control)
+        self.createBots()
     
-    async def stop(self):
-        '''
-        Stops the various telegram bots within self.BOTS
-        (For projects with more than one chatbot)        
-        '''
-        try:
-            for bot in self.BOTS:
-                async with self.BOTS[bot] as client:
-                    await client.disconnect()
-        except:
-            ut.pLog("Telegram Chat Bot failed to stop", p1=True)
-    """
-    
-    def getKeys(self, control) -> None:
+    def setKeys(self, control) -> None:
         '''
         Loads keys from environment variables based on configuration provided in control.yml
 
         Variables:
         control - control dictionary loaded from control.yml
 
-        returns None (self.AUTH and self.APIS are set without any return value)
+        returns None (self.__AUTH and self.__API_KEYS are set without any return value)
         '''
         ut.pLog("Obtaining Authentication for Telegram...")
         try:
             AuthRequired = control["Auth"]["data"]["tele"]["app"]
             for key in AuthRequired:
-                self.AUTH[key] = os.environ.get(key)
+                self.__AUTH[key] = os.environ.get(key)
             BotsRequired = control["Auth"]["data"]["tele"]["bots"]
-            for key in BotsRequired:
-                self.APIS[key] = os.environ.get(BotsRequired[key])
+            for key, value in BotsRequired.items():
+                self.__AUTH['API_KEYS'] = {key: os.environ.get(value)}
             ut.pLog("Authentication for Telegram Complete.", p1=True) 
         except:
             ut.pLog("Failed to load Authentication for Telegram.", p1=True)
@@ -81,12 +55,12 @@ class Tele:
         '''
         ut.pLog("Imbuing Telegram Bot with Logic Flow...")
         try:
-            for api_k, api_v in self.APIS.items():
+            for api_k, api_v in self.__AUTH['API_KEYS'].items():
                 if api_k != '' and not None:
                     Client = TelegramClient(
                         'bot_session',
-                        self.AUTH["AUTH_TELE_APP_ID"],
-                        self.AUTH["AUTH_TELE_APP_HASH"]
+                        self.__AUTH["AUTH_TELE_APP_ID"],
+                        self.__AUTH["AUTH_TELE_APP_HASH"]
                         )
                     # self.addB2DHandlers(control, Client)
                     ut.pLog("Telegram Chat Bot Logic Flow Created!", p1=True)
@@ -95,34 +69,31 @@ class Tele:
         except:
             ut.pLog("Failed to create bots")
 
-    async def update(self, control, upload_media = False):        
-        self.__addB2DHandlers(control)
-        if upload_media: await self.__uploadMedia(control)
 
-
-    async def __uploadMedia(self, control):
+    async def uploadMedia(self, control):
         Client = self.BOTS['b2d']
         media_list = control['MediaList']['data']
         media_prefix = control['Source']['data']['GoogleDrive']['storage']
         for file_name in media_list.keys():
             # TODO - remove this limiter of 4 files (2 photos, 2 pdfs)
-            # if file_name in ["prize ring black nosebar.png"]:
+            # if file_name in ["prize ring black nosebar.png", "prize ring black nosebar1.png"]:
+            if not file_name in self.__target_coro.keys():
 
-            with open(media_prefix + file_name, "rb") as media:
-                self.__target_coro[file_name]= await Client.send_file(
-                    entity = 63144080,
-                    file=media,
-                    file_name=file_name,
-                    )
+                with open(media_prefix + file_name, "rb") as media:
+                    self.__target_coro[file_name]= await Client.send_file(
+                        entity = 63144080,
+                        file=media,
+                        file_name=file_name,
+                        )
             # TODO And remove indentation of with block and await block as well
             
-            await Client.send_message(
-                        entity=63144080,
-                        message=f"[File {len(self.__target_coro)} out of {len(media_list.keys())}] {file_name} uploaded!")
+                await Client.send_message(
+                    entity=63144080,
+                    message=f"[File {len(self.__target_coro)} out of {len(media_list.keys())}] {file_name} uploaded!")
                             
         ut.pLog("Telegram Chat Bot Media Uploaded!", p1=True)
         
-    def __addB2DHandlers(self, control) -> None:
+    def addB2DHandlers(self, control) -> None:
         '''
         Adds callback handlers (for buttons) and commands (for shortcut commands)
         to one individual Telegram Bot. Logs as event.newMessage. Default category is a
@@ -254,7 +225,8 @@ class Tele:
         except:
             ut.pLog("Failed to load handlers...", p1=True)
 
-    def beauButtons(self, button_list: list = []) -> list:
+    @staticmethod
+    def beauButtons(button_list: list = []) -> list:
         '''
         Button layout designer.
         1 , 4, 9 (Squares design concept):

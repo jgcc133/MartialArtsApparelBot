@@ -1,6 +1,6 @@
 {
   "Control": {
-    "Time": "2024-05-03 14:39:42.465553",
+    "Time": "2024-05-05 14:36:17.547609",
     "Data": {
       "Auth": {
         "data": {
@@ -36,8 +36,7 @@
               "btn": [
                 "Product Enquiry",
                 "Arrange Viewing",
-                "Other Services",
-                "Back"
+                "Other Services"
               ],
               "msg": "Welcome to Martial Arts Apparel Bot! What services would you like to take a look at?"
             }
@@ -89,8 +88,7 @@
               "btn": [
                 "Product Enquiry",
                 "Arrange Viewing",
-                "Other Services",
-                "Back"
+                "Other Services"
               ],
               "msg": "What services would you like to take a look at?",
               "tag": "service"
@@ -220,17 +218,6 @@
                 "Back to Start"
               ]
             },
-            "Pro Training Velcro (Blue Silver)": {
-              "tag": "variation",
-              "msg": "Stay tuned! We will be adding more Pro Training Velcro (Blue Silver) photos soon!",
-              "media": [],
-              "btn": [
-                "Add to Cart",
-                "Back to Prize Ring Boxing Gloves",
-                "Back to Boxing Gloves",
-                "Back to Start"
-              ]
-            },
             "Product Enquiry": {
               "btn": [
                 "Boxing Gloves",
@@ -238,73 +225,11 @@
                 "Head Gear",
                 "Shoes",
                 "Sweat Pants",
+                "Quick Search",
                 "Back to Start"
               ],
               "msg": "Which areas of products would you like to look at today?",
               "tag": "service"
-            },
-            "Prof SS Boxing Gloves Soft Type (All White)": {
-              "tag": "variation",
-              "msg": "Prize Ring Boxing Gloves\nProf SS Boxing Gloves Soft Type (All White)",
-              "media": [
-                "All white prize ring.JPG"
-              ],
-              "btn": [
-                "Add to Cart",
-                "Back to Prize Ring Boxing Gloves",
-                "Back to Boxing Gloves",
-                "Back to Start"
-              ]
-            },
-            "Prof SS Boxing Gloves Soft Type (Black Silver)": {
-              "tag": "variation",
-              "msg": "Prize Ring Boxing Gloves\nProf SS Boxing Gloves Soft Type (Black Silver)",
-              "media": [
-                "Professional SS 16oz Black Silver Prize Ring Gloves.JPG"
-              ],
-              "btn": [
-                "Add to Cart",
-                "Back to Prize Ring Boxing Gloves",
-                "Back to Boxing Gloves",
-                "Back to Start"
-              ]
-            },
-            "Prof. 5.0 (Black Orange)": {
-              "tag": "variation",
-              "msg": "Stay tuned! We will be adding more Prof. 5.0 (Black Orange) photos soon!",
-              "media": [],
-              "btn": [
-                "Add to Cart",
-                "Back to Prize Ring Boxing Gloves",
-                "Back to Boxing Gloves",
-                "Back to Start"
-              ]
-            },
-            "Prof. 5.0 (Maroon Black Piping)": {
-              "tag": "variation",
-              "msg": "Prize Ring Boxing Gloves\nProf. 5.0 (Maroon Black Piping)",
-              "media": [
-                "Maroon Black Prize Ring.JPG"
-              ],
-              "btn": [
-                "Add to Cart",
-                "Back to Prize Ring Boxing Gloves",
-                "Back to Boxing Gloves",
-                "Back to Start"
-              ]
-            },
-            "Prof. 5.0 (White Blue Red)": {
-              "tag": "variation",
-              "msg": "Prize Ring Boxing Gloves\nProf. 5.0 (White Blue Red)",
-              "media": [
-                "white blue red prize ring.JPG"
-              ],
-              "btn": [
-                "Add to Cart",
-                "Back to Prize Ring Boxing Gloves",
-                "Back to Boxing Gloves",
-                "Back to Start"
-              ]
             },
             "Shoes": {
               "tag": "category",
@@ -381,10 +306,98 @@
                 "Head Gear",
                 "Shoes",
                 "Sweat Pants",
+                "Quick Search",
                 "Back to Start"
               ],
               "msg": "Which areas of products would you like to look at today?",
               "tag": "service"
+            },
+            "Pro Training Velcro (Blue Silver)": {
+              "tag": "variation",
+              "msg": "Stay tuned! We will be adding more Pro Training Velcro (Blue Silver) photos soon!",
+              "media": [],
+              "btn": [
+                "Add to Cart",
+                "Back to Prize Ring Boxing Gloves",
+                "Back to Boxing Gloves",
+                "Back to Start"
+              ]
+            },
+            "Prof SS Boxing Gloves Soft Type (All White)": {
+              "tag": "variation",
+              "msg": "Prize Ring Boxing Gloves\nProf SS Boxing Gloves Soft Type (All White)",
+              "media": [
+                "All white prize ring.JPG"
+              ],
+              "btn": [
+                "Add to Cart",
+                "Back to Prize Ring Boxing Gloves",
+                "Back to Boxing Gloves",
+                "Back to Start"
+              ]
+            },
+            "Prof SS Boxing Gloves Soft Type (Black Silver)": {
+              "tag": "variation",
+              "msg": "Prize Ring Boxing Gloves\nProf SS Boxing Gloves Soft Type (Black Silver)",
+              "media": [
+                "Professional SS 16oz Black Silver Prize Ring Gloves.JPG"
+              ],
+              "btn": [
+                "Add to Cart",
+                "Back to Prize Ring Boxing Gloves",
+                "Back to Boxing Gloves",
+                "Back to Start"
+              ]
+            },
+            "Prof. 5.0 (Black Orange)": {
+              "tag": "variation",
+              "msg": "Stay tuned! We will be adding more Prof. 5.0 (Black Orange) photos soon!",
+              "media": [],
+              "btn": [
+                "Add to Cart",
+                "Back to Prize Ring Boxing Gloves",
+                "Back to Boxing Gloves",
+                "Back to Start"
+              ]
+            },
+            "Prof. 5.0 (Blue White)": {
+              "tag": "variation",
+              "msg": "Prize Ring Boxing Gloves\nProf. 5.0 (Blue White)",
+              "media": [
+                "blue white prize ring.JPG"
+              ],
+              "btn": [
+                "Add to Cart",
+                "Back to Prize Ring Boxing Gloves",
+                "Back to Boxing Gloves",
+                "Back to Start"
+              ]
+            },
+            "Prof. 5.0 (Maroon Black Piping)": {
+              "tag": "variation",
+              "msg": "Prize Ring Boxing Gloves\nProf. 5.0 (Maroon Black Piping)",
+              "media": [
+                "Maroon Black Prize Ring.JPG"
+              ],
+              "btn": [
+                "Add to Cart",
+                "Back to Prize Ring Boxing Gloves",
+                "Back to Boxing Gloves",
+                "Back to Start"
+              ]
+            },
+            "Prof. 5.0 (White Blue Red)": {
+              "tag": "variation",
+              "msg": "Prize Ring Boxing Gloves\nProf. 5.0 (White Blue Red)",
+              "media": [
+                "white blue red prize ring.JPG"
+              ],
+              "btn": [
+                "Add to Cart",
+                "Back to Prize Ring Boxing Gloves",
+                "Back to Boxing Gloves",
+                "Back to Start"
+              ]
             },
             "Back to Shoes": {
               "tag": "category",
@@ -465,19 +478,6 @@
                 "Back to Start"
               ]
             },
-            "Prof. 5.0 (Blue White)": {
-              "tag": "variation",
-              "msg": "Prize Ring Boxing Gloves\nProf. 5.0 (Blue White)",
-              "media": [
-                "blue white prize ring.JPG"
-              ],
-              "btn": [
-                "Add to Cart",
-                "Back to Prize Ring Boxing Gloves",
-                "Back to Boxing Gloves",
-                "Back to Start"
-              ]
-            },
             "Back to Prize Ring": {
               "tag": "product",
               "msg": "Which variation would you like to explore?",
@@ -511,8 +511,7 @@
               "btn": [
                 "Product Enquiry",
                 "Arrange Viewing",
-                "Other Services",
-                "Back"
+                "Other Services"
               ],
               "msg": "Welcome to Martial Arts Apparel Bot! What services would you like to take a look at?"
             }
@@ -601,7 +600,7 @@
     }
   },
   "GoogleDrive Pointers": {
-    "Time": "2024-05-03 14:51:11.688404",
+    "Time": "2024-05-05 14:40:46.373089",
     "Data": {
       "Head Gear": {
         "id": "16FkSyv0PnoE0ups7JOQannHvJqeIOeNK",
@@ -609,7 +608,7 @@
           "Prize Ring Head Gear": {
             "id": "16JDDxU1ui0j1ZP0B9zT2Aq69vOwCzrO-",
             "media": {
-              "prize ring black nosebar.png": "16FqOdWAjxl_wO-7qAio0A1mx0qOrqr_4"
+              "prize ring black nosebar3.png": "16FqOdWAjxl_wO-7qAio0A1mx0qOrqr_4"
             },
             "variations": {}
           }
@@ -791,10 +790,10 @@
     }
   },
   "GoogleDrive Media List": {
-    "Time": "2024-05-03 14:51:11.704690",
+    "Time": "2024-05-05 14:40:46.409860",
     "Data": {
-      "prize ring black nosebar.png": {
-        "storage": "workflows/media/googledrive/prize ring black nosebar.png",
+      "prize ring black nosebar3.png": {
+        "storage": "workflows/media/googledrive/prize ring black nosebar3.png",
         "googleID": "16FqOdWAjxl_wO-7qAio0A1mx0qOrqr_4",
         "googleURL": "https://drive.google.com/uc?id=16FqOdWAjxl_wO-7qAio0A1mx0qOrqr_4&export=download"
       },

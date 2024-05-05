@@ -1,33 +1,23 @@
-[ 2024-05-03 14:39:42.464651 | 1 | system ] : 	 Control has been loaded from user/control.yml
-[ 2024-05-03 14:39:54.829652 | 1 | system ] : 	 Credentials for GoogleDrive successfully set.
-[ 2024-05-03 14:39:54.832553 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
-[ 2024-05-03 14:40:07.349766 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
-[ 2024-05-03 14:40:07.349766 | 1 | system ] : 	 Trawler created: GoogleDrive for Martial Arts Apparel.
-[ 2024-05-03 14:40:07.377013 | 1 | system ] : 	 Authentication for Telegram Complete.
-[ 2024-05-03 14:40:07.395987 | 1 | system ] : 	 Telegram Chat Bot Logic Flow Created!
-[ 2024-05-03 14:40:07.994276 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
-[ 2024-05-03 14:40:18.715338 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
-[ 2024-05-03 14:40:21.939258 | 1 | system ] : 	 Telegram Chat Bot Media Uploaded!
-[ 2024-05-03 14:40:36.066120 | 63144080 | Jon Chow ] : 	 Clicked on [Back] button that has not been added to the Config list.
-[ 2024-05-03 14:40:40.343044 | 63144080 | Jon Chow ] : 	 Clicked on [Back] button that has not been added to the Config list.
-[ 2024-05-03 14:41:22.013568 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
-[ 2024-05-03 14:41:32.422426 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
-[ 2024-05-03 14:42:32.447053 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
-[ 2024-05-03 14:42:47.724890 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
-[ 2024-05-03 14:43:47.745750 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
-[ 2024-05-03 14:44:01.281974 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
-[ 2024-05-03 14:45:01.315125 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
-[ 2024-05-03 14:45:15.070759 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
-[ 2024-05-03 14:46:15.066864 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
-[ 2024-05-03 14:46:25.209955 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
-[ 2024-05-03 14:47:25.228601 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
-[ 2024-05-03 14:47:35.448748 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
-[ 2024-05-03 14:48:15.163166 | 63144080 | Jon Chow ] : 	 Clicked on [Back] button that has not been added to the Config list.
-[ 2024-05-03 14:48:19.456789 | 63144080 | Jon Chow ] : 	 Clicked on [Back] button that has not been added to the Config list.
-[ 2024-05-03 14:48:35.467139 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
-[ 2024-05-03 14:48:45.204700 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
-[ 2024-05-03 14:49:45.208580 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
-[ 2024-05-03 14:49:56.901729 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
-[ 2024-05-03 14:50:56.921830 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
-[ 2024-05-03 14:51:11.720039 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
-[ 2024-05-03 14:52:20.401733 | 63144080 | Jon Chow ] : 	 Clicked on [Back] button that has not been added to the Config list.
+[ 2024-05-05 14:36:17.546611 | 1 | system ] : 	 Control has been loaded from user/control.yml
+[ 2024-05-05 14:36:17.759738 | 1 | system ] : 	 Credentials for GoogleDrive successfully set.
+[ 2024-05-05 14:36:17.762002 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
+[ 2024-05-05 14:36:30.830090 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
+[ 2024-05-05 14:36:30.830090 | 1 | system ] : 	 Trawler created: GoogleDrive for Martial Arts Apparel.
+[ 2024-05-05 14:36:30.855118 | 1 | system ] : 	 Authentication for Telegram Complete.
+[ 2024-05-05 14:36:30.859746 | 1 | system ] : 	 Telegram Chat Bot Logic Flow Created!
+[ 2024-05-05 14:36:31.646226 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
+[ 2024-05-05 14:36:43.285744 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
+[ 2024-05-05 14:36:54.293506 | 1 | system ] : 	 Telegram Chat Bot Media Uploaded!
+[ 2024-05-05 14:37:35.202910 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
+[ 2024-05-05 14:37:46.014325 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
+[ 2024-05-05 14:38:17.902652 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
+[ 2024-05-05 14:38:29.059722 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
+[ 2024-05-05 14:38:42.947020 | 1 | system ] : 	 Telegram Chat Bot Media Uploaded!
+[ 2024-05-05 14:39:06.722636 | 63144080 | Jon Chow ] : 	 Clicked on [Date & Time] button that has not been added to the Config list.
+[ 2024-05-05 14:39:29.648619 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
+[ 2024-05-05 14:39:40.822081 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
+[ 2024-05-05 14:39:50.689849 | 1 | system ] : 	 Telegram Chat Bot Media Uploaded!
+[ 2024-05-05 14:40:03.013174 | 63144080 | Jon Chow ] : 	 Clicked on [Back] button that has not been added to the Config list.
+[ 2024-05-05 14:40:34.886974 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
+[ 2024-05-05 14:40:46.427791 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
+[ 2024-05-05 14:40:50.387016 | 1 | system ] : 	 Telegram Chat Bot Media Uploaded!

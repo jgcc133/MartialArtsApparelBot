@@ -165,19 +165,9 @@ B2DFlow:
         tag: product
         msg: Prize Ring Head Gear
         media:
-        - prize ring black nosebar.png
+        - prize ring black nosebar3.png
         btn:
         - Back to Head Gear
-        - Back to Start
-      Pro Training Velcro (Blue Silver):
-        tag: variation
-        msg: Stay tuned! We will be adding more Pro Training Velcro (Blue Silver)
-          photos soon!
-        media: []
-        btn:
-        - Add to Cart
-        - Back to Prize Ring Boxing Gloves
-        - Back to Boxing Gloves
         - Back to Start
       Product Enquiry: &id002
         btn:
@@ -190,63 +180,6 @@ B2DFlow:
         - Back to Start
         msg: Which areas of products would you like to look at today?
         tag: service
-      Prof SS Boxing Gloves Soft Type (All White):
-        tag: variation
-        msg: 'Prize Ring Boxing Gloves
-
-          Prof SS Boxing Gloves Soft Type (All White)'
-        media:
-        - All white prize ring.JPG
-        btn:
-        - Add to Cart
-        - Back to Prize Ring Boxing Gloves
-        - Back to Boxing Gloves
-        - Back to Start
-      Prof SS Boxing Gloves Soft Type (Black Silver):
-        tag: variation
-        msg: 'Prize Ring Boxing Gloves
-
-          Prof SS Boxing Gloves Soft Type (Black Silver)'
-        media:
-        - Professional SS 16oz Black Silver Prize Ring Gloves.JPG
-        btn:
-        - Add to Cart
-        - Back to Prize Ring Boxing Gloves
-        - Back to Boxing Gloves
-        - Back to Start
-      Prof. 5.0 (Black Orange):
-        tag: variation
-        msg: Stay tuned! We will be adding more Prof. 5.0 (Black Orange) photos soon!
-        media: []
-        btn:
-        - Add to Cart
-        - Back to Prize Ring Boxing Gloves
-        - Back to Boxing Gloves
-        - Back to Start
-      Prof. 5.0 (Maroon Black Piping):
-        tag: variation
-        msg: 'Prize Ring Boxing Gloves
-
-          Prof. 5.0 (Maroon Black Piping)'
-        media:
-        - Maroon Black Prize Ring.JPG
-        btn:
-        - Add to Cart
-        - Back to Prize Ring Boxing Gloves
-        - Back to Boxing Gloves
-        - Back to Start
-      Prof. 5.0 (White Blue Red):
-        tag: variation
-        msg: 'Prize Ring Boxing Gloves
-
-          Prof. 5.0 (White Blue Red)'
-        media:
-        - white blue red prize ring.JPG
-        btn:
-        - Add to Cart
-        - Back to Prize Ring Boxing Gloves
-        - Back to Boxing Gloves
-        - Back to Start
       Shoes: &id003
         tag: category
         msg: Which product would you like to explore?
@@ -308,6 +241,49 @@ B2DFlow:
         - Back to Shoes
         - Back to Start
       Back to Categories: *id002
+      Pro Training Velcro (Blue Silver):
+        tag: variation
+        msg: Stay tuned! We will be adding more Pro Training Velcro (Blue Silver)
+          photos soon!
+        media: []
+        btn:
+        - Add to Cart
+        - Back to Prize Ring Boxing Gloves
+        - Back to Boxing Gloves
+        - Back to Start
+      Prof SS Boxing Gloves Soft Type (All White):
+        tag: variation
+        msg: 'Prize Ring Boxing Gloves
+
+          Prof SS Boxing Gloves Soft Type (All White)'
+        media:
+        - All white prize ring.JPG
+        btn:
+        - Add to Cart
+        - Back to Prize Ring Boxing Gloves
+        - Back to Boxing Gloves
+        - Back to Start
+      Prof SS Boxing Gloves Soft Type (Black Silver):
+        tag: variation
+        msg: 'Prize Ring Boxing Gloves
+
+          Prof SS Boxing Gloves Soft Type (Black Silver)'
+        media:
+        - Professional SS 16oz Black Silver Prize Ring Gloves.JPG
+        btn:
+        - Add to Cart
+        - Back to Prize Ring Boxing Gloves
+        - Back to Boxing Gloves
+        - Back to Start
+      Prof. 5.0 (Black Orange):
+        tag: variation
+        msg: Stay tuned! We will be adding more Prof. 5.0 (Black Orange) photos soon!
+        media: []
+        btn:
+        - Add to Cart
+        - Back to Prize Ring Boxing Gloves
+        - Back to Boxing Gloves
+        - Back to Start
       Prof. 5.0 (Blue White):
         tag: variation
         msg: 'Prize Ring Boxing Gloves
@@ -315,6 +291,30 @@ B2DFlow:
           Prof. 5.0 (Blue White)'
         media:
         - blue white prize ring.JPG
+        btn:
+        - Add to Cart
+        - Back to Prize Ring Boxing Gloves
+        - Back to Boxing Gloves
+        - Back to Start
+      Prof. 5.0 (Maroon Black Piping):
+        tag: variation
+        msg: 'Prize Ring Boxing Gloves
+
+          Prof. 5.0 (Maroon Black Piping)'
+        media:
+        - Maroon Black Prize Ring.JPG
+        btn:
+        - Add to Cart
+        - Back to Prize Ring Boxing Gloves
+        - Back to Boxing Gloves
+        - Back to Start
+      Prof. 5.0 (White Blue Red):
+        tag: variation
+        msg: 'Prize Ring Boxing Gloves
+
+          Prof. 5.0 (White Blue Red)'
+        media:
+        - white blue red prize ring.JPG
         btn:
         - Add to Cart
         - Back to Prize Ring Boxing Gloves
@@ -356,7 +356,7 @@ B2DFlow:
 ID: Martial Arts Apparel
 MediaList:
   data:
-    prize ring black nosebar.png: workflows/media/googledrive/prize ring black nosebar.png
+    prize ring black nosebar3.png: workflows/media/googledrive/prize ring black nosebar3.png
     Sky Blue Handwraps Prize Ring.JPG: workflows/media/googledrive/Sky Blue Handwraps
       Prize Ring.JPG
     1081A051_020_SB_BT_GLB.png: workflows/media/googledrive/1081A051_020_SB_BT_GLB.png

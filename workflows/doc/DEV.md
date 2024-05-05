@@ -136,8 +136,12 @@ On app branch, managed to deploy both uvicorn FastAPI and telegram simultaneousl
 (don't use uvicorn.run, as it has it's own asyncio.run loop, which throws errors if you try to execute a uvicorn run task within an asyncio.run or gather. Instead, use uvicorn.Config, .Server, then server.serve)
 control flow is updated with each deployment, callback handlers are now automatically added
 
+03 May 24:
+1) Return media via telegram done. Hourly update done. Media is first uploaded onto telegram via 
+
 Next Steps:
-1) return media via telegram
 2) check how to deploy on railway with a listener on a web domain that we own (can temporarily use:
 www.peta-femto.com/active-apparels/(martial-arts-apparel-bot) as the root for this project)
 3) telegram filter query handler
+
+
