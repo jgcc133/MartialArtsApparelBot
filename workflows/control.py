@@ -222,6 +222,7 @@ class Control():
                 self.logic['B2DFlow']['data']['callbacks'] = new_flow
                 self.logic['MediaList']['data'] = new_media
                 
+                tele.addB2DHandlers(self.logic)
                 await tele.uploadMedia(self.logic)
             except:
                 raise ValueError(f"Unable to update control")

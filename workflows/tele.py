@@ -85,7 +85,6 @@ class Tele:
                         file=media,
                         file_name=file_name,
                         )
-            # TODO And remove indentation of with block and await block as well
             
                 await Client.send_message(
                     entity=63144080,
@@ -109,10 +108,12 @@ class Tele:
         Callbacks = control["B2DFlow"]["data"]["callbacks"]
         Default = control["B2DFlow"]["data"]["default"]
         Client = self.BOTS["b2d"]
+
+        if len(Client.list_event_handlers()) > 0: [Client.remove_event_handler(a[0]) for a in Client.list_event_handlers()]
         
         try:        
             @Client.on(events.NewMessage())
-            async def handler(event):
+            async def messageHandler(event):
                 # Obtaining username
                 chat_from = event.chat if event.chat else (await event.get_chat())
                 chat_username = utils.get_display_name(chat_from)
@@ -140,7 +141,7 @@ class Tele:
                             buttons=buttons)
             
             @Client.on(events.CallbackQuery())
-            async def handler(event):
+            async def callbackHandler(event):
                 # Obtaining username
                 chat_from = event.chat if event.chat else (await event.get_chat())
                 chat_username = utils.get_display_name(chat_from)
@@ -163,12 +164,13 @@ class Tele:
                             ut.pLog(f"Sending Media for [{data}] to user", chat_id, chat_username)
 
                             # TODO swap back the declaration of media_file_names
-                            # media_file_names = ["prize ring black nosebar.png"]
+                            
+                            # media_file_names = ["prize ring black nosebar.png", "prize ring black nosebar1.png"]
                             media_file_names = Callbacks[data]['media']
                             
                             photo_coros = [self.__target_coro[key] for key in media_file_names if key[-4:] != '.pdf']
                             pdf_coros = [self.__target_coro[key] for key in media_file_names if key[-4:] == '.pdf']
-                                                        
+                            
                             if len(photo_coros) > 0 :
                                 await Client.send_file(
                                     entity=chat_id,
@@ -224,6 +226,14 @@ class Tele:
                     buttons=Button.clear())
         except:
             ut.pLog("Failed to load handlers...", p1=True)
+
+            '''
+    def update(self, control):
+        Client = self.BOTS['b2d']
+        if len(Client.list_event_handlers()) > 0:
+            Client.remove_event_handler(messageHandler)
+            Client.remove_event_handler(callbackHandler)
+            '''
 
     @staticmethod
     def beauButtons(button_list: list = []) -> list:

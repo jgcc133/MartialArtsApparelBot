@@ -62,10 +62,10 @@ Handwraps:
 Head Gear:
   id: 16FkSyv0PnoE0ups7JOQannHvJqeIOeNK
   products:
-    Prize Ring Head Gear:
+    Prize Ring Head Gear 1:
       id: 16JDDxU1ui0j1ZP0B9zT2Aq69vOwCzrO-
       media:
-        prize ring black nosebar.png: 16FqOdWAjxl_wO-7qAio0A1mx0qOrqr_4
+        prize ring black nosebar1.png: 16FqOdWAjxl_wO-7qAio0A1mx0qOrqr_4
       variations: {}
 Shoes:
   id: 1i_d4tVJW0vHCVJHbVWJMPb3h8jWE6LiR

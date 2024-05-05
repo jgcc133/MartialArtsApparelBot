@@ -161,14 +161,6 @@ B2DFlow:
         - Prof. 5.0 (White Blue Red)
         - Back to Boxing Gloves
         - Back to Start
-      Prize Ring Head Gear:
-        tag: product
-        msg: Prize Ring Head Gear
-        media:
-        - prize ring black nosebar3.png
-        btn:
-        - Back to Head Gear
-        - Back to Start
       Product Enquiry: &id002
         btn:
         - Boxing Gloves
@@ -241,6 +233,18 @@ B2DFlow:
         - Back to Shoes
         - Back to Start
       Back to Categories: *id002
+      Prof. 5.0 (Blue White):
+        tag: variation
+        msg: 'Prize Ring Boxing Gloves
+
+          Prof. 5.0 (Blue White)'
+        media:
+        - blue white prize ring.JPG
+        btn:
+        - Add to Cart
+        - Back to Prize Ring Boxing Gloves
+        - Back to Boxing Gloves
+        - Back to Start
       Pro Training Velcro (Blue Silver):
         tag: variation
         msg: Stay tuned! We will be adding more Pro Training Velcro (Blue Silver)
@@ -284,18 +288,6 @@ B2DFlow:
         - Back to Prize Ring Boxing Gloves
         - Back to Boxing Gloves
         - Back to Start
-      Prof. 5.0 (Blue White):
-        tag: variation
-        msg: 'Prize Ring Boxing Gloves
-
-          Prof. 5.0 (Blue White)'
-        media:
-        - blue white prize ring.JPG
-        btn:
-        - Add to Cart
-        - Back to Prize Ring Boxing Gloves
-        - Back to Boxing Gloves
-        - Back to Start
       Prof. 5.0 (Maroon Black Piping):
         tag: variation
         msg: 'Prize Ring Boxing Gloves
@@ -323,6 +315,14 @@ B2DFlow:
       Back to Shoes: *id003
       Back to Handwraps: *id004
       Back to Boxing Gloves: *id005
+      Prize Ring Head Gear:
+        tag: product
+        msg: Prize Ring Head Gear
+        media:
+        - prize ring black nosebar.png
+        btn:
+        - Back to Head Gear
+        - Back to Start
       Back to Head Gear: *id006
       Back to Asics Matflex 7 Shoes: *id007
       Back to Asics Matflex 6 Shoes: *id008
@@ -356,7 +356,7 @@ B2DFlow:
 ID: Martial Arts Apparel
 MediaList:
   data:
-    prize ring black nosebar3.png: workflows/media/googledrive/prize ring black nosebar3.png
+    prize ring black nosebar.png: workflows/media/googledrive/prize ring black nosebar.png
     Sky Blue Handwraps Prize Ring.JPG: workflows/media/googledrive/Sky Blue Handwraps
       Prize Ring.JPG
     1081A051_020_SB_BT_GLB.png: workflows/media/googledrive/1081A051_020_SB_BT_GLB.png

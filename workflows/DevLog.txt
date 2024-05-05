@@ -1,23 +1,21 @@
-[ 2024-05-05 14:36:17.546611 | 1 | system ] : 	 Control has been loaded from user/control.yml
-[ 2024-05-05 14:36:17.759738 | 1 | system ] : 	 Credentials for GoogleDrive successfully set.
-[ 2024-05-05 14:36:17.762002 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
-[ 2024-05-05 14:36:30.830090 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
-[ 2024-05-05 14:36:30.830090 | 1 | system ] : 	 Trawler created: GoogleDrive for Martial Arts Apparel.
-[ 2024-05-05 14:36:30.855118 | 1 | system ] : 	 Authentication for Telegram Complete.
-[ 2024-05-05 14:36:30.859746 | 1 | system ] : 	 Telegram Chat Bot Logic Flow Created!
-[ 2024-05-05 14:36:31.646226 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
-[ 2024-05-05 14:36:43.285744 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
-[ 2024-05-05 14:36:54.293506 | 1 | system ] : 	 Telegram Chat Bot Media Uploaded!
-[ 2024-05-05 14:37:35.202910 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
-[ 2024-05-05 14:37:46.014325 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
-[ 2024-05-05 14:38:17.902652 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
-[ 2024-05-05 14:38:29.059722 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
-[ 2024-05-05 14:38:42.947020 | 1 | system ] : 	 Telegram Chat Bot Media Uploaded!
-[ 2024-05-05 14:39:06.722636 | 63144080 | Jon Chow ] : 	 Clicked on [Date & Time] button that has not been added to the Config list.
-[ 2024-05-05 14:39:29.648619 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
-[ 2024-05-05 14:39:40.822081 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
-[ 2024-05-05 14:39:50.689849 | 1 | system ] : 	 Telegram Chat Bot Media Uploaded!
-[ 2024-05-05 14:40:03.013174 | 63144080 | Jon Chow ] : 	 Clicked on [Back] button that has not been added to the Config list.
-[ 2024-05-05 14:40:34.886974 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
-[ 2024-05-05 14:40:46.427791 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
-[ 2024-05-05 14:40:50.387016 | 1 | system ] : 	 Telegram Chat Bot Media Uploaded!
+[ 2024-05-05 17:23:25.592313 | 1 | system ] : 	 Control has been loaded from user/control.yml
+[ 2024-05-05 17:23:25.776740 | 1 | system ] : 	 Credentials for GoogleDrive successfully set.
+[ 2024-05-05 17:23:25.779365 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
+[ 2024-05-05 17:23:36.126127 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
+[ 2024-05-05 17:23:36.127130 | 1 | system ] : 	 Trawler created: GoogleDrive for Martial Arts Apparel.
+[ 2024-05-05 17:23:36.152178 | 1 | system ] : 	 Authentication for Telegram Complete.
+[ 2024-05-05 17:23:36.154178 | 1 | system ] : 	 Telegram Chat Bot Logic Flow Created!
+[ 2024-05-05 17:23:36.770126 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
+[ 2024-05-05 17:23:46.764217 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
+[ 2024-05-05 17:24:00.849650 | 1 | system ] : 	 Telegram Chat Bot Media Uploaded!
+[ 2024-05-05 17:24:13.166417 | 1 | system ] : 	 Failed to send [Prize Ring Head Gear 1] message from events.CallbackQuery to user
+[ 2024-05-05 17:24:32.776316 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
+[ 2024-05-05 17:25:09.156762 | 1 | system ] : 	 Could not load file IDs from GoogleDrive
+[ 2024-05-05 17:28:43.864585 | 1 | system ] : 	 Telegram Chat Bot Media Uploaded!
+[ 2024-05-05 17:29:07.512900 | 1 | system ] : 	 Failed to send [Prize Ring Head Gear 1] message from events.CallbackQuery to user
+[ 2024-05-05 17:29:21.020302 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
+[ 2024-05-05 17:29:31.982285 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
+[ 2024-05-05 17:31:09.529268 | 1 | system ] : 	 Telegram Chat Bot Media Uploaded!
+[ 2024-05-05 17:31:41.880668 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
+[ 2024-05-05 17:31:52.057101 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
+[ 2024-05-05 17:33:24.348919 | 1 | system ] : 	 Telegram Chat Bot Media Uploaded!
