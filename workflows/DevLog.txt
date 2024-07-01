@@ -7,3 +7,5 @@
 [ 2024-07-01 12:23:02.897398 | 1 | system ] : 	 Telegram Chat Bot Logic Flow Created!
 [ 2024-07-01 12:23:04.867053 | 1 | system ] : 	 Querying GoogleDrive with 	 ('18YmzUyozBbAKTkFvl7ldSLnji3lu-EJ5' in parents) and (trashed = false)
 [ 2024-07-01 12:24:36.039126 | 1 | system ] : 	 File and Folder IDs have been loaded from GoogleDrive.
+[ 2024-07-01 12:37:44.716918 | 1 | system ] : 	 Telegram Chat Bot Media Uploaded!
+[ 2024-07-01 12:43:29.218595 | 63144080 | Jon Chow ] : 	 Clicked on [Date & Time] button that has not been added to the Config list.

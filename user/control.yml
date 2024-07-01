@@ -165,7 +165,7 @@ B2DFlow:
         tag: product
         msg: Prize Ring Head Gear
         media:
-        - prize ring black nosebar3.png
+        - prize ring black nosebar.png
         btn:
         - Back to Head Gear
         - Back to Start
@@ -176,7 +176,6 @@ B2DFlow:
         - Head Gear
         - Shoes
         - Sweat Pants
-        - Quick Search
         - Back to Start
         msg: Which areas of products would you like to look at today?
         tag: service
@@ -356,7 +355,7 @@ B2DFlow:
 ID: Martial Arts Apparel
 MediaList:
   data:
-    prize ring black nosebar3.png: workflows/media/googledrive/prize ring black nosebar3.png
+    prize ring black nosebar.png: workflows/media/googledrive/prize ring black nosebar.png
     Sky Blue Handwraps Prize Ring.JPG: workflows/media/googledrive/Sky Blue Handwraps
       Prize Ring.JPG
     1081A051_020_SB_BT_GLB.png: workflows/media/googledrive/1081A051_020_SB_BT_GLB.png
