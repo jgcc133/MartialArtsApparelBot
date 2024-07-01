@@ -161,6 +161,14 @@ B2DFlow:
         - Prof. 5.0 (White Blue Red)
         - Back to Boxing Gloves
         - Back to Start
+      Prize Ring Head Gear:
+        tag: product
+        msg: Prize Ring Head Gear
+        media:
+        - prize ring black nosebar.png
+        btn:
+        - Back to Head Gear
+        - Back to Start
       Product Enquiry: &id002
         btn:
         - Boxing Gloves
@@ -168,7 +176,6 @@ B2DFlow:
         - Head Gear
         - Shoes
         - Sweat Pants
-        - Quick Search
         - Back to Start
         msg: Which areas of products would you like to look at today?
         tag: service
